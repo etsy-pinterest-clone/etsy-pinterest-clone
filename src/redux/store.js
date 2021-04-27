@@ -1,7 +1,7 @@
-import { createStore, combineReducers } from 'redux'
+// import { createStore, combineReducers } from 'redux'
 
-const rootReducer = combineReducers({
+// const rootReducer = combineReducers({
     
-})
+// })
 
-export default createStore(rootReducer);
+// export default createStore(rootReducer);

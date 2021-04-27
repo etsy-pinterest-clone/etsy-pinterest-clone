@@ -2,6 +2,10 @@ import React from 'react'
 import SearchSharpIcon from '@material-ui/icons/SearchSharp'
 import ContactsSharpIcon from '@material-ui/icons/ContactsSharp'
 import InfoSharpIcon from '@material-ui/icons/InfoSharp'
+import ExitToAppSharpIcon from '@material-ui/icons/ExitToAppSharp'
+import { Link } from 'react-router-dom'
+import { connect } from "react-redux";
+import '../styles/Header.css'
 
 function Header() {
     return (
@@ -15,13 +19,20 @@ function Header() {
                 <ContactsSharpIcon />
             </div>
             <div className='header__input' >
-                <input placeholder='search' type='text'/>
+                <input placeholder='search' type='text' className='header__inputSearch'/>  
                 <SearchSharpIcon className='header__inputButton'/>
+                         
             </div>
             <div className='header__right'>
-
+                <ExitToAppSharpIcon />
             </div>
 
         </div>
     )
 }
+
+export default Header
+
+// const mapStateToProps = (reduxState) => reduxState;
+
+// export default connect(mapStateToProps)(Header);
