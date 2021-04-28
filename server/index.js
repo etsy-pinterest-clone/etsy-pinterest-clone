@@ -109,6 +109,10 @@ app.get('/user/store')
 app.post('/user/store/createitem', storeCtrl.newItem)
 
 // storeCtrl.getItems
+app.get('/user/store/items', storeCtrl.getUserItems)
+
+//storeCtrl.readItem
+app.get('/user/store/item/:id', storeCtrl.openItem)
 app.get('/user/store/cart/:id', storeCtrl.getUserItems)
 
 // storeCtrl.editItem
