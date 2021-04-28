@@ -3,6 +3,8 @@ import {useMediaQuery} from 'react-responsive';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import {readPost, deleteUserPost} from '../redux/postReducer';
+import DeleteSharpIcon from '@material-ui/icons/DeleteSharp';
+import {Button} from '@material-ui/core';
 import {useHistory} from 'react-router-dom';
 
 
@@ -38,12 +40,25 @@ const Post = (props) => {
     const goBack = () => {
         history.push('/user/dash')
     }
+
+    const deletePost = (id) => {
+        axios.delete(`/user/post/${id}`)
+        .then(() => {
+            alert('post has successfully been deleted')
+            history.push('/user/dash')
+        })
+        .catch(err => console.log('error'))
+    }
     
     return (
         <div className='background' >
        
             <div>
             <div className='postContain'>
+            <Button onClick={() => deletePost()} >
+                <DeleteSharpIcon />                             
+            </Button>
+
                 <span className='closepost' onClick={() => goBack} >&#8678;</span>
                 {/* <img src={trash} alt='trash-icon' className='delete' onClick={() => {props.deletepost(post.post_id); closeView()}} /> */}
                 <h1 className='postData' >{post.date}</h1>
