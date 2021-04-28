@@ -5,6 +5,7 @@ const massive = require('massive');
 const authCtrl = require('./controllers/authController')
 const postCtrl = require('./controllers/postController')
 const storeCtrl = require('./controllers/storeController')
+const userCtrl = require('./controllers/userController')
 const path = require('path');
 const app = express();
 
@@ -49,7 +50,7 @@ app.delete('/auth/user/:id', authCtrl.deleteAccount)
 app.get('/user/:id')
 
 // userCtrl.updateUser
-app.put('/user/:id')
+app.put('/user/profile', userCtrl.updateProfile)
 
 // userCtrl.followUser
 app.put('/user/follow/:id')
@@ -112,6 +113,7 @@ app.get('/user/store/items', storeCtrl.getUserItems)
 
 //storeCtrl.readItem
 app.get('/user/store/item/:id', storeCtrl.openItem)
+app.get('/user/store/cart/:id', storeCtrl.getUserItems)
 
 // storeCtrl.editItem
 app.put('/user/store/item/:id')
