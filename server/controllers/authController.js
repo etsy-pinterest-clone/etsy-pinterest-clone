@@ -58,14 +58,18 @@ module.exports = {
     },
     deleteAccount: async (req, res) => {
         const db = req.app.get('db');
-        // let user = req.profile;
+        const {user_id} = req.session.user
 
-        try {
-            // let deletedUser = await db.auth.delete_account()
+        await db.auth.delete_account(user_id)
+        res.status(200).send('Account successfully deleted')
+        
+
+        // try {
+        //    await db.auth.delete_account(user_id)
             
-        } catch (err) {
-            console.log(err)
-        }
+        // } catch (err) {
+        //     console.log(err)
+        // }
     },
     logout: (req, res) => {
         req.session.destroy();
@@ -81,5 +85,6 @@ module.exports = {
 //             res.sendStatus(403);
 //         }
 //     }
+//
 }
 
