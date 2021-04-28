@@ -40,7 +40,7 @@ app.delete('/auth/logout', authCtrl.logout);
 app.delete('/auth/user/:id', authCtrl.deleteAccount)
 
 // not sure if we need this
-// app.get('/auth/session');
+app.get('/auth/session', authCtrl.getSession)
 
 
 
@@ -109,6 +109,10 @@ app.get('/user/store')
 app.post('/user/store/createitem', storeCtrl.newItem)
 
 // storeCtrl.getItems
+app.get('/user/store/items', storeCtrl.getUserItems)
+
+//storeCtrl.readItem
+app.get('/user/store/item/:id', storeCtrl.openItem)
 app.get('/user/store/cart/:id', storeCtrl.getUserItems)
 
 // storeCtrl.editItem

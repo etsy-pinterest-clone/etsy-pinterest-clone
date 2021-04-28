@@ -59,24 +59,36 @@ module.exports = {
     deleteAccount: async (req, res) => {
         const db = req.app.get('db');
         const {user_id} = req.session.user
+
+        await db.auth.delete_account(user_id)
+        res.status(200).send('Account successfully deleted')
+        
+
+        // try {
+        //    await db.auth.delete_account(user_id)
+            
+        // } catch (err) {
+        //     console.log(err)
+        // }
         
         await db.auth.delete_account(user_id)
         res.status(200).send('Account successfully deleted')
     },
+
     logout: (req, res) => {
         req.session.destroy();
         res.sendStatus(200);
     },
+    
 
 //      IF NEEDED
 
-//     getSession: (req, res) => {
-//         if (req.session.user) {
-//             res.status(200).send(req.session.user);
-//         } else {
-//             res.sendStatus(403);
-//         }
-//     }
-//
+    getSession: (req, res) => {
+        if (req.session.user) {
+            res.status(200).send(req.session.user);
+        } else {
+            res.sendStatus(403);
+        }
+    }
 }
 

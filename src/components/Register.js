@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { connect } from "react-redux"
 import { useHistory } from 'react-router-dom'
-import { loginUser } from '../redux/userReducer'
+import { loginUser, updateUser } from '../redux/userReducer'
 import axios from 'axios';
 
 
@@ -60,4 +60,4 @@ const Register = (props) => {
 function mapStateToProps(state){
   return state
 }
-export default connect(mapStateToProps, {loginUser})(Register); 
+export default connect(mapStateToProps, {loginUser, updateUser})(Register); 
