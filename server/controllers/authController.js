@@ -22,7 +22,7 @@ module.exports = {
             req.session.user = newUser;
             
             res.status(200).send(newUser)
-        } catch(err) {
+        } catch (err) {
             console.log(err)
             return res.status(500).send('ERROR')
         }
@@ -50,7 +50,7 @@ module.exports = {
             req.session.user = existingUser;
 
             res.status(200).send(req.session.user);
-        } catch(err) {
+        } catch (err) {
             console.log(err)
             return res.status(500).send('ERROR')
         }
@@ -58,10 +58,10 @@ module.exports = {
     },
     deleteAccount: async (req, res) => {
         const db = req.app.get('db');
-        // let user = req.profile;
+        
 
         try {
-            // let deletedUser = await db.auth.delete_account()
+            
             
         } catch (err) {
             console.log(err)
