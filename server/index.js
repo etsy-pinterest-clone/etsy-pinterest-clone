@@ -25,7 +25,7 @@ app.use(session({
 // USER LOGIN/REGISTRATION ENDPOINTS
 
 // authCtrl.register
-app.post('/auth/register', authCtrl.Register);
+app.post('/auth/register', authCtrl.register);
 
 // authCtrl.login
 app.post('/auth/login', authCtrl.login);
