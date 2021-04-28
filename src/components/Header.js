@@ -15,7 +15,23 @@ import axios from 'axios'
 
 
 function Header(props) {
+    const [ name, setName ] = useState('');
+    const [ users, setUsers ] = useState([]);
     const history = useHistory();
+
+    const handleSearch = async (e) => {
+        e.preventDefault();
+
+        try {
+            await axios
+                    .put('/explore/search')
+                    .then(response => {
+                        setName(response.data)
+                    })
+        } catch (err) {
+            console.log(err)
+        }
+    };
 
     const logout = () => {
         axios.get('/auth/logout')
@@ -41,11 +57,16 @@ function Header(props) {
                     <ContactsSharpIcon />
                 </Button>
             </div>
-            <div className='header__input' >
-                <input placeholder='search' type='text' className='header__inputSearch' />
+            <form className='header__input' onSubmit={handleSearch} >
+                <input
+                    placeholder='Search...'
+                    type='text'
+                    className='header__inputSearch'
+                    value={name}
+                    onChange={e => setName(e.target.value)}
+                    />
                 <SearchSharpIcon className='header__inputButton' />
-
-            </div>
+            </form>
             <div className='header__right'>
                 <Button onClick={() => logout()}>
                     <ExitToAppSharpIcon />
