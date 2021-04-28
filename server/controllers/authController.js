@@ -45,7 +45,7 @@ module.exports = {
                 return res.status(403).send('Incorrect email and/or password');
             }
 
-            delete existingUser.hash;
+            delete existingUser.password;
 
             req.session.user = existingUser;
 
@@ -58,14 +58,10 @@ module.exports = {
     },
     deleteAccount: async (req, res) => {
         const db = req.app.get('db');
+        const {user_id} = req.session.user
         
-
-        try {
-            
-            
-        } catch (err) {
-            console.log(err)
-        }
+        await db.auth.delete_account(user_id)
+        res.status(200).send('Account successfully deleted')
     },
     logout: (req, res) => {
         req.session.destroy();
