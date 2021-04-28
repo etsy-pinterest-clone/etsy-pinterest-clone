@@ -1,0 +1,28 @@
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    z-index: 10;
+    top: 0%;
+    background-color: lightgrey;
+}
+
+.header__logo {
+    height: 25px;
+    object-fit: contain;
+    margin-left: 25px;
+}
+
+.header__input {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    border: 1px solid black
+
+}
+
+.header__inputSearch {
+    width: fit-content;
+}
