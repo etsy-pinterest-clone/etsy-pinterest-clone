@@ -6,6 +6,7 @@ const authCtrl = require('./controllers/authController')
 const postCtrl = require('./controllers/postController')
 const storeCtrl = require('./controllers/storeController')
 const userCtrl = require('./controllers/userController')
+const exploreCtrl = require('./controllers/exploreController');
 const path = require('path');
 const app = express();
 
@@ -154,7 +155,8 @@ app.get('/explore/:id') /* category ID */
 app.get('/explore/search/:id') /* category ID */
 
 // exploreCtrl.searchUser
-app.get('/explore/search/:id') /* user ID */
+app.put('/explore/search', exploreCtrl.searchUser) /* user ID */
+// using .put so that we have access to req.body
 
 // exploreCtrl.savePost
 app.put('/explore/post/:id')
