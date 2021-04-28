@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { createPost } from '../redux/createPost';
+import { createPost } from '../redux/postReducer';
 import axios from 'axios';
 
 const CreatePost = (props) => {

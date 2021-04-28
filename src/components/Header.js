@@ -12,7 +12,7 @@ import userReducer from '../redux/userReducer'
 import Login from './Login'
 import '../styles/Header.css'
 import axios from 'axios'
-// import { logout } from "../../server/controllers/authController"
+
 
 function Header(props) {
     const history = useHistory();

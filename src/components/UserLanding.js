@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AddCircleSharpIcon from '@material-ui/icons/AddCircleSharp';
 import { Button, CircularProgress } from "@material-ui/core";
+import UserPosts from './UserPosts';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -24,6 +25,7 @@ const UserLanding = () => {
                     <AddCircleSharpIcon />
                 </Link>
             </Button>
+            <UserPosts />
         </div>
     )
 }
