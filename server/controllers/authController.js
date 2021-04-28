@@ -74,20 +74,21 @@ module.exports = {
         await db.auth.delete_account(user_id)
         res.status(200).send('Account successfully deleted')
     },
+
     logout: (req, res) => {
         req.session.destroy();
         res.sendStatus(200);
     },
+    
 
 //      IF NEEDED
 
-//     getSession: (req, res) => {
-//         if (req.session.user) {
-//             res.status(200).send(req.session.user);
-//         } else {
-//             res.sendStatus(403);
-//         }
-//     }
-//
+    getSession: (req, res) => {
+        if (req.session.user) {
+            res.status(200).send(req.session.user);
+        } else {
+            res.sendStatus(403);
+        }
+    }
 }
 

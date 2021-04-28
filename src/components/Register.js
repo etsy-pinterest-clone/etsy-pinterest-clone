@@ -44,7 +44,7 @@ const Register = (props) => {
               <input className='registerField' type='text' placeholder='First name' name='first_name' onChange={onChange} value={data.first_name}/>
               <input className='registerField' type='text' placeholder='Last name' name='last_name' onChange={onChange} value={data.last_name} />
               <input className='registerField' type='date' placeholder='Birthday' name='birthday' onChange={e => setData({...data, [e.target.name]: e.target.value})}value={data.birthday} />
-              <lable>Select a file</lable>
+              <label>Select a file</label>
               <input type='file' accept="image/png, image/jpeg" name='profilePic' value={data.profilePic}></input>
               <input className='registerField' type='email' placeholder='Email address' name='email' onChange={onChange} value={data.email} />
               <input className='registerField' type='tel' placeholder='Telephone number'  name='phone_number' onChange={onChange} value={data.phone_number} />

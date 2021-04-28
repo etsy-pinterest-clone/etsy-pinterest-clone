@@ -4,6 +4,7 @@ import App from '../App'
 import Login from '../components/Login'
 import Register from '../components/Register'
 import UserLanding from '../components/UserLanding'
+import CreatePost from '../components/CreatePost'
 
 
 export default (
@@ -14,5 +15,6 @@ export default (
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Register}/>
       <Route path='/user/dash' component={UserLanding} />
+      <Route path='/user/createpost' component={CreatePost} />
     </Switch>
   )

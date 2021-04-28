@@ -40,7 +40,7 @@ app.delete('/auth/logout', authCtrl.logout);
 app.delete('/auth/user/:id', authCtrl.deleteAccount)
 
 // not sure if we need this
-// app.get('/auth/session');
+app.get('/auth/session', authCtrl.getSession)
 
 
 

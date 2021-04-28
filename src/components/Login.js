@@ -31,7 +31,7 @@ class Login extends Component {
             this.props.updateUser({username: res.data.username, id: res.data.user_id, isAdmin: res.data.is_admin})
 
             this.props.history.push('/user/dash') 
-            console.log(this.props)
+            // console.log(this.props)
         })
         .catch(err => {
             console.log(err)
