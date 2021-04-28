@@ -22,7 +22,7 @@ module.exports = {
             req.session.user = newUser;
             
             res.status(200).send(newUser)
-        } catch(err) {
+        } catch (err) {
             console.log(err)
             return res.status(500).send('ERROR')
         }
@@ -45,12 +45,12 @@ module.exports = {
                 return res.status(403).send('Incorrect email and/or password');
             }
 
-            delete existingUser.hash;
+            delete existingUser.password;
 
             req.session.user = existingUser;
 
             res.status(200).send(req.session.user);
-        } catch(err) {
+        } catch (err) {
             console.log(err)
             return res.status(500).send('ERROR')
         }
@@ -58,14 +58,10 @@ module.exports = {
     },
     deleteAccount: async (req, res) => {
         const db = req.app.get('db');
-        // let user = req.profile;
-
-        try {
-            // let deletedUser = await db.auth.delete_account()
-            
-        } catch (err) {
-            console.log(err)
-        }
+        const {user_id} = req.session.user
+        
+        await db.auth.delete_account(user_id)
+        res.status(200).send('Account successfully deleted')
     },
     logout: (req, res) => {
         req.session.destroy();

@@ -3,6 +3,9 @@ const express = require('express');
 const session = require('express-session');
 const massive = require('massive');
 const authCtrl = require('./controllers/authController')
+const postCtrl = require('./controllers/postController')
+const storeCtrl = require('./controllers/storeController')
+const userCtrl = require('./controllers/userController')
 const path = require('path');
 const app = express();
 
@@ -31,10 +34,10 @@ app.post('/auth/register', authCtrl.register);
 app.post('/auth/login', authCtrl.login);
 
 // authCtrl.logout
-app.delete('/auth/logout');
+app.delete('/auth/logout', authCtrl.logout);
 
 // authCtrl.deleteAccount
-app.delete('/auth/user/:id')
+app.delete('/auth/user/:id', authCtrl.deleteAccount)
 
 // not sure if we need this
 // app.get('/auth/session');
@@ -47,7 +50,7 @@ app.delete('/auth/user/:id')
 app.get('/user/:id')
 
 // userCtrl.updateUser
-app.put('/user/:id')
+app.put('/user/profile', userCtrl.updateProfile)
 
 // userCtrl.followUser
 app.put('/user/follow/:id')
@@ -72,13 +75,13 @@ app.get('/user/userdata')
 // POST CONTROLLER ENDPOINTS
 
 // postCtrl.getUserPosts
-app.get('/user/posts')
+app.get('/user/posts', postCtrl.getUserPosts)
 
 // postCtrl.getSavedPosts
 app.get('/user/savedposts')
 
 // postCtrl.createPost
-app.post('/user/post/createpost')
+app.post('/user/post/createpost', postCtrl.newPost)
 
 // postCtrl.commentPost
 app.put('/user/post/:id')
@@ -87,7 +90,7 @@ app.put('/user/post/:id')
 app.delete('/user/post/:id')
 
 // postCtrl.deleteUserPost
-app.delete('/user/post/:id')
+app.delete('/user/post/:id', postCtrl.deletePost)
 
 // postCtrl.removeSavedPost
 app.delete('/user/savedpost/:id')
@@ -103,13 +106,16 @@ app.get('/user/recommended')
 app.get('/user/store')
 
 // storeCtrl.createItem
-app.post('/user/store/createitem')
+app.post('/user/store/createitem', storeCtrl.newItem)
 
 // storeCtrl.getItems
-app.get('/user/store/cart/:id')
+app.get('/user/store/cart/:id', storeCtrl.getUserItems)
 
 // storeCtrl.editItem
 app.put('/user/store/item/:id')
+
+//storeCtrl.deleteItem
+app.delete('/user/store/item/:id', storeCtrl.deleteItem)
 
 // storeCtrl.addToCart
 app.put('/user/store/cart/item:id')
