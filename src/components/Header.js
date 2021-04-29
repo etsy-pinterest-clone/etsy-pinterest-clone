@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react"
-import { Link, useHistory } from 'react-router-dom'
-import { Button, CircularProgress } from "@material-ui/core"
-import { routes } from '../routes/routes'
-import SearchSharpIcon from '@material-ui/icons/SearchSharp'
-import ContactsSharpIcon from '@material-ui/icons/ContactsSharp'
-import InfoSharpIcon from '@material-ui/icons/InfoSharp'
-import ExitToAppSharpIcon from '@material-ui/icons/ExitToAppSharp'
-import { connect } from "react-redux"
-import { updateUser } from '../redux/userReducer'
-import userReducer from '../redux/userReducer'
-import Login from './Login'
-import '../styles/Header.css'
-import axios from 'axios'
+import React, { useState, useEffect } from "react";
+import { Link, useHistory } from 'react-router-dom';
+import { Button, CircularProgress } from "@material-ui/core";
+import { routes } from '../routes/routes';
+import SearchSharpIcon from '@material-ui/icons/SearchSharp';
+import ContactsSharpIcon from '@material-ui/icons/ContactsSharp';
+import InfoSharpIcon from '@material-ui/icons/InfoSharp';
+import ExitToAppSharpIcon from '@material-ui/icons/ExitToAppSharp';
+import { connect } from "react-redux";
+import { updateUser } from '../redux/userReducer';
+import userReducer from '../redux/userReducer';
+import Login from './Login';
+import axios from 'axios';
+import '../styles/Header.css';
 
 
 function Header(props) {
@@ -74,7 +74,7 @@ function Header(props) {
                     placeholder='Search...'
                     type='text'
                     className='header__inputSearch'
-                    value={name.first_name}
+                    value={name.first_name, name.last_name}
                     onChange={e => setName(e.target.value)}
                     />
                 <SearchSharpIcon className='header__inputButton' />
@@ -85,7 +85,7 @@ function Header(props) {
                 </Button>
             </div>
 
-            <div>{mappedUsers}</div>
+            <div className='user-search'>{mappedUsers}</div>
         </div>
 
     )
