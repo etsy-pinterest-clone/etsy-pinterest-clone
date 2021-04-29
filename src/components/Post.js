@@ -26,6 +26,7 @@ const Post = (props) => {
 
     useEffect(() => {
         if (props.match){
+            console.log(props.match)
         axios.get(`/user/post/${props.match.params.id}`)
             .then(res =>{
                 setPost(res.data)
@@ -34,6 +35,7 @@ const Post = (props) => {
                 .then(res =>{
                     setPost(res.data)
                 })
+                .catch(err => console.log(err))
             }
     }, [])
 
@@ -49,7 +51,7 @@ const Post = (props) => {
         })
         .catch(err => console.log('error'))
     }
-    
+    console.log(post)
     return (
         <div className='background' >
        
@@ -59,13 +61,12 @@ const Post = (props) => {
                 <DeleteSharpIcon />                             
             </Button>
 
-                <span className='closepost' onClick={() => goBack} >&#8678;</span>
-                {/* <img src={trash} alt='trash-icon' className='delete' onClick={() => {props.deletepost(post.post_id); closeView()}} /> */}
+                <span className='closepost' onClick={() => goBack()} >&#8678;</span>
                 <h1 className='postData' >{post.date}</h1>
                 <h1 className='postData' >{post.title}</h1>
                 <h1 className='postData' >{post.category}</h1>
                 <h1 className='postDescription' >{post.description}</h1>
-                
+                <div>Comments area</div>
             </div>
             </div>
             
