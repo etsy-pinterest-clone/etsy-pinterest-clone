@@ -50,7 +50,7 @@ export default function reducer(state = initialState, action) {
         case READ_POST:
             return {
                 ...state,
-                ...action.payload
+                post: action.payload
             }
         case DELETE_POST:
             return {

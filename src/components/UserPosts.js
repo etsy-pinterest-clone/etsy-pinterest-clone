@@ -22,6 +22,7 @@ const UserPosts = (props) => {
     const [readPost, setReadPost] = useState(null)
 
     useEffect(() => {
+        console.log(props)
         axios.get('/user/posts')
             .then(res => {
                 setPosts(res.data)
@@ -32,37 +33,28 @@ const UserPosts = (props) => {
     const viewPost = (postId) => {   
         setReadPost(postId)
         props.readPost(postId)
-        history.push(`/user/posts/${postId}`)
+        
     }
 
-    // const deletePost = (id) => {
-    //      axios.delete(`/user/post/${id}`)
-    //      .then(() => {
-    //          alert('post has successfully been deleted')
-    //          history.push('/user/dash')
-    //      })
-    //      .catch(err => console.log('error'))
-    //  }
 
-
-    
     return (
         <div className='sideBarTix'>
             {
                 posts.map((t, index) => { 
+                    console.log(t)
                         return ( 
                             <div key={index} >
                                 <div>
+                                    <Link to={`/user/posts/${t.post_id}`} >
                                 <div className='postList' onClick={() => viewPost(t.post_id)}> 
-                                   <h2 onClick={() => viewPost(t.post_id)} className='postItems'>{t.date}</h2>                                                            
-                                   <h2 onClick={() => viewPost(t.post_id)} className='postItems'>{t.category}</h2>                                                            
-                                   <h2 onClick={() => viewPost(t.post_id)} className='postItems'>{t.title}</h2>                                                            
-                                   <h2 onClick={() => viewPost(t.post_id)} className='postItems'>{t.description}</h2>                                                            
-                                   <h2 onClick={() => viewPost(t.post_id)} className='postItems'>{t.media}</h2>                                                            
+                                
+                                   <h2 className='postItems'>{t.date}</h2>                                                            
+                                   <h2 className='postItems'>{t.category}</h2>                                                            
+                                   <h2 className='postItems'>{t.title}</h2>                                                            
+                                   <h2 className='postItems'>{t.description}</h2>                                                            
+                                   <h2 className='postItems'>{t.media}</h2>                                                            
                                 </div>
-                                <div className='openpost'>
-                            
-                                </div>
+                                </Link>
                                 </div>
                             </div>
                         )
