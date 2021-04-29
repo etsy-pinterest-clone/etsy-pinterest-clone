@@ -40,14 +40,14 @@ function Header(props) {
             .catch(err => console.log(err))
     };
 
-    const mappedUsers = name.map(user => {
-        return (
-            <div key={user.user_id}>
-                <div>{user.first_name}</div>
-                <div>{user.last_name}</div>
-            </div>
-        )
-    })
+    // const mappedUsers = name.map(user => {
+    //     return (
+    //         <div key={user.user_id}>
+    //             <div>{user.first_name}</div>
+    //             <div>{user.last_name}</div>
+    //         </div>
+    //     )
+    // })
     
     // console.log(mappedUsers)
 
@@ -74,7 +74,7 @@ function Header(props) {
                     type='text'
                     className='header__inputSearch'
                     value={name.first_name}
-                    // onChange={e => setName(e.target.value)}
+                    onChange={e => setName(e.target.value)}
                     />
                 <SearchSharpIcon className='header__inputButton' />
             </form>
@@ -82,6 +82,14 @@ function Header(props) {
                 <Button onClick={() => logout()}>
                     <ExitToAppSharpIcon />
                 </Button>
+            </div>
+            <div>
+                {users.map(user => {
+                <div key={user.user_id}>
+                    <div>{user.first_name}</div>
+                    <div>{user.last_name}</div>
+                </div>
+                })}
             </div>
             {/* <div>{mappedUsers}</div> */}
         </div>
