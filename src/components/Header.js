@@ -28,6 +28,7 @@ function Header(props) {
                     .then(res => {
                         console.log(res.data)
                         setName(res.data)
+                        setUsers(res.data)
                     })
                 } catch (err) {
                     console.log(err)
@@ -40,16 +41,16 @@ function Header(props) {
             .catch(err => console.log(err))
     };
 
-    // const mappedUsers = name.map(user => {
-    //     return (
-    //         <div key={user.user_id}>
-    //             <div>{user.first_name}</div>
-    //             <div>{user.last_name}</div>
-    //         </div>
-    //     )
-    // })
+    const mappedUsers = users.map(user => {
+        return (
+            <div key={user.user_id}>
+                <div>{user.first_name}</div>
+                <div>{user.last_name}</div>
+            </div>
+        )
+    })
     
-    // console.log(mappedUsers)
+    console.log(mappedUsers)
 
     return (
 
@@ -83,15 +84,8 @@ function Header(props) {
                     <ExitToAppSharpIcon />
                 </Button>
             </div>
-            <div>
-                {users.map(user => {
-                <div key={user.user_id}>
-                    <div>{user.first_name}</div>
-                    <div>{user.last_name}</div>
-                </div>
-                })}
-            </div>
-            {/* <div>{mappedUsers}</div> */}
+
+            <div>{mappedUsers}</div>
         </div>
 
     )
