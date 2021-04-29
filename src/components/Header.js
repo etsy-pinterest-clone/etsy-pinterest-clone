@@ -57,6 +57,7 @@ function Header(props) {
                     <ContactsSharpIcon />
                 </Button>
                 <Button><Link to="/contact">Contact</Link></Button>
+                <Button><Link to="/about">About</Link></Button>
             </div>
             <form className='header__input' onSubmit={handleUserSearch} >
                 <input

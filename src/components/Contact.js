@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react'
+import axios from 'axios'
+import '../styles/Contact.css'
 
-export default function Emailer (props){
+export default function Contact (props){
 
   
 const [body, setBody] = useState({
@@ -33,13 +34,15 @@ const [body, setBody] = useState({
     
   
   return (
-      <div>
+      <div className='contactPage'>
         <h1>Contact Us</h1>
+        <div className='contactForm'>
         <input placeholder='your name' name='name' value={body.name} onChange={onChange} />
         <input  placeholder='your email' name='email' value={body.email} onChange={onChange} />
         <input placeholder='subject' name='title' value={body.title} onChange={onChange} />
         <textarea  placeholder='message' name='message' value={body.message} onChange={onChange} />
         <button onClick={handleSend}>Send</button>
+        </div>
       </div>
     )
   }

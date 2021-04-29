@@ -1,0 +1,26 @@
+.contactPage{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactForm{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contactForm > input{
+    width: 300px;
+    padding: 8px;
+    margin: 10px;
+}
+
+.contactForm > textarea{
+    width: 310px;
+    height: 300px;
+}
