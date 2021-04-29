@@ -8,6 +8,7 @@ const storeCtrl = require('./controllers/storeController')
 const userCtrl = require('./controllers/userController')
 const exploreCtrl = require('./controllers/exploreController');
 const path = require('path');
+const contactController = require('./controllers/contactController');
 const app = express();
 
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env;
@@ -162,6 +163,8 @@ app.put('/explore/search', exploreCtrl.searchUser) /* user ID */
 app.put('/explore/post/:id')
 
 
+// nodemailer/ contactCtrl
+app.post('/api/email', contactController.email);
 
 
 massive({

@@ -22,8 +22,7 @@ const Post = (props) => {
     })
 
     const history = useHistory();
-
-
+    
     useEffect(() => {
         console.log(props.match.params.id)
         axios.get(`/user/post/${props.match.params.id}`)
