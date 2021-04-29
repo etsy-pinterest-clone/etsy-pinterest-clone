@@ -1,5 +1,6 @@
 
 .header {
+    height: 8vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -17,12 +18,18 @@
 
 .header__input {
     display: flex;
+    justify-content: center;
     align-items: center;
     width: 40%;
-    border: 1px solid black
-
+    /* border: 1px solid black; */
 }
 
 .header__inputSearch {
-    width: fit-content;
+    width: 60%;
+    height: 3vh;
+    padding-left: 5px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
 }
+

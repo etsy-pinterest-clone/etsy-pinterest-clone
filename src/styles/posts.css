@@ -1,0 +1,125 @@
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.link {
+    text-decoration: none;
+    
+}
+
+.mainContain {
+    font-family: "Poppins", sans-serif;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; 
+    perspective: 1000px;
+    flex-wrap: wrap; 
+}
+
+.openPostContain {
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center; 
+    perspective: 1000px;
+    flex-wrap: wrap; 
+
+}
+
+.container {
+    /* background-color: lightblue; */
+    width: 13vw;
+}
+
+.buttonContain {
+    position: relative;
+    top: 0;
+    margin-bottom: 5px;
+    width: 30vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.back {
+    width: 35px;
+    height: 35px;
+    background-color: aquamarine;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.back:hover {
+    cursor: pointer;
+}
+
+.delete {
+   color: red;
+}
+
+
+
+.card {
+    transform-style: preserve-3d;
+    height: 25vh;
+    width: 12vw;
+    border-radius: 30px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0 0 50px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px;
+}
+
+.openCard {
+    position: absolute;
+    top: 0px;
+    right: 37vw;
+    height: 35vh;
+    width: 20vw;
+    border-radius: 30px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0 0 50px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px;
+}
+
+
+ .title {
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.75s ease-out;
+    text-align: center;
+    text-decoration: none;
+}
+ .openTitle {
+    position: absolute;
+    top: 5vh; 
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.75s ease-out;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+
+
+.date {
+    font-size: 0.5rem;
+    color: lightgray;
+}
+
+
+
+

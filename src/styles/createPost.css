@@ -1,0 +1,95 @@
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.link {
+    text-decoration: none;
+    
+}
+
+
+.createPostContain {
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center; 
+    perspective: 1000px;
+    flex-wrap: wrap; 
+
+}
+
+.backContain {
+    position: absolute;
+    top: 15vh;
+    left: 30vw;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    width: 30vw;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+.backBt {
+    width: 35px;
+    height: 35px;
+    background-color: aquamarine;
+    border-radius: 100%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.backBt:hover {
+    cursor: pointer;
+    background-color: rgb(80, 165, 136);
+}
+
+
+.createPost {
+    height: 65vh;
+    width: 40vw;
+    border-radius: 30px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0 0 50px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px;
+}
+
+
+ .title {
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.75s ease-out;
+    text-align: center;
+    text-decoration: none;
+}
+ .openTitle {
+    position: absolute;
+    top: 5vh; 
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.75s ease-out;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+
+
+.date {
+    font-size: 0.5rem;
+    color: lightgray;
+}
+
+
+
+

@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import { useHistory } from 'react-router-dom'
 import { loginUser, updateUser } from '../redux/userReducer'
 import axios from 'axios';
+import '../styles/register.css';
 
 
 
@@ -38,21 +39,58 @@ const Register = (props) => {
 
 
   return (
-      <div className='registerUser' >
-          <button className='backB' onClick={() => history.push('/')} >&#8678;</button>
-          <form className='form' >
-              <input className='registerField' type='text' placeholder='First name' name='first_name' onChange={onChange} value={data.first_name}/>
-              <input className='registerField' type='text' placeholder='Last name' name='last_name' onChange={onChange} value={data.last_name} />
-              <input className='registerField' type='date' placeholder='Birthday' name='birthday' onChange={e => setData({...data, [e.target.name]: e.target.value})}value={data.birthday} />
-              <label>Select a file</label>
-              <input type='file' accept="image/png, image/jpeg" name='profilePic' value={data.profilePic}></input>
-              <input className='registerField' type='email' placeholder='Email address' name='email' onChange={onChange} value={data.email} />
-              <input className='registerField' type='tel' placeholder='Telephone number'  name='phone_number' onChange={onChange} value={data.phone_number} />
-              <input className='registerField' type='text' placeholder='Username' name='username' onChange={onChange} value={data.username} />
-              <input className='registerField' type='password' placeholder='Password' name='password' onChange={onChange} value={data.password} />
-              <button className='submit' type='submit' onClick={(e) => register(e)}>Submit</button>
-              <button onClick={() => history.push('/')}>cancel</button>
-          </form>
+      <div className='register-contain' >
+          <div className='register-box'>
+            <div className='button-contain'>
+                <button className='backButton' onClick={() => history.push('/')} >&#8678;</button>
+                {/* <button className='cancel' onClick={() => history.push('/')}>cancel</button> */}
+            </div>
+            <h2>Register</h2>
+            <form >
+                <div className='register-field'>
+                    <input  type='text'  name='first_name' onChange={onChange} value={data.first_name}/>
+                    <label>First Name</label>
+                </div>
+                <div className='register-field'>
+                    <input type='text'  name='last_name' onChange={onChange} value={data.last_name} />
+                    <label>Last Name</label>
+                </div>
+                <div className='register-field'>
+                    <input type='date'  name='birthday' onChange={e => setData({...data, [e.target.name]: e.target.value})}value={data.birthday} />
+                    <label>Birthday</label>
+                </div>
+                <div className='register-field'>
+                    <input accept="image/png, image/jpeg" name='profilePic' value={data.profilePic}></input>
+                    <label>Profile Picture</label>
+                </div>
+                <div className='register-field'>
+                    <input type='email'  name='email' onChange={onChange} value={data.email} />
+                    <label>Email</label>
+                </div>
+                <div className='register-field'>
+                    <input type='tel'   name='phone_number' onChange={onChange} value={data.phone_number} />
+                    <label>Phone Number</label>
+                </div>
+                <div className='register-field'>
+                    <input className='button' type='text'  name='username' onChange={onChange} value={data.username} />
+                    <label>Username</label>
+                </div>
+                <div className='register-field'>
+                    <input type='password'  name='password' onChange={onChange} value={data.password} />
+                    <label>Password</label>
+                </div>
+                <a onClick={(e) => this.register(e)}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Register
+                </a>
+
+                {/* <button className='submit' type='submit' onClick={(e) => register(e)}>Submit</button> */}
+                
+            </form>
+          </div>
       </div>
   )
 };

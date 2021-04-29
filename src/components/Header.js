@@ -53,7 +53,7 @@ function Header(props) {
                     />
 
                 </Button>
-                <Button onClick={() => history.push('/login')} >
+                <Button className='authBtn' onClick={() => history.push('/login')} >
                     <ContactsSharpIcon />
                 </Button>
                 <Button><Link to="/contact">Contact</Link></Button>
