@@ -20,7 +20,7 @@ const [body, setBody] = useState({
             email: '',
             title: '',
             message: ''
-        })
+        });
         console.log(res.data);
         alert('Your message has been sent!')
     })
