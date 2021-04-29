@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useMediaQuery} from 'react-responsive';
-import {getUserPosts} from '../redux/postReducer';
+import {getUserPosts, readPost} from '../redux/postReducer';
 import DeleteSharpIcon from '@material-ui/icons/DeleteSharp';
 import {Button} from '@material-ui/core';
 import {connect}  from 'react-redux';
@@ -31,6 +31,8 @@ const UserPosts = (props) => {
 
     const viewPost = (postId) => {   
         setReadPost(postId)
+        props.readPost(postId)
+        history.push(`/user/posts/${postId}`)
     }
 
     // const deletePost = (id) => {
@@ -49,13 +51,9 @@ const UserPosts = (props) => {
             {
                 posts.map((t, index) => { 
                         return ( 
-                            // <Link to={`/user/posts/${t.post_id}`} />
                             <div key={index} >
                                 <div>
-                                <div className='postList'> 
-                                {/* <Button onClick={() => deletePost()} >
-                                    <DeleteSharpIcon />                             
-                                </Button> */}
+                                <div className='postList' onClick={() => viewPost(t.post_id)}> 
                                    <h2 onClick={() => viewPost(t.post_id)} className='postItems'>{t.date}</h2>                                                            
                                    <h2 onClick={() => viewPost(t.post_id)} className='postItems'>{t.category}</h2>                                                            
                                    <h2 onClick={() => viewPost(t.post_id)} className='postItems'>{t.title}</h2>                                                            
@@ -63,6 +61,7 @@ const UserPosts = (props) => {
                                    <h2 onClick={() => viewPost(t.post_id)} className='postItems'>{t.media}</h2>                                                            
                                 </div>
                                 <div className='openpost'>
+                            
                                 </div>
                                 </div>
                             </div>
@@ -77,4 +76,4 @@ const mapStateToProps = (state) => {
     return state
 }
 
-export default connect(mapStateToProps, {getUserPosts})(UserPosts);
+export default connect(mapStateToProps, {getUserPosts, readPost})(UserPosts);
