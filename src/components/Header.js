@@ -19,14 +19,14 @@ function Header(props) {
     const [ users, setUsers ] = useState([]);
     const history = useHistory();
 
-    const handleSearch = async (e) => {
+    const handleUserSearch = async (e) => {
         e.preventDefault();
 
         try {
             await axios
                     .put('/explore/search')
-                    .then(response => {
-                        setName(response.data)
+                    .then(res => {
+                        setName(res.data)
                     })
         } catch (err) {
             console.log(err)
@@ -57,7 +57,7 @@ function Header(props) {
                     <ContactsSharpIcon />
                 </Button>
             </div>
-            <form className='header__input' onSubmit={handleSearch} >
+            <form className='header__input' onSubmit={handleUserSearch} >
                 <input
                     placeholder='Search...'
                     type='text'

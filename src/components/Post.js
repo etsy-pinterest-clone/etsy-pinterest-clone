@@ -13,7 +13,7 @@ import {useHistory} from 'react-router-dom';
 
 const Post = (props) => {
     const [post, setPost] = useState({
-        postId: null,
+        post_id: null,
         date: null,
         category: '',
         title: '',
@@ -25,16 +25,13 @@ const Post = (props) => {
 
 
     useEffect(() => {
-        if (props.match){
+        console.log(props.match.params.id)
         axios.get(`/user/post/${props.match.params.id}`)
             .then(res =>{
                 setPost(res.data)
-            })} else {
-                axios.get(`/user/post/${props.postId}`)
-                .then(res =>{
-                    setPost(res.data)
-                })
-            }
+                props.readPost(res.data)
+            })
+            .catch(err => console.log(err))    
     }, [])
 
     const goBack = () => {
@@ -49,24 +46,23 @@ const Post = (props) => {
         })
         .catch(err => console.log('error'))
     }
-    
+    console.log(post.post_id)
     return (
-        <div className='background' >
-       
-            <div>
+        <div className='background'>
+            
             <div className='postContain'>
-            <Button onClick={() => deletePost()} >
-                <DeleteSharpIcon />                             
-            </Button>
 
-                <span className='closepost' onClick={() => goBack} >&#8678;</span>
-                {/* <img src={trash} alt='trash-icon' className='delete' onClick={() => {props.deletepost(post.post_id); closeView()}} /> */}
+
+                <span className='closepost' onClick={() => goBack()} >&#8678;</span>
+                <Button onClick={() => deletePost(post.post_id)} >
+                    <DeleteSharpIcon />                             
+                </Button>
                 <h1 className='postData' >{post.date}</h1>
                 <h1 className='postData' >{post.title}</h1>
                 <h1 className='postData' >{post.category}</h1>
                 <h1 className='postDescription' >{post.description}</h1>
-                
-            </div>
+                <div>Comments area</div>
+            
             </div>
             
         </div>
@@ -77,5 +73,5 @@ const mapStateToProps = (state) => {
     return state;
 }
 
-// export default post;
+// export default post;s, readPot
 export default connect(mapStateToProps, {readPost, deleteUserPost})(Post);
