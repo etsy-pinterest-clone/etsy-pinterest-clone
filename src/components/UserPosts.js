@@ -31,6 +31,7 @@ const UserPosts = (props) => {
 
     const viewPost = (postId) => {   
         setReadPost(postId)
+        history.push(`/user/post/${postId}`)
     }
 
     // const deletePost = (id) => {

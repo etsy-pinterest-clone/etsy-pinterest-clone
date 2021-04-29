@@ -84,7 +84,7 @@ app.get('/user/savedposts')
 // postCtrl.createPost
 app.post('/user/post/createpost', postCtrl.newPost)
 
-app.get('/user/posts/:id', postCtrl.readPost)
+app.get('/user/post/:id', postCtrl.readPost)
 
 // postCtrl.commentPost
 app.put('/user/post/:id')
