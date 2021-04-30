@@ -8,6 +8,7 @@ const storeCtrl = require('./controllers/storeController')
 const userCtrl = require('./controllers/userController')
 const exploreCtrl = require('./controllers/exploreController');
 const path = require('path');
+const contactController = require('./controllers/contactController');
 const app = express();
 
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env;
@@ -46,7 +47,8 @@ app.get('/auth/session', authCtrl.getSession)
 // userCtrl.getUser
 app.get('/user/:id')
 
-app.put('/user/profile', userCtrl.updateProfile)
+// userCtrl.updateUser
+app.put('/user/updateprofile', userCtrl.updateProfile)
 
 // userCtrl.followUser
 app.put('/user/follow/:id')
@@ -151,6 +153,8 @@ app.put('/explore/search', exploreCtrl.searchUser)
 app.put('/explore/post/:id')
 
 
+// nodemailer/ contactCtrl
+app.post('/api/email', contactController.email);
 
 
 massive({

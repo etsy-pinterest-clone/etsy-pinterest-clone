@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { createPost } from '../redux/postReducer';
 import axios from 'axios';
+import { app } from '../firebase/firebase'
+import '../styles/createPost.css';
 
 const CreatePost = (props) => {
     const [data, setData] = useState({
@@ -22,6 +24,15 @@ const CreatePost = (props) => {
         console.log(props)
         const { id } = props;
         const data1 = { id: id, date: data.date, category: data.category, title: data.title, description: data.description, media: data.media };
+
+        console.log(data1.media)
+        const storageRef = app.storage().ref()
+        const fileRef = storageRef.child(id)
+        fileRef.put(data1.media).then(() => {
+            console.log('Uploaded File successfully')
+        }).catch(err => console.log('Upload File Unsuccessful'))
+
+
         axios.post('/user/post/createpost', data1)
             .then(res => {
 
@@ -39,12 +50,14 @@ const CreatePost = (props) => {
     const goBack = () => {
         history.push('/user/dash')
     }
-
+    
     return (
-        <div>
-            <form className='createTicket'>
+        <div className='createPostContain'>
+                <div className='backContain'>
+                    <button type='button' className='backBt' onClick={() => goBack()} >&#8678;</button>
+                </div>
+            <form className='createPost'>
                 <h1 className='newHeader'>Create New Post</h1>
-                <button type='button' className='backBtn' onClick={() => goBack()} >&#8678;</button>
                 <input className='newTitle' type='text' placeholder='Title' onChange={onChange} name='title' value={data.title} />
                 <select className='select' name='category' onChange={onChange} selected>
                     <option value='' disabled selected>Please select an option </option>
@@ -55,6 +68,7 @@ const CreatePost = (props) => {
                     <option name='other' value='other'>Other</option>
                 </select>
                 <textarea className='textInput' type='text' placeholder='description' onChange={onChange} name='description' value={data.description} />
+                <input type='file' placeholder='upload media' onChange={onChange} name='media' value={data.media} />
                 <button className='submitTicket' type='submit' onClick={(e) => submitPost(e)} >Submit Request</button>
             </form>
 

@@ -1,0 +1,27 @@
+.subContain {
+    position: relative;
+    width: 100vw;
+    height: 6vh;
+    background-color: rgb(87, 105, 105);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.userIcon {
+    position: relative;
+    left: 0px;
+    color: white;
+    background-color: #3498db;
+    font-size: 5px;
+    width: 2.5vw;
+    height: 4vh;
+    border-radius: 100%;
+    margin-right: 60vw;
+}
+
+.createTicket {
+    font-size: 40px;
+    color: lightgreen;
+    margin-left: 30vw;
+}

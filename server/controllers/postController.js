@@ -5,6 +5,7 @@ module.exports = {
         const {user_id} = req.session.user;
         const {title, category, description, media} = req.body;
         const date = new Date();
+        
         console.log(user_id)
         if (user_id) {       
            const createNew = await db.posts.create_post([user_id, category, date, title, description, media])

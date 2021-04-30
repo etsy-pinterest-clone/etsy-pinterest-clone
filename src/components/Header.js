@@ -177,9 +177,11 @@ function Header(props) {
                     />
 
                 </Button>
-                <Button onClick={() => history.push('/login')} >
+                <Button className='authBtn' onClick={() => history.push('/login')} >
                     <ContactsSharpIcon />
                 </Button>
+                <Button onClick={() => history.push('/contact')}>Contact</Button>
+                <Button onClick={() => history.push('/about')}>About</Button>
             </div>
             <form className='header__input' onSubmit={handleUserSearch} /* {handlePostSearch} {handleCategorySearch} {handleTitleSearch} {handleDescriptionSearch} */>
                 <input

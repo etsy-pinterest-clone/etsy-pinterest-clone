@@ -3,6 +3,7 @@ import axios from 'axios';
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {updateUser} from '../redux/userReducer' 
+import '../styles/login.css'
 
 
 
@@ -49,15 +50,30 @@ class Login extends Component {
 
     render() {
       return (
-        <div className="logInArea">
-         <input autoComplete='on' type='username' placeholder='username' onChange={e => this.handleChange('username', e.target.value)} required></input><br/>
-         <input autoComplete='on' type='password' placeholder='password' onChange={e => this.handleChange('password', e.target.value)} required></input><br/>
-         <div>
-         {this.state.errorMsg && <h3 className='auth-error-msg'>{this.state.errorMsg} <span onClick={this.closeErrorMessage}>X</span></h3>}
-         </div>
-           <button onClick={() => this.login()} >login</button><br/>
-           <Link className='register' to='/signup'>Signup instead</Link>
-           {/* <button onClick={() => history.push('/signup')}>Signup instead</button> */}
+        <div className='login-contain'>
+          <div className="login-box">
+            <h2>Please Login</h2>
+          <div className='user-box'>
+            <input autoComplete='on' type='username'  onChange={e => this.handleChange('username', e.target.value)} required></input>
+            <label>Username</label>
+          </div>
+          <div className='user-box'>
+            <input autoComplete='on' type='password'  onChange={e => this.handleChange('password', e.target.value)} required></input>
+            <label>Password</label>
+          </div>
+          <div>
+          {this.state.errorMsg && <h3 className='auth-error-msg'>{this.state.errorMsg} <span onClick={this.closeErrorMessage}>X</span></h3>}
+          </div>
+          <a onClick={() => this.login()}>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Login
+          </a>
+            {/* <button onClick={() => this.login()} >login</button><br/> */}
+            <Link className='register' to='/signup'>Signup instead</Link>
+          </div>
         </div>
       );
     }

@@ -2,11 +2,13 @@ import React, {useState, useEffect} from 'react';
 import {useMediaQuery} from 'react-responsive';
 import {getUserPosts, readPost} from '../redux/postReducer';
 import DeleteSharpIcon from '@material-ui/icons/DeleteSharp';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import {Button} from '@material-ui/core';
 import {connect}  from 'react-redux';
 import {useHistory, Link} from 'react-router-dom';
 import Post from './Post';
 import axios from 'axios';
+import '../styles/posts.css';
 
 
 const UserPosts = (props) => {
@@ -38,22 +40,24 @@ const UserPosts = (props) => {
 
 
     return (
-        <div className='sideBarTix'>
+        <div className='mainContain'>
             {
                 posts.map((t, index) => { 
                     console.log(t)
                         return ( 
-                            <div key={index} >
+                            <div key={index} className='container'>
                                 <div>
-                                    <Link to={`/user/posts/${t.post_id}`} >
-                                <div className='postList' onClick={() => viewPost(t.post_id)}> 
+                                    <Link to={`/user/posts/${t.post_id}`} className='link'>
+                                <div className='card' onClick={() => viewPost(t.post_id)}> 
                                 
-                                   <h2 className='postItems'>{t.date}</h2>                                                            
+                                   <h1 className='title'>{t.title}</h1>                                                            
                                    <h2 className='postItems'>{t.category}</h2>                                                            
-                                   <h2 className='postItems'>{t.title}</h2>                                                            
-                                   <h2 className='postItems'>{t.description}</h2>                                                            
-                                   <h2 className='postItems'>{t.media}</h2>                                                            
+                                   <h2 className='description'>{t.description}</h2>                                                            
+                                   <h2 className='media'>{t.media}</h2> 
+                                   <FavoriteIcon className='save' />                                                           
+                                   <h2 className='date'>{t.date}</h2>                                                            
                                 </div>
+                                <script src='../scripts/3d.js' />
                                 </Link>
                                 </div>
                             </div>
