@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { createPost } from '../redux/postReducer';
 import axios from 'axios';
+import { app } from '../firebase/firebase'
 import '../styles/createPost.css';
 
 const CreatePost = (props) => {
@@ -23,6 +24,15 @@ const CreatePost = (props) => {
         console.log(props)
         const { id } = props;
         const data1 = { id: id, date: data.date, category: data.category, title: data.title, description: data.description, media: data.media };
+
+        console.log(data1.media)
+        const storageRef = app.storage().ref()
+        const fileRef = storageRef.child(id)
+        fileRef.put(data1.media).then(() => {
+            console.log('Uploaded File successfully')
+        }).catch(err => console.log('Upload File Unsuccessful'))
+
+
         axios.post('/user/post/createpost', data1)
             .then(res => {
 
@@ -40,7 +50,7 @@ const CreatePost = (props) => {
     const goBack = () => {
         history.push('/user/dash')
     }
-
+    
     return (
         <div className='createPostContain'>
                 <div className='backContain'>
@@ -58,7 +68,7 @@ const CreatePost = (props) => {
                     <option name='other' value='other'>Other</option>
                 </select>
                 <textarea className='textInput' type='text' placeholder='description' onChange={onChange} name='description' value={data.description} />
-                <input type='file' placeholder='upload media' />
+                <input type='file' placeholder='upload media' onChange={onChange} name='media' value={data.media} />
                 <button className='submitTicket' type='submit' onClick={(e) => submitPost(e)} >Submit Request</button>
             </form>
 
