@@ -53,7 +53,7 @@ const UserPosts = (props) => {
                                    <h1 className='title'>{t.title}</h1>                                                            
                                    <h2 className='postItems'>{t.category}</h2>                                                            
                                    <h2 className='description'>{t.description}</h2>                                                            
-                                   <h2 className='media'>{t.media}</h2> 
+                                   <img className='media' src={t.media} />
                                    <FavoriteIcon className='save' />                                                           
                                    <h2 className='date'>{t.date}</h2>                                                            
                                 </div>
