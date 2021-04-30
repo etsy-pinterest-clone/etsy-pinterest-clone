@@ -7,7 +7,7 @@
     position: sticky;
     z-index: 10;
     top: 0%;
-    background-color: lightgrey;
+    background: linear-gradient(to bottom, #a5a5a5 0%,#a3a3a3 22%,#777777 87%,#848484 100%);
 }
 
 .header__logo {

@@ -1,6 +1,6 @@
 module.exports = {
     updateProfile: async (req, res) => {
-        // console.log(req.session.user)
+        console.log(req.session.user)
         const db = req.app.get('db');
         const {first_name, last_name, birthday, email, phone_number, username} = req.body;
         const phoneNumber = parseInt(phone_number);

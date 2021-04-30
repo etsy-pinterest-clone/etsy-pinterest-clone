@@ -112,7 +112,12 @@
     text-decoration: none;
 }
 
-
+.save {
+    position: absolute;
+    bottom: 3vh;
+    right: 1vw;
+    color: red;
+}
 
 
 .date {

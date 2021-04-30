@@ -79,7 +79,7 @@ const Register = (props) => {
                     <input type='password'  name='password' onChange={onChange} value={data.password} />
                     <label>Password</label>
                 </div>
-                <a onClick={(e) => this.register(e)}>
+                <a onClick={(e) => register(e)}>
                     <span></span>
                     <span></span>
                     <span></span>
