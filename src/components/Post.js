@@ -6,6 +6,7 @@ import {readPost, deleteUserPost} from '../redux/postReducer';
 import DeleteSharpIcon from '@material-ui/icons/DeleteSharp';
 import {Button} from '@material-ui/core';
 import {useHistory} from 'react-router-dom';
+import '../styles/posts.css';
 
 
 
@@ -22,7 +23,6 @@ const Post = (props) => {
     })
 
     const history = useHistory();
-
 
     useEffect(() => {
         console.log(props.match.params.id)
@@ -48,22 +48,24 @@ const Post = (props) => {
     }
     console.log(post.post_id)
     return (
-        <div className='background'>
+        <div className='openPostContain'>
             
-            <div className='postContain'>
+            <div>
 
-
-                <span className='closepost' onClick={() => goBack()} >&#8678;</span>
-                <Button onClick={() => deletePost(post.post_id)} >
-                    <DeleteSharpIcon />                             
-                </Button>
-                <h1 className='postData' >{post.date}</h1>
-                <h1 className='postData' >{post.title}</h1>
+            <div className='openCard'>
+                <div className='buttonContain'>
+                    <span  onClick={() => goBack()} className='back' >&#8678;</span>
+                    <Button onClick={() => deletePost(post.post_id)}  >
+                        <DeleteSharpIcon className='delete' />                             
+                    </Button>
+                </div>
+                <h1 className='openTitle' >{post.title}</h1>
                 <h1 className='postData' >{post.category}</h1>
                 <h1 className='postDescription' >{post.description}</h1>
-                <div>Comments area</div>
-            
+                <h1 className='date' >{post.date}</h1>
             </div>
+            </div>
+            <div>Comments area</div>
             
         </div>
     )

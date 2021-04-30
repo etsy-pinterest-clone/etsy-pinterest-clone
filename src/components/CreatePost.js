@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { createPost } from '../redux/postReducer';
 import axios from 'axios';
+import '../styles/createPost.css';
 
 const CreatePost = (props) => {
     const [data, setData] = useState({
@@ -41,10 +42,12 @@ const CreatePost = (props) => {
     }
 
     return (
-        <div>
-            <form className='createTicket'>
+        <div className='createPostContain'>
+                <div className='backContain'>
+                    <button type='button' className='backBt' onClick={() => goBack()} >&#8678;</button>
+                </div>
+            <form className='createPost'>
                 <h1 className='newHeader'>Create New Post</h1>
-                <button type='button' className='backBtn' onClick={() => goBack()} >&#8678;</button>
                 <input className='newTitle' type='text' placeholder='Title' onChange={onChange} name='title' value={data.title} />
                 <select className='select' name='category' onChange={onChange} selected>
                     <option value='' disabled selected>Please select an option </option>
@@ -55,6 +58,7 @@ const CreatePost = (props) => {
                     <option name='other' value='other'>Other</option>
                 </select>
                 <textarea className='textInput' type='text' placeholder='description' onChange={onChange} name='description' value={data.description} />
+                <input type='file' placeholder='upload media' />
                 <button className='submitTicket' type='submit' onClick={(e) => submitPost(e)} >Submit Request</button>
             </form>
 
