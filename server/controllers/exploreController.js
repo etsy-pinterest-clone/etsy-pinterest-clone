@@ -49,5 +49,5 @@ module.exports = {
         // console.log(searchResults);
 
         res.status(200).send(searchResults);
-    },
+    }
 }
