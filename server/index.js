@@ -29,16 +29,12 @@ app.use(session({
 
 // USER LOGIN/REGISTRATION ENDPOINTS
 
-// authCtrl.register
 app.post('/auth/register', authCtrl.register);
 
-// authCtrl.login
 app.post('/auth/login', authCtrl.login);
 
-// authCtrl.logout
 app.delete('/auth/logout', authCtrl.logout);
 
-// authCtrl.deleteAccount
 app.delete('/auth/user/:id', authCtrl.deleteAccount)
 
 // not sure if we need this
@@ -76,13 +72,11 @@ app.get('/user/userdata')
 
 // POST CONTROLLER ENDPOINTS
 
-// postCtrl.getUserPosts
 app.get('/user/posts', postCtrl.getUserPosts)
 
 // postCtrl.getSavedPosts
 app.get('/user/savedposts')
 
-// postCtrl.createPost
 app.post('/user/post/createpost', postCtrl.newPost)
 
 app.get('/user/post/:id', postCtrl.readPost)
@@ -93,7 +87,6 @@ app.put('/user/post/:id')
 // postCtrl.deleteComment
 app.delete('/user/post/:id')
 
-// postCtrl.deleteUserPost
 app.delete('/user/post/:id', postCtrl.deletePost)
 
 // postCtrl.removeSavedPost
@@ -109,20 +102,17 @@ app.get('/user/recommended')
 // storeCtrl.goToStore
 app.get('/user/store')
 
-// storeCtrl.createItem
 app.post('/user/store/createitem', storeCtrl.newItem)
 
-// storeCtrl.getItems
 app.get('/user/store/items', storeCtrl.getUserItems)
 
-//storeCtrl.readItem
 app.get('/user/store/item/:id', storeCtrl.openItem)
+
 app.get('/user/store/cart/:id', storeCtrl.getUserItems)
 
 // storeCtrl.editItem
 app.put('/user/store/item/:id')
 
-//storeCtrl.deleteItem
 app.delete('/user/store/item/:id', storeCtrl.deleteItem)
 
 // storeCtrl.addToCart
@@ -137,6 +127,8 @@ app.put('/user/store/cart/:id')
 // storeCtrl.getStoreData
 app.get('/user/store/storedata')
 
+// app.put('/user/store', storeCtrl.searchStore)
+
 
 
 // EXPLORE ( SEARCH ) CONTROLLER ENDPOINTS
@@ -146,17 +138,15 @@ app.get('/user/store/storedata')
 // exploreCtrl.sortNew
 app.get('/explore/new')
 
-// exploreCtrl.sortPopular
-app.get('/explore/popular')
+app.put('/explore/searchtitle', exploreCtrl.searchTitle)
 
-// exploreCtrl.displayCategory
-app.get('/explore/:id') /* category ID */
+app.put('/explore/searchcategory', exploreCtrl.searchCategory)
 
-// exploreCtrl.searchCategory
-app.get('/explore/search/:id') /* category ID */
+app.put('/explore/searchdescription', exploreCtrl.searchDescription)
 
-// exploreCtrl.searchUser
-app.put('/explore/search', exploreCtrl.searchUser) /* user ID */
+app.put('/explore/searchpost', exploreCtrl.searchPost)
+
+app.put('/explore/search', exploreCtrl.searchUser)
 // using .put so that we have access to req.body
 
 // exploreCtrl.savePost
