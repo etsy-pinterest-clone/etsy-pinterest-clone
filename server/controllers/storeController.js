@@ -36,5 +36,15 @@ module.exports = {
         
         const updatedItemList = await db.store.delete_item(id)
         res.status(200).send(updatedItemList)
-    }
+    },
+    // searchStore: async (req, res) => {
+    //     const { store } = req.body;
+
+    //     const db = req.app.get('db');
+
+    //     const searchResults = await db.store.search_store(`%${store}%`);
+    //     console.log(searchResults);
+
+    //     res.status(200).send(searchResults);
+    // }
 }
