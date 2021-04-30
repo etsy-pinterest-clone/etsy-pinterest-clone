@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useMediaQuery} from 'react-responsive';
 import {getUserPosts, readPost} from '../redux/postReducer';
 import DeleteSharpIcon from '@material-ui/icons/DeleteSharp';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import {Button} from '@material-ui/core';
 import {connect}  from 'react-redux';
 import {useHistory, Link} from 'react-router-dom';
@@ -52,7 +53,8 @@ const UserPosts = (props) => {
                                    <h1 className='title'>{t.title}</h1>                                                            
                                    <h2 className='postItems'>{t.category}</h2>                                                            
                                    <h2 className='description'>{t.description}</h2>                                                            
-                                   <h2 className='media'>{t.media}</h2>                                                            
+                                   <h2 className='media'>{t.media}</h2> 
+                                   <FavoriteIcon className='save' />                                                           
                                    <h2 className='date'>{t.date}</h2>                                                            
                                 </div>
                                 <script src='../scripts/3d.js' />

@@ -52,7 +52,7 @@ app.get('/auth/session', authCtrl.getSession)
 app.get('/user/:id')
 
 // userCtrl.updateUser
-app.put('/user/profile', userCtrl.updateProfile)
+app.put('/user/updateprofile', userCtrl.updateProfile)
 
 // userCtrl.followUser
 app.put('/user/follow/:id')

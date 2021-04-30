@@ -1,4 +1,4 @@
-.register-contain {
+.contact-contain {
     margin:0;
     padding:0;
     font-family: sans-serif;
@@ -20,7 +20,7 @@
 }
 
 
-.register-box {
+.contact-box {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -28,26 +28,26 @@
     height: 80vh;
     padding: 40px;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.616);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
     
   }
   
-  .register-box h2 {
+  .contact-box h2 {
     margin: 0 0 30px;
     padding: 0;
     color: #fff;
-    font-size: 20px;
+    font-size: 25px;
     text-align: center;
   }
   
-  .register-box .register-field {
+  .contact-box .contact-field {
     position: relative;
   }
   
-  .register-box .register-field input {
+  .contact-box .contact-field input {
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
@@ -58,7 +58,7 @@
     outline: none;
     background: transparent;
   }
-  .register-box .register-field label {
+  .contact-box .contact-field label {
     position: absolute;
     top:0;
     left: 0;
@@ -68,45 +68,62 @@
     pointer-events: none;
     transition: .5s;
   }
+
+  .message-field {
+    position: relative;
+    top: 5vh;
+    width: 100%;
+    height: 30vh;
+    margin-bottom: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #03e9f4;
+    border-radius: 5px;
+    color: white;
+    font-family: sans-serif;
+    padding: 10px;
+  }
   
-  .register-box .register-field input:focus ~ label,
-  .register-box .register-field input:valid ~ label {
+  .contact-box .contact-field input:focus ~ label,
+  .contact-box .contact-field input:valid ~ label {
     top: -20px;
     left: 0;
     color: #03e9f4;
     font-size: 12px;
   }
   
-  .register-box  a {
+  .contact-box  a {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
     color: #03e9f4;
+    background-color: rgba(0, 0, 0, 0.2);
     font-size: 16px;
     text-decoration: none;
     text-transform: uppercase;
     overflow: hidden;
     transition: .5s;
     margin-top: 40px;
-    letter-spacing: 4px
+    letter-spacing: 4px;
+    border-radius: 5px;
   }
   
-  .register-box a:hover, .backButton:hover {
+  .contact-box a:hover, .backButton:hover {
     background: #03e9f4;
     color: #fff;
     border-radius: 5px;
+    cursor: pointer;
     box-shadow: 0 0 5px #03e9f4,
                 0 0 15px #03e9f4,
                 0 0 20px #03e9f4,
                 0 0 50px #03e9f4;
   }
   
-  .register-box a span {
+  .contact-box a span {
     position: absolute;
     display: block;
   }
   
-  .register-box a span:nth-child(1) {
+  .contact-box a span:nth-child(1) {
     top: 0;
     left: -100%;
     width: 100%;
@@ -124,7 +141,7 @@
     }
   }
   
-  .register-box a span:nth-child(2) {
+  .contact-box a span:nth-child(2) {
     top: -100%;
     right: 0;
     width: 2px;
@@ -143,7 +160,7 @@
     }
   }
   
-  .register-box a span:nth-child(3) {
+  .contact-box a span:nth-child(3) {
     bottom: 0;
     right: -100%;
     width: 100%;
@@ -162,7 +179,7 @@
     }
   }
   
-  .register-box a span:nth-child(4) {
+  .contact-box a span:nth-child(4) {
     bottom: -100%;
     left: 0;
     width: 2px;
