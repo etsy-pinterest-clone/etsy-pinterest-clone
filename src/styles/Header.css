@@ -16,20 +16,28 @@
     margin-left: 25px;
 }
 
-.header__input {
+/* .header__input {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40%;
+    width: 40%; */
     /* border: 1px solid black; */
-}
+/* } */
 
-.header__inputSearch {
+/* .header__inputSearch {
     width: 60%;
     height: 3vh;
     padding-left: 5px;
     margin-right: 10px;
     border: none;
     border-radius: 5px;
-}
+} */
 
+
+        /* Might move the results elsewhere.... */
+
+/* .user_search {
+    top: 300px;
+    left: 50px;
+    position: absolute;
+} */
