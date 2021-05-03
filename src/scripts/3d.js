@@ -4,10 +4,10 @@ const container = document.querySelector('.container');
 
 // items
 const title = document.querySelector('.title');
-const profile = document.querySelector('.profile img');
-const contact = document.querySelector('.contact button');
+const category = document.querySelector('.category');
+// const contact = document.querySelector('.contact button');
 const description = document.querySelector('.info h3');
-const social = document.querySelector('.social');
+const date = document.querySelector('.date');
 
 
 //moving animation
@@ -23,9 +23,9 @@ container.addEventListener('mouseenter', (e) => {
     // pop out
     title.style.transform = "translateZ(150px)";
     description.style.transform = "translateZ(125px)";
-    social.style.transform = "translateZ(100px)";
-    contact.style.transform = "translateZ(75px)";
-    profile.style.transform = "translateZ(175px)";
+    // social.style.transform = "translateZ(100px)";
+    category.style.transform = "translateZ(75px)";
+    date.style.transform = "translateZ(175px)";
 });
 
 //animate out
@@ -34,8 +34,8 @@ container.addEventListener('mouseleave', (e) => {
     card.style.transform = `rotateY(0deg) rotateX(0deg)`;
     // pop back
     title.style.transform = "translateZ(0px)";
-    profile.style.transform = "translateZ(0px)";
+    category.style.transform = "translateZ(0px)";
     description.style.transform = "translateZ(0px)";
-    social.style.transform = "translateZ(0px)";
-    contact.style.transform = "translateZ(0px";
+    date.style.transform = "translateZ(0px)";
+    // contact.style.transform = "translateZ(0px";
 })
