@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import AddCircleSharpIcon from '@material-ui/icons/AddCircleSharp';
 import PersonIcon from '@material-ui/icons/Person';
 import { Button, CircularProgress } from "@material-ui/core";
+import ShoppingCartSharpIcon from '@material-ui/icons/ShoppingCartSharp';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import '../styles/subHeader.css';
@@ -42,6 +43,12 @@ export default function SubHeader() {
                 
                 : null 
                 }
+            <Button>
+                <Link to='/user/cart'>
+                    <ShoppingCartSharpIcon className='shoppingCart' />
+                </Link>
+            </Button>
+
             <Button>
                 <Link to='/user/createpost'>
                     <AddCircleSharpIcon className='createTicket'/>

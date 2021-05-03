@@ -8,10 +8,16 @@ const storeCtrl = require('./controllers/storeController')
 const userCtrl = require('./controllers/userController')
 const exploreCtrl = require('./controllers/exploreController');
 const path = require('path');
-const contactController = require('./controllers/contactController');
+const contactController = require('./controllers/contactController')
 const app = express();
+app.use(express.static('.'));
 
-const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env;
+
+const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET, STRIPE_KEY} = process.env;
+
+const stripe = require('stripe')(STRIPE_KEY)
+
+const YOUR_DOMAIN = 'http://localhost:3000/user/cart';
 
 
 
@@ -24,6 +30,29 @@ app.use(session({
         maxAge: 1000 * 60 * 60 * 24 * 7 * 4
     }
 }));
+
+app.post('/create-checkout-session', async (req, res) => {
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items: [
+        {
+          price_data: {
+            currency: 'usd',
+            product_data: {
+              name: 'Stubborn Attachments',
+              images: ['https://i.imgur.com/EHyR2nP.png'],
+            },
+            unit_amount: 2000,
+          },
+          quantity: 1,
+        },
+      ],
+      mode: 'payment',
+      success_url: `${YOUR_DOMAIN}?success=true`,
+      cancel_url: `${YOUR_DOMAIN}?canceled=true`,
+    });
+    res.json({ id: session.id });
+  });
 
 
 
