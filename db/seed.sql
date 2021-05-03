@@ -32,3 +32,13 @@ price INT,
 item_rating INT
 );
 
+CREATE TABLE user_data (
+user_id INT REFERENCES user_info(user_id),
+number_of_posts INT,
+number_posts_others_saved INT,
+profile_visits INT,
+revenue INT,
+average_rating INT,
+store_visits INT
+);
+

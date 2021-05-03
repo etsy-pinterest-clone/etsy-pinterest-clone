@@ -32,6 +32,17 @@ const UserPosts = (props) => {
     }, [])
 
 
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = "../scripts/3d.js";
+        script.async = true;
+        document.body.appendChild(script);
+    return () => {
+        document.body.removeChild(script);
+        }
+    }, []);
+
+
     const viewPost = (postId) => {   
         setReadPost(postId)
         props.readPost(postId)
@@ -51,13 +62,12 @@ const UserPosts = (props) => {
                                 <div className='card' onClick={() => viewPost(t.post_id)}> 
                                 
                                    <h1 className='title'>{t.title}</h1>                                                            
-                                   <h2 className='postItems'>{t.category}</h2>                                                            
+                                   <h2 className='category'>{t.category}</h2>                                                            
                                    <h2 className='description'>{t.description}</h2>                                                            
                                    <img className='media' src={t.media} />
                                    <FavoriteIcon className='save' />                                                           
                                    <h2 className='date'>{t.date}</h2>                                                            
                                 </div>
-                                <script src='../scripts/3d.js' />
                                 </Link>
                                 </div>
                             </div>
