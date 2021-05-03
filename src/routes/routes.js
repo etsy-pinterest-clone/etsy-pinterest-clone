@@ -9,6 +9,7 @@ import UserLanding from '../components/UserLanding'
 import CreatePost from '../components/CreatePost'
 import Post from '../components/Post'
 import UserProfile from '../components/UserProfile'
+import Cart from '../components/Cart'
 
 
 export default (
@@ -24,5 +25,6 @@ export default (
       <Route path='/user/createpost' component={CreatePost} />
       <Route path='/user/posts/:id' component={Post} />
       <Route path='/user/userprofile' component={UserProfile}/>
+      <Route path='/user/cart' component={Cart} />
     </Switch>
   )
