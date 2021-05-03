@@ -36,6 +36,7 @@ export default function SubHeader() {
             { viewOptions ?
                 <div className='optionContain'>                        
                     <Link to ='/user/userprofile' className='optionButton'>Update Profile </Link>
+                    <Link to ='/user/userdata' className='optionButton'>My Data </Link>
                     {/* <Link to ='/user/updateprofile' className='optionButton'>View Your Stats </Link> */}
                     <Link to='/' onClick={() => logout} className='optionButton' >Logout</Link>
                 </div>

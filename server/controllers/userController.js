@@ -14,4 +14,12 @@ module.exports = {
         res.status(200).send(req.session.user)
         console.log(req.session.user)
     },
+
+    getUserData: async(req, res) => {
+        const db = req.app.get('db');
+        const userId = req.body;
+        // .res will be UserData({numOfPosts: , numPostsUsersSaved: , numOfVists: })
+
+        
+    }
 }
