@@ -2,8 +2,6 @@ require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const massive = require('massive');
-const stripe = require('stripe')('sk_test_51In8T6KglDRdKQ3CSkCGIe9WzRntC1mEJrQfPIPJp3HHuqGipvyan4KgqrsZZKm2bthnHw1dg4BuWG549LlXbs1R00SoC0uM6n')
-
 const authCtrl = require('./controllers/authController')
 const postCtrl = require('./controllers/postController')
 const storeCtrl = require('./controllers/storeController')
@@ -15,7 +13,9 @@ const app = express();
 app.use(express.static('.'));
 
 
-const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env;
+const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET, STRIPE_KEY} = process.env;
+
+const stripe = require('stripe')(STRIPE_KEY)
 
 const YOUR_DOMAIN = 'http://localhost:3000/user/cart';
 
