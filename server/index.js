@@ -162,11 +162,10 @@ app.get('/user/store/storedata')
 
 // EXPLORE ( SEARCH ) CONTROLLER ENDPOINTS
 
-    /* category ID */
-
 // exploreCtrl.sortNew
 app.get('/explore/new')
 
+// using .put so that we have access to req.body
 app.put('/explore/searchtitle', exploreCtrl.searchTitle)
 
 app.put('/explore/searchcategory', exploreCtrl.searchCategory)
@@ -176,7 +175,6 @@ app.put('/explore/searchdescription', exploreCtrl.searchDescription)
 app.put('/explore/searchpost', exploreCtrl.searchPost)
 
 app.put('/explore/search', exploreCtrl.searchUser)
-// using .put so that we have access to req.body
 
 // exploreCtrl.savePost
 app.put('/explore/post/:id')
