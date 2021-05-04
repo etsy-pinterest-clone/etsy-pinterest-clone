@@ -52,6 +52,10 @@
     cursor: pointer;
 }
 
+.search_by option {
+    font-family: "Poppins", sans-serif;
+}
+
 .search_name {
     width: 315px;
     display: flex;
@@ -59,6 +63,16 @@
     padding: 12px;
     border-bottom: 1px dotted black;
     font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.search_name:hover {
+    background-color: lightgray;
+}
+
+.search_name:active {
+    background-color: rgb(192, 192, 192);
 }
 
 .search_post {
@@ -68,6 +82,15 @@
     align-items: center;
     padding: 10px;
     border-bottom: 1px dotted black;
+    cursor: pointer;
+}
+
+.search_post:hover {
+    background-color: lightgray;
+}
+
+.search_post:active {
+    background-color: rgb(192, 192, 192);
 }
 
 .search_post_title {
@@ -87,6 +110,15 @@
     align-items: center;
     padding: 10px;
     border-bottom: 1px dotted black;
+    cursor: pointer;
+}
+
+.search_category:hover {
+    background-color: lightgray;
+}
+
+.search_category:active {
+    background-color: rgb(192, 192, 192);
 }
 
 .search_title {
@@ -96,6 +128,15 @@
     align-items: center;
     padding: 10px;
     border-bottom: 1px dotted black;
+    cursor: pointer;
+}
+
+.search_title:hover {
+    background-color: lightgray;
+}
+
+.search_title:active {
+    background-color: rgb(192, 192, 192);
 }
 
 .search_description {
@@ -105,6 +146,15 @@
     align-items: center;
     padding: 10px;
     border-bottom: 1px dotted black;
+    cursor: pointer;
+}
+
+.search_description:hover {
+    background-color: lightgray;
+}
+
+.search_description:active {
+    background-color: rgb(192, 192, 192);
 }
 
 .search_by_description {
