@@ -31,14 +31,18 @@
 }
 
 .user_search {
+    height: 500px;
     font-size: 17px;
     top: 8vh;
     position: absolute;
-    background: linear-gradient(to bottom, #a5a5a5 0%,#a3a3a3 22%,#777777 87%,#848484 100%);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    background: white;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0px 7px 14px 0px rgba(0,0,0,0.35);
+    overflow-y: scroll;
     z-index: 2;
 }
+
 
 .search_by {
     width: 130px;
@@ -48,33 +52,74 @@
     cursor: pointer;
 }
 
-.name {
-    width: 150px;
+.search_name {
+    width: 315px;
     display: flex;
     justify-content: space-evenly;
     padding: 12px;
+    border-bottom: 1px dotted black;
+    font-family: "Poppins", sans-serif;
 }
 
-.post {
-    width: 150px;
+.search_post {
+    width: 315px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px dotted black;
 }
 
-.category {
+.search_post_title {
     width: 150px;
-    display: flex;
-    justify-content: space-evenly;
+    font-style: italic;
 }
 
-.title {
-    width: 150px;
-    display: flex;
-    justify-content: space-evenly;
+.search_post_category {
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
 }
 
-.description {
-    width: 150px;
+.search_category {
+    width: 315px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px dotted black;
+}
+
+.search_title {
+    width: 315px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px dotted black;
+}
+
+.search_description {
+    width: 315px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px dotted black;
+}
+
+.search_by_description {
+    width: 150px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+}
+
+.search_description_title {
+    width: 150px;
+    margin-right: 15px;
+    font-style: italic;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
 }

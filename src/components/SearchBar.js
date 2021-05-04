@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import SearchSharpIcon from '@material-ui/icons/SearchSharp';
 import axios from 'axios';
 import '../styles/searchBar.css';
@@ -16,7 +16,6 @@ function Header(props) {
     const [ title, setTitle ] = useState([]);
 
     const [ description, setDescription ] = useState([]);
-    const [ descriptions, setDescriptions ] = useState([]);
 
     const [ selectedFilter, setFilter ] = useState('name');
 
@@ -24,10 +23,8 @@ function Header(props) {
 
     const [ searchResults, setSearchResults ] = useState(null);
 
-    const history = useHistory();
 
-
-    const handleUserSearch = async (e) => {
+    const handleUserSearch = async () => {
         let body = { name: searchParams };
         try {
             await axios
@@ -36,7 +33,7 @@ function Header(props) {
                         const mappedUsers = res.data.map(user => {
                             return (
                                 <div key={user.user_id}>
-                                    <div className='name'>
+                                    <div className='search_name'>
                                         <div>{user.first_name}</div>
                                         <div>{user.last_name}</div>
                                     </div>
@@ -51,7 +48,7 @@ function Header(props) {
             }
     };
 
-    const handlePostSearch = async (e) => {
+    const handlePostSearch = async () => {
         let body = { post: searchParams };
         try {
             await axios
@@ -60,10 +57,9 @@ function Header(props) {
                         const mappedPosts = res.data.map(userPost => {
                             return (
                                 <div key={userPost.post_id}>
-                                    <div className='post'>
-                                        <div>{userPost.category}</div>
-                                        <div>{userPost.title}</div>
-                                        <div>{userPost.description}</div>
+                                    <div className='search_post'>
+                                        <div className='search_post_category'>{userPost.category}</div>
+                                        <div className='search_post_title'>{userPost.title}</div>
                                     </div>
                                 </div>
                             );
@@ -76,7 +72,7 @@ function Header(props) {
         }
     };
 
-    const handleCategorySearch = async (e) => {
+    const handleCategorySearch = async () => {
         let body = { category: searchParams };
         try {
             await axios
@@ -85,10 +81,9 @@ function Header(props) {
                         const mappedCategories = res.data.map(postCat => {
                             return (
                                 <div key={postCat.post_id}>
-                                    <div className='category'>
-                                        <div>{postCat.category}</div>
-                                        <div>{postCat.title}</div>
-                                        <div>{postCat.description}</div>
+                                    <div className='search_category'>
+                                        <div className='search_post_category'>{postCat.category}</div>
+                                        <div className='search_post_title'>{postCat.title}</div>
                                     </div>
                                 </div>
                             );
@@ -101,7 +96,7 @@ function Header(props) {
         }
     };
 
-    const handleTitleSearch = async (e) => {
+    const handleTitleSearch = async () => {
         let body = { title: searchParams };
         try {
             await axios
@@ -110,10 +105,9 @@ function Header(props) {
                         const mappedTitles = res.data.map(postTitle => {
                             return (
                                 <div key={postTitle.post_id}>
-                                    <div className='title'>
-                                    <div>{postTitle.category}</div>
-                                    <div>{postTitle.title}</div>
-                                    <div>{postTitle.description}</div>
+                                    <div className='search_title'>
+                                        <div className='search_post_category'>{postTitle.category}</div>
+                                        <div className='search_post_title'>{postTitle.title}</div>
                                     </div>
                                 </div>
                             );
@@ -126,7 +120,7 @@ function Header(props) {
         }
     };
 
-    const handleDescriptionSearch = async (e) => {
+    const handleDescriptionSearch = async () => {
         let body = { description: searchParams };
         try {
             await axios
@@ -135,10 +129,9 @@ function Header(props) {
                         const mappedDescriptions = res.data.map(postDescription => {
                             return (
                                 <div key={postDescription.post_id}>
-                                    <div className='description'>
-                                        <div>{postDescription.category}</div>
-                                        <div>{postDescription.title}</div>
-                                        <div>{postDescription.description}</div>
+                                    <div className='search_description'>
+                                        <div className='search_description_title'>{postDescription.title}</div>
+                                        <div className='search_by_description'>{postDescription.description}</div>
                                     </div>
                                 </div>
                             );
@@ -153,8 +146,11 @@ function Header(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault(e)
-        if (selectedFilter === 'name') {
-            handleUserSearch()            
+        if (searchParams === '') {
+            setSearchResults('')
+            return searchResults
+        } else if (selectedFilter === 'name') {
+            handleUserSearch()       
         } else if (selectedFilter === 'post') {
             handlePostSearch()
         } else if (selectedFilter === 'category') {
@@ -164,9 +160,9 @@ function Header(props) {
         } else if (selectedFilter === 'description') {
             handleDescriptionSearch()
         } else {
-            return null
+            return null;
         }
-    }
+    };
 
     return (
         <div className='search_container'>
@@ -180,7 +176,6 @@ function Header(props) {
                         <option value='description'>Description</option>
                     </select>
                     <input
-                        required
                         placeholder='Search...'
                         type='text'
                         className='header__inputSearch'

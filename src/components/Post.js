@@ -25,7 +25,7 @@ const Post = (props) => {
     const history = useHistory();
 
     useEffect(() => {
-        console.log(props.match.params.id)
+        // console.log(props.match.params.id)
         axios.get(`/user/post/${props.match.params.id}`)
             .then(res =>{
                 setPost(res.data)
@@ -44,7 +44,7 @@ const Post = (props) => {
             alert('post has successfully been deleted')
             history.push('/user/dash')
         })
-        .catch(err => console.log('error'))
+        .catch(err => console.log(err))
     }
     console.log(post.post_id)
     return (
