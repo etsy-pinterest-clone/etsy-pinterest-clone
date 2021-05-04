@@ -62,7 +62,7 @@ const Post = (props) => {
                 <h1 className='openTitle' >{post.title}</h1>
                 <h1 className='postData' >{post.category}</h1>
                 <h1 className='postDescription' >{post.description}</h1>
-                <img className='postMedia' src={post.media} />
+                <iframe className='postMedia' src={post.media} />
                 <h1 className='date' >{post.date}</h1>
             </div>
             </div>

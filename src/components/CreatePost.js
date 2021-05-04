@@ -71,7 +71,7 @@ const CreatePost = (props) => {
                     <option name='other' value='other'>Other</option>
                 </select>
                 <textarea className='textInput' type='text' placeholder='description' onChange={onChange} name='description' value={data.description} />
-                <input type='file' placeholder='upload media' onChange={onFileChange} name='media' value={data.media} />
+                <input type='file' accept='image/*, video/*' placeholder='upload media' onChange={onFileChange} name='media' />
                 <button className='submitTicket' type='submit' onClick={(e) => submitPost(e)} >Submit Request</button>
             </form>
 
