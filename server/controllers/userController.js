@@ -15,11 +15,15 @@ module.exports = {
         console.log(req.session.user)
     },
 
-    getUserData: async(req, res) => {
-        const db = req.app.get('db');
-        const userId = req.body;
-        // .res will be UserData({numOfPosts: , numPostsUsersSaved: , numOfVists: })
+    // getUserData: (req, res) => {
+    //     const db = req.app.get('db');
+    //     const userId = req.body;
+    //     const userData = {
+    //         numOfPosts: , 
+    //         numPostsUsersSaved: , 
+    //         numOfVists: 
+    //     };
+    //     res.status(200).send(userData)
 
-        
-    }
+    // }
 }

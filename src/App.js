@@ -3,7 +3,6 @@ import Header from './components/Header'
 import Login from './components/Login'
 import routes from './routes/routes'
 import {withRouter} from 'react-router-dom'
-import chart from 'chart.js'
 
 import './App.css'
 
