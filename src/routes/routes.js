@@ -11,6 +11,8 @@ import Post from '../components/Post'
 import UserProfile from '../components/UserProfile'
 import UserData from '../components/UserData'
 import Cart from '../components/Cart'
+import Products from '../components/body/products/Products'
+import DetailProduct from '../components/body/detailProduct/DetailProduct'
 
 
 export default (
@@ -28,5 +30,9 @@ export default (
       <Route path='/user/userprofile' component={UserProfile}/>
       <Route path='/user/userdata' component={UserData}/>
       <Route path='/user/cart' component={Cart} />
+
+      <Route path="/api/products" component={Products} exact />
+      <Route path="/api/product/:id" component={DetailProduct} exact />
+
     </Switch>
   )

@@ -3,6 +3,7 @@ import AddCircleSharpIcon from '@material-ui/icons/AddCircleSharp';
 import PersonIcon from '@material-ui/icons/Person';
 import { Button, CircularProgress } from "@material-ui/core";
 import ShoppingCartSharpIcon from '@material-ui/icons/ShoppingCartSharp';
+import StorefrontSharpIcon from '@material-ui/icons/StorefrontSharp';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import '../styles/subHeader.css';
@@ -40,6 +41,7 @@ export default function SubHeader() {
                     <Link to ='/user/userdata' className='optionButton'>My Data </Link>
                     {/* <Link to ='/user/updateprofile' className='optionButton'>View Your Stats </Link> */}
                     <Link to='/' onClick={() => logout} className='optionButton' >Logout</Link>
+                    
                 </div>
                 
                 : null 
@@ -47,6 +49,12 @@ export default function SubHeader() {
             <Button>
                 <Link to='/user/cart'>
                     <ShoppingCartSharpIcon className='shoppingCart' />
+                </Link>
+            </Button>
+
+            <Button>
+                <Link to='/api/products'>
+                    <StorefrontSharpIcon className='shoppingCart' />
                 </Link>
             </Button>
 

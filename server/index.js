@@ -2,6 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const massive = require('massive');
+const mongoose = require('mongoose');
+const cors = require('cors')
 const authCtrl = require('./controllers/authController')
 const postCtrl = require('./controllers/postController')
 const storeCtrl = require('./controllers/storeController')
@@ -11,9 +13,10 @@ const path = require('path');
 const contactController = require('./controllers/contactController')
 const app = express();
 app.use(express.static('.'));
+const Comments = require('../models/commentModel');
 
 
-const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET, STRIPE_KEY} = process.env;
+const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET, STRIPE_KEY, MONGODB_URL, SOCKET_PORT} = process.env;
 
 const stripe = require('stripe')(STRIPE_KEY)
 
@@ -30,6 +33,80 @@ app.use(session({
         maxAge: 1000 * 60 * 60 * 24 * 7 * 4
     }
 }));
+
+//SOCKET.IO
+
+// TEST SOCKET Routes
+app.use('/api', require('../src/routes/productRouter'))
+app.use('/api', require('../src/routes/commentRouter'))
+
+app.use(cors());
+const http = require('http').createServer(app)
+const io = require('socket.io')(http)
+
+let users = []
+io.on('connection', socket => {
+    // console.log(socket.id + ' connected.')
+
+    socket.on('joinRoom', id => {
+        const user = {userId: socket.id, room: id}
+
+        const check = users.every(user => user.userId !== socket.id)
+
+        if(check){
+            users.push(user)
+            socket.join(user.room)
+        }else{
+            users.map(user => {
+                if(user.userId === socket.id){
+                    if(user.room !== id){
+                        socket.leave(user.room)
+                        socket.join(id)
+                        user.room = id
+                    }
+                }
+            })
+        }
+
+        // console.log(users)
+        // console.log(socket.adapter.rooms)
+
+    })
+
+    socket.on('createComment', async msg => {
+        const {username, content, product_id, createdAt, rating, send} = msg
+
+        const newComment = new Comments({
+            username, content, product_id, createdAt, rating
+        })
+
+        if(send === 'replyComment'){
+            const {_id, username, content, product_id, createdAt, rating} = newComment
+
+            const comment = await Comments.findById(product_id)
+
+            if(comment){
+                comment.reply.push({_id, username, content, createdAt, rating})
+
+                await comment.save()
+                io.to(comment.product_id).emit('sendReplyCommentToClient', comment)
+            }
+        }else{
+            await newComment.save()
+            io.to(newComment.product_id).emit('sendCommentToClient', newComment)
+        }
+
+        
+    })
+
+    socket.on('disconnect', () => {
+        // console.log(socket.id + ' disconnected.')
+        users = users.filter(user => user.userId !== socket.id)
+    })
+})
+
+
+
 
 app.post('/create-checkout-session', async (req, res) => {
     const session = await stripe.checkout.sessions.create({
@@ -186,6 +263,27 @@ app.put('/explore/post/:id')
 app.post('/api/email', contactController.email);
 
 
+// Connection to mongodb
+const URI = MONGODB_URL
+mongoose.connect(URI, {
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}, err => {
+    if(err) throw err;
+    console.log('Connected to mongodb')
+})
+
+
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('client/build'))
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+    })
+}
+
+
 massive({
     connectionString:  CONNECTION_STRING,
     ssl: {
@@ -199,3 +297,8 @@ massive({
 .catch(err => {
     console.log(err)
 });
+
+const PORT = SOCKET_PORT || 5000
+http.listen(PORT, () => {
+    console.log('Socket is running on port', PORT)
+})
