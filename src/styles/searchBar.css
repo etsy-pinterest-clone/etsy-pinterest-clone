@@ -173,3 +173,8 @@
     width: 0;
     background: transparent;
 }
+
+.link {
+    text-decoration: none;
+    color: black;
+}

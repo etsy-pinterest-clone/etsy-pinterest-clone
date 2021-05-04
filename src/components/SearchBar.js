@@ -32,12 +32,14 @@ function Header(props) {
                     .then(res => {
                         const mappedUsers = res.data.map(user => {
                             return (
-                                <div key={user.user_id}>
-                                    <div className='search_name'>
-                                        <div>{user.first_name}</div>
-                                        <div>{user.last_name}</div>
+                                <Link to={`/visitUserProfile/${user.user_id}`} className='link'>
+                                    <div key={user.user_id}>
+                                        <div className='search_name'>
+                                            <div>{user.first_name}</div>
+                                            <div>{user.last_name}</div>
+                                        </div>
                                     </div>
-                                </div>
+                                </Link>
                             );
                         })
                         setSearchResults(mappedUsers)
@@ -185,7 +187,7 @@ function Header(props) {
                     <SearchSharpIcon className='header__inputButton' onClick={handleSubmit} />
                 </form>
             </div>
-            <div className='user_search'>{searchResults}</div>
+            <div className='user_search' onMouseLeave={() => setSearchResults('')}>{searchResults}</div>
         </div>
     );
 }
