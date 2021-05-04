@@ -31,6 +31,7 @@ export default (
       <Route path='/user/userdata' component={UserData}/>
       <Route path='/user/cart' component={Cart} />
 
+      {/* socket io */}
       <Route path="/api/products" component={Products} exact />
       <Route path="/api/product/:id" component={DetailProduct} exact />
 

@@ -10,7 +10,7 @@ function ProductCard({product}) {
             <span>$ {product.price}</span>
             <p>{product.description}</p>
             <div className="product_card_row">
-                <Link to={`/product/${product._id}`}>View</Link>
+                <Link to={`/api/product/${product._id}`}>View</Link>
                 <button>Buy</button>
             </div>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import './Rating.css'
+import '../rating/Rating.css'
 
 let rate = 0;
 function Rating({props}) {

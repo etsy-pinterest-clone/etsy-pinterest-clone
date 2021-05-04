@@ -1,7 +1,7 @@
 import React from 'react'
 import Rating from '../rating/Rating'
 import moment from 'moment'
-import './CommentCard.css'
+import '../commentItem/CommentCard.css'
 
 function CommentCard({children, comment}) {
     return (

@@ -16,7 +16,7 @@ export const DataProvider = ({children}) => {
         const socket = io()
         setSocket(socket)
         return () =>  socket.close()
-    },[])
+    }, [])
 
     const state = {
         products: [products, setProducts],

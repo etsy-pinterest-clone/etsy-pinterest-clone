@@ -10,7 +10,8 @@ const storeCtrl = require('./controllers/storeController')
 const userCtrl = require('./controllers/userController')
 const exploreCtrl = require('./controllers/exploreController');
 const path = require('path');
-const contactController = require('./controllers/contactController')
+const contactController = require('./controllers/contactController');
+const socket = require('socket.io');
 const app = express();
 app.use(express.static('.'));
 const Comments = require('../models/commentModel');
@@ -41,12 +42,16 @@ app.use('/api', require('../src/routes/productRouter'))
 app.use('/api', require('../src/routes/commentRouter'))
 
 app.use(cors());
+
+
+
 const http = require('http').createServer(app)
-const io = require('socket.io')(http)
+const io = socket(app.listen(SERVER_PORT, () => console.log(`Server is running on ${SERVER_PORT}`))
+)
 
 let users = []
 io.on('connection', socket => {
-    // console.log(socket.id + ' connected.')
+    console.log(socket.id + ' connected.')
 
     socket.on('joinRoom', id => {
         const user = {userId: socket.id, room: id}
@@ -292,13 +297,10 @@ massive({
 })
 .then(db => {
     app.set('db', db)
-    app.listen(SERVER_PORT, () => console.log(`Server is running on ${SERVER_PORT}`))
+    // app.listen(SERVER_PORT, () => console.log(`Server is running on ${SERVER_PORT}`))
 })
 .catch(err => {
     console.log(err)
 });
 
-const PORT = SOCKET_PORT || 5000
-http.listen(PORT, () => {
-    console.log('Socket is running on port', PORT)
-})
+

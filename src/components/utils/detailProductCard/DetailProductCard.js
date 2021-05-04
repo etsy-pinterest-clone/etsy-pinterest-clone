@@ -1,5 +1,5 @@
 import React from 'react'
-import './DetailProductCard.css'
+import '../../utils/detailProductCard/DetailProductCard.css'
 import Rating from '../rating/Rating'
 
 function DetailProductCard({product}) {
