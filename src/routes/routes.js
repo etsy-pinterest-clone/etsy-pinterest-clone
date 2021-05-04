@@ -10,6 +10,7 @@ import CreatePost from '../components/CreatePost'
 import Post from '../components/Post'
 import UserProfile from '../components/UserProfile'
 import UserData from '../components/UserData'
+import Cart from '../components/Cart'
 
 
 export default (
@@ -26,5 +27,6 @@ export default (
       <Route path='/user/posts/:id' component={Post} />
       <Route path='/user/userprofile' component={UserProfile}/>
       <Route path='/user/userdata' component={UserData}/>
+      <Route path='/user/cart' component={Cart} />
     </Switch>
   )

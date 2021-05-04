@@ -20,8 +20,13 @@
     margin-right: 60vw;
 }
 
+.shoppingCart {
+    font-size: 40px;
+    color: white;
+}
+
 .createTicket {
     font-size: 40px;
     color: lightgreen;
-    margin-left: 30vw;
+    margin-left: 2vw;
 }
