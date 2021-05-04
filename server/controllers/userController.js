@@ -14,4 +14,16 @@ module.exports = {
         res.status(200).send(req.session.user)
         console.log(req.session.user)
     },
+
+    // getUserData: (req, res) => {
+    //     const db = req.app.get('db');
+    //     const userId = req.body;
+    //     const userData = {
+    //         numOfPosts: , 
+    //         numPostsUsersSaved: , 
+    //         numOfVists: 
+    //     };
+    //     res.status(200).send(userData)
+
+    // }
 }
