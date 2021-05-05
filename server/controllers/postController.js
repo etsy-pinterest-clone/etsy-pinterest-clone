@@ -37,5 +37,16 @@ module.exports = {
         
         const updatedPostList = await db.posts.delete_post(id)
         res.status(200).send(updatedPostList)
+    },
+    getVisitedUserPosts: async (req, res) => {
+        const db = await req.app.get('db');
+        let { user_id } = req.params;
+        
+        if (user_id) {
+             db.posts.get_user_posts(user_id)
+                .then(dbRes => res.status(200).send(dbRes))
+        } else {
+            res.sendStatus(403)
+        }
     }
 }

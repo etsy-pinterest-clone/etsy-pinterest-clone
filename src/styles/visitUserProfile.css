@@ -1,0 +1,18 @@
+.back_btn {
+    width: 2vw;
+    height: 3vh;
+    background-color: rgba(0, 0, 0, 0.267);
+    border: 1px solid #03e9f4;
+    border-radius: 5px;
+    color: white;
+  }
+
+.back_btn:hover {
+background: #03e9f4;
+color: #fff;
+border-radius: 5px;
+box-shadow: 0 0 5px #03e9f4,
+            0 0 15px #03e9f4,
+            0 0 20px #03e9f4,
+            0 0 50px #03e9f4;
+}

@@ -1,21 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import SearchSharpIcon from '@material-ui/icons/SearchSharp';
 import axios from 'axios';
 import '../styles/searchBar.css';
 
-    /* all searchPost/searchCategory/searchTitle functionality has been commented out but does in fact work. A separate search bar or a different idea for searching is need because the search bar cannot search for both ( or I don't know how to accomplish that, also not sure that we want that ) */
 
 function Header(props) {
     const [ name, setName ] = useState([]);
-
-    const [ post, setPost ] = useState([]);
-
-    const [ category, setCategory ] = useState([]);
-
-    const [ title, setTitle ] = useState([]);
-
-    const [ description, setDescription ] = useState([]);
 
     const [ selectedFilter, setFilter ] = useState('name');
 
@@ -32,12 +23,10 @@ function Header(props) {
                     .then(res => {
                         const mappedUsers = res.data.map(user => {
                             return (
-                                <Link to={`/visitUserProfile/${user.user_id}`} className='link'>
-                                    <div key={user.user_id}>
-                                        <div className='search_name'>
-                                            <div>{user.first_name}</div>
-                                            <div>{user.last_name}</div>
-                                        </div>
+                                <Link to={`/visitUserProfile/${user.user_id}`} key={user.user_id} className='link'>
+                                    <div className='search_name'>
+                                        <div>{user.first_name}</div>
+                                        <div>{user.last_name}</div>
                                     </div>
                                 </Link>
                             );
@@ -45,9 +34,9 @@ function Header(props) {
                         setSearchResults(mappedUsers)
                         setName(res.data)
                     })
-                } catch (err) {
-                    console.log(err)
-            }
+        } catch (err) {
+            console.log(err)
+        }
     };
 
     const handlePostSearch = async () => {
@@ -67,7 +56,6 @@ function Header(props) {
                             );
                         })
                         setSearchResults(mappedPosts)
-                        setPost(res.data)
                     })
         } catch (err) {
             console.log(err)
@@ -91,7 +79,6 @@ function Header(props) {
                             );
                         })
                         setSearchResults(mappedCategories)
-                        setCategory(res.data)
                     })
         } catch (err) {
             console.log(err)
@@ -115,7 +102,6 @@ function Header(props) {
                             );
                         })
                         setSearchResults(mappedTitles)
-                        setTitle(res.data)
                     })
         } catch (err) {
             console.log(err)
@@ -139,7 +125,6 @@ function Header(props) {
                             );
                         })
                         setSearchResults(mappedDescriptions)
-                        setDescription(res.data)
                     })
         } catch (err) {
             console.log(err)
