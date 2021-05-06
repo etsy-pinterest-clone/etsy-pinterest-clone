@@ -6,38 +6,42 @@ import {connect} from 'react-redux'
 import axios from 'axios'
 import {Bar, Line, Pie, Doughnut} from 'react-chartjs-2'
 import { defaults } from 'react-chartjs-2';
-import '../styles/userData.css'
+import '../styles/storeData.css'
 
 const UserData = (props) => {
     const history = useHistory();
     const [userId, setUserId] = useState('');
     const [week1Data, setWeek1Data] = useState({
-        numOfPosts: 0,
-        numOfPostOthersSaved: 0,
         numOfVisits: 0,
+        numOfPurchases: 0,
+        mostPopularItems: [],
+        revenue: 0,
     });
     const [week2Data, setWeek2Data] = useState({
-        numOfPosts: 0,
-        numOfPostOthersSaved: 0,
         numOfVisits: 0,
+        numOfPurchases: 0,
+        mostPopularItems: [],
+        revenue: 0,
     });
     const [week3Data, setWeek3Data] = useState({
-        numOfPosts: 0,
-        numOfPostOthersSaved: 0,
         numOfVisits: 0,
+        numOfPurchases: 0,
+        mostPopularItems: [],
+        revenue: 0,
     });
     const [week4Data, setWeek4Data] = useState({
-        numOfPosts: 0,
-        numOfPostOthersSaved: 0,
         numOfVisits: 0,
+        numOfPurchases: 0,
+        mostPopularItems: [],
+        revenue: 0,
     });
 
     const [chartData, setChartData] = useState({
         labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
         datasets:[
             {
-                label:'Posts',
-                data:[week1Data.numOfPosts, week2Data.numOfPosts, week3Data.numOfPosts, week4Data.numOfPosts],
+                label:'Visitors',
+                data:[week1Data.numOfVisits, week2Data.numOfVisits, week3Data.numOfVisits, week4Data.numOfVisits],
                 backgroundColor:[
                     'rgb(241, 72, 52, 0.7)'
                 ],
@@ -48,7 +52,7 @@ const UserData = (props) => {
                 hoverBackgroundColor:['rgb(121, 38, 163, 0.7)'],
                 options:{
                     scales:{
-                        yAxesL:[{
+                        yAxes:[{
                             ticks:{
                                 beginAtZero:true
                             }
@@ -57,8 +61,8 @@ const UserData = (props) => {
                 }
             },
             {
-                label:'Posts Saved by Others',
-                data:[week1Data.numOfPostOthersSaved, week2Data.numOfPostOthersSaved, week3Data.numOfPostOthersSaved, week4Data.numOfPostOthersSaved],
+                label:'Purchases',
+                data:[week1Data.numOfPurchases, week2Data.numOfPurchases, week3Data.numOfPurchases, week4Data.numOfPurchases],
                 backgroundColor:[
                     'rgb(249, 137, 72, 0.7)'
                 ],
@@ -78,8 +82,8 @@ const UserData = (props) => {
                 }
             },
             {
-                label:'Profile Visits',
-                data:[week1Data.numOfVisits, week2Data.numOfVisits, week3Data.numOfVisits, week4Data.numOfVisits],
+                label:'Revenue',
+                data:[week1Data.revenue, week2Data.revenue, week3Data.revenue, week4Data.revenue],
                 backgroundColor:[
                     'rgb(254, 186, 85, 0.7)',
                 ],
@@ -123,7 +127,7 @@ const UserData = (props) => {
     return(
         <div className='chartPage'>
             <SubHeader/>
-            <h1 className='chartHeader'>My Profile Data</h1>
+            <h1 className='chartHeader'>My Store Data</h1>
             <div className='barChart'>
                 <Bar
                     data={chartData}
