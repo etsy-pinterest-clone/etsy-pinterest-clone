@@ -50,6 +50,7 @@ const UserProfile = (props) => {
 
     return(
         <div>
+            <SubHeader />
             <div className='update-box'>
                 <h2>Update Your Profile</h2>
                 <form >
