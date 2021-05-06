@@ -96,6 +96,7 @@
 
 
  .title {
+    padding-top: 5%;
     font-size: 1rem;
     font-weight: bold;
     transition: all 0.75s ease-out;

@@ -12,6 +12,7 @@ import UserProfile from '../components/UserProfile'
 import UserData from '../components/UserData'
 import StoreData from '../components/StoreData'
 import Cart from '../components/Cart'
+import VisitUserProfile from '../components/VisitUserProfile';
 
 
 
@@ -30,5 +31,6 @@ export default (
       <Route path='/user/userdata' component={UserData}/>
       <Route path='/user/storedata' component={StoreData}/>
       <Route path='/user/cart' component={Cart} />
+      <Route path='/visitUserProfile/:id' component={VisitUserProfile}/>
     </Switch>
   )
