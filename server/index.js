@@ -66,7 +66,6 @@ app.delete('/auth/logout', authCtrl.logout);
 
 app.delete('/auth/user/:id', authCtrl.deleteAccount)
 
-// not sure if we need this
 app.get('/auth/session', authCtrl.getSession)
 
 
@@ -102,6 +101,8 @@ app.get('/user/userdata')
 // POST CONTROLLER ENDPOINTS
 
 app.get('/user/posts', postCtrl.getUserPosts)
+
+app.get('/user/posts/:id', postCtrl.getVisitedUserPosts)
 
 // postCtrl.getSavedPosts
 app.get('/user/savedposts')

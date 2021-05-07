@@ -126,6 +126,13 @@
     color: lightgray;
 }
 
+/* temporary media style to help with space */
+.media {
+    width: 50%;
+    height: 50%;
+}
 
-
-
+.postMedia {
+    width: 50%;
+    height: 50%;
+}
