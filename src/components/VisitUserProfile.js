@@ -4,15 +4,10 @@ import { useHistory, useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getUserPosts, readPost } from '../redux/postReducer';
-
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import '../styles/visitUserProfile.css';
 import '../styles/posts.css';
 
-
-// This component will serve as the component that dynamically
-// renders other users' profiles after being linked here from 
-// SearchBar.js
 
 const VisitUserProfile = (props) => {
 

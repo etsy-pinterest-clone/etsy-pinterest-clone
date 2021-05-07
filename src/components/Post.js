@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {useMediaQuery} from 'react-responsive';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import {readPost, deleteUserPost} from '../redux/postReducer';
@@ -46,7 +45,8 @@ const Post = (props) => {
         })
         .catch(err => console.log(err))
     }
-    console.log(post.post_id)
+    // console.log(post.post_id)
+
     return (
         <div className='openPostContain'>
             

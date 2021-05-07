@@ -21,12 +21,11 @@ function Header(props) {
             await axios
                     .put('/explore/search', body)
                     .then(res => {
-                        const mappedUsers = res.data.map(user => {
+                        const mappedUsers = res.data.map((user, index) => {
                             return (
-                                <Link to={`/visitUserProfile/${user.user_id}`} key={user.user_id} className='link'>
+                                <Link to={`/visitUserProfile/${user.user_id}`} key={index} className='search_link'>
                                     <div className='search_name'>
-                                        <div>{user.first_name}</div>
-                                        <div>{user.last_name}</div>
+                                        <div>{user.username}</div>
                                     </div>
                                 </Link>
                             );
@@ -45,14 +44,14 @@ function Header(props) {
             await axios
                     .put('/explore/searchpost', body)
                     .then(res => {
-                        const mappedPosts = res.data.map(userPost => {
+                        const mappedPosts = res.data.map((userPost, index) => {
                             return (
-                                <div key={userPost.post_id}>
+                                <Link to={`/visitUserProfile/${userPost.user_id}`} key={index} className='search_link'>
                                     <div className='search_post'>
                                         <div className='search_post_category'>{userPost.category}</div>
                                         <div className='search_post_title'>{userPost.title}</div>
                                     </div>
-                                </div>
+                                </Link>
                             );
                         })
                         setSearchResults(mappedPosts)
@@ -68,14 +67,14 @@ function Header(props) {
             await axios
                     .put('/explore/searchcategory', body)
                     .then(res => {
-                        const mappedCategories = res.data.map(postCat => {
+                        const mappedCategories = res.data.map((postCat, index) => {
                             return (
-                                <div key={postCat.post_id}>
+                                <Link to={`/visitUserProfile/${postCat.user_id}`} key={index} className='search_link'>
                                     <div className='search_category'>
                                         <div className='search_post_category'>{postCat.category}</div>
                                         <div className='search_post_title'>{postCat.title}</div>
                                     </div>
-                                </div>
+                                </Link>
                             );
                         })
                         setSearchResults(mappedCategories)
@@ -91,14 +90,14 @@ function Header(props) {
             await axios
                     .put('/explore/searchtitle', body)
                     .then(res => {
-                        const mappedTitles = res.data.map(postTitle => {
+                        const mappedTitles = res.data.map((postTitle, index) => {
                             return (
-                                <div key={postTitle.post_id}>
+                                <Link to={`/visitUserProfile/${postTitle.user_id}`} key={index} className='search_link'>
                                     <div className='search_title'>
                                         <div className='search_post_category'>{postTitle.category}</div>
                                         <div className='search_post_title'>{postTitle.title}</div>
                                     </div>
-                                </div>
+                                </Link>
                             );
                         })
                         setSearchResults(mappedTitles)
@@ -114,14 +113,14 @@ function Header(props) {
             await axios
                     .put('/explore/searchdescription', body)
                     .then(res => {
-                        const mappedDescriptions = res.data.map(postDescription => {
+                        const mappedDescriptions = res.data.map((postDescription, index) => {
                             return (
-                                <div key={postDescription.post_id}>
+                                <Link to={`/visitUserProfile/${postDescription.user_id}`} key={index} className='search_link'>
                                     <div className='search_description'>
                                         <div className='search_description_title'>{postDescription.title}</div>
                                         <div className='search_by_description'>{postDescription.description}</div>
                                     </div>
-                                </div>
+                                </Link>
                             );
                         })
                         setSearchResults(mappedDescriptions)

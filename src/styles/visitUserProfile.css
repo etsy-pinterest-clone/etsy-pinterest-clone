@@ -11,13 +11,14 @@
   }
 
 .back_btn:hover {
-background: #03e9f4;
-color: #fff;
-border-radius: 5px;
-box-shadow: 0 0 5px #03e9f4,
-            0 0 15px #03e9f4,
-            0 0 20px #03e9f4,
-            0 0 50px #03e9f4;
+  cursor: pointer;
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 15px #03e9f4,
+              0 0 20px #03e9f4,
+              0 0 50px #03e9f4;
 }
 
 /* .visit_profile {
@@ -29,3 +30,8 @@ box-shadow: 0 0 5px #03e9f4,
   perspective: 1000px;
   flex-wrap: wrap; 
 } */
+
+.link {
+  text-decoration: none;
+  color: black;
+}

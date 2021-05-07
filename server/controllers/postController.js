@@ -33,7 +33,7 @@ module.exports = {
     deletePost: async (req, res) => {
         const db = req.app.get('db');
         const { id } = req.params;
-        console.log('work', id)
+        // console.log('work', id)
         
         const updatedPostList = await db.posts.delete_post(id)
         res.status(200).send(updatedPostList)
