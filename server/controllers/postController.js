@@ -40,7 +40,7 @@ module.exports = {
     },
     getVisitedUserPosts: async (req, res) => {
         const db = await req.app.get('db');
-        let { user_id } = req.params;
+        let { id: user_id } = req.params;
         
         if (user_id) {
              db.posts.get_user_posts(user_id)

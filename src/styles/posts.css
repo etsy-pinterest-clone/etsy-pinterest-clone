@@ -127,9 +127,9 @@
 }
 
 /* temporary media style to help with space */
-/* .media {
-    position: absolute;
-    zoom: -500%;
-} */
+.media {
+    width: 50%;
+    height: 50%;
+}
 
 

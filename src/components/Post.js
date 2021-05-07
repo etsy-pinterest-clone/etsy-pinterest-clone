@@ -35,13 +35,13 @@ const Post = (props) => {
     }, [])
 
     const goBack = () => {
-        history.push('/user/dash')
+        history.goBack()
     }
 
     const deletePost = (id) => {
         axios.delete(`/user/post/${id}`)
         .then(() => {
-            alert('post has successfully been deleted')
+            alert('Post has successfully been deleted')
             history.push('/user/dash')
         })
         .catch(err => console.log(err))
@@ -62,7 +62,7 @@ const Post = (props) => {
                 <h1 className='openTitle' >{post.title}</h1>
                 <h1 className='postData' >{post.category}</h1>
                 <h1 className='postDescription' >{post.description}</h1>
-                <iframe className='postMedia' src={post.media} />
+                <iframe className='postMedia' title='user_media' src={post.media} />
                 <h1 className='date' >{post.date}</h1>
             </div>
             </div>
@@ -76,5 +76,4 @@ const mapStateToProps = (state) => {
     return state;
 }
 
-// export default post;s, readPot
 export default connect(mapStateToProps, {readPost, deleteUserPost})(Post);

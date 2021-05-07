@@ -1,7 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router';
-import '../styles/visitUserProfile.css'
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { getUserPosts, readPost } from '../redux/postReducer';
+
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import '../styles/visitUserProfile.css';
+import '../styles/posts.css';
 
 
 // This component will serve as the component that dynamically
@@ -9,39 +15,55 @@ import '../styles/visitUserProfile.css'
 // SearchBar.js
 
 const VisitUserProfile = (props) => {
-    // console.log(props)
+
     const history = useHistory();
 
     const [ result, setResult ] = useState([]);
     
     let { id } = useParams();
-    console.log(id)
 
     useEffect(() => {
         axios
             .get(`/user/posts/${id}`)
             .then(res => {
-                const userPosts = res.data.map(post => {
-                    return (
-                        <div>
-                            <div>{post.title}</div>
-                            <div>{post.description}</div>
-                        </div>
-                    );
-                })
-                setResult(userPosts)
-                // console.log(res.data)
+                setResult(res.data)
             })
             .catch(err => console.log(err));
-    })
+    }, [id]);
+
+    const viewPost = (postId) => {
+        props.readPost(postId)
+    };
 
     return (
-        <div className='visit_profile'>
+        <div className='mainContain'>
             <button className='back_btn' onClick={() => history.goBack()}>&#8678;</button>
-            user profile info to be added
-            {result}
+            {
+                result.map((post, index) => {
+                    return (
+                        <div key={index} className='container'>
+                            <div>
+                                <Link to={`/user/posts/${post.post_id}`} className='link'>
+                                    <div className='card' onClick={() => viewPost(post.post_id)}>
+                                        <h1 className='title'>{post.title}</h1>
+                                        <h2 className='category'>{post.category}</h2>
+                                        <h2 className='description'>{post.description}</h2>
+                                        <iframe className='media' title='user_media' src={post.media} />
+                                        <FavoriteIcon className='save' />
+                                        <h2 className='date'>{post.date}</h2>
+                                    </div>
+                                </Link>
+                            </div>
+                        </div>
+                    )
+                })
+            }
         </div>
     );
 }
 
-export default VisitUserProfile
+const mapStateToProps = (state) => {
+    return state
+}
+
+export default connect(mapStateToProps, { getUserPosts, readPost })(VisitUserProfile);
