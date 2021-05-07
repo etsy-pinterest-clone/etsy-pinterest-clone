@@ -30,15 +30,21 @@ const VisitUserProfile = (props) => {
         props.readPost(postId)
     };
 
+    const back = (e) => {
+        e.preventDefault()
+        history.goBack()
+    }
+
     return (
         <div className='mainContain'>
-            <button className='back_btn' onClick={() => history.goBack()}>&#8678;</button>
+            <button className='back_btn' onClick={back}>&#8678;</button>
             {
                 result.map((post, index) => {
                     return (
                         <div key={index} className='container'>
                             <div>
                                 <Link to={`/user/posts/${post.post_id}`} className='link'>
+                                    <div>{post.username}</div>
                                     <div className='card' onClick={() => viewPost(post.post_id)}>
                                         <h1 className='title'>{post.title}</h1>
                                         <h2 className='category'>{post.category}</h2>

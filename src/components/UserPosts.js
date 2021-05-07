@@ -20,7 +20,7 @@ const UserPosts = (props) => {
     const [readPost, setReadPost] = useState(null)
 
     useEffect(() => {
-        console.log(props)
+        // console.log(props)
         axios.get('/user/posts')
             .then(res => {
                 setPosts(res.data)
@@ -50,7 +50,7 @@ const UserPosts = (props) => {
         <div className='mainContain'>
             {
                 posts.map((t, index) => {
-                    console.log(t)
+                    // console.log(t)
                     return (
                         <div key={index} className='container'>
                             <div>
