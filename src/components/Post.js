@@ -23,7 +23,8 @@ const Post = (props) => {
 
     useEffect(() => {
         // console.log(props.match.params.id)
-        axios.get(`/user/post/${props.match.params.id}`)
+        axios
+            .get(`/user/post/${props.match.params.id}`)
             .then(res =>{
                 setPost(res.data)
                 props.readPost(res.data)
@@ -37,12 +38,13 @@ const Post = (props) => {
     }
 
     const deletePost = (id) => {
-        axios.delete(`/user/post/${id}`)
-        .then(() => {
-            alert('Post has successfully been deleted')
-            history.replace('/user/dash')
-        })
-        .catch(err => console.log(err))
+        axios
+            .delete(`/user/post/${id}`)
+            .then(() => {
+                alert('Post has successfully been deleted')
+                history.replace('/user/dash')
+            })
+            .catch(err => console.log(err))
     }
     // console.log(post.post_id)
     // console.log(props.postReducer.post.user_id)

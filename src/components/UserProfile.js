@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SubHeader from '../components/SubHeader';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import {getUser, updateUser} from '../redux/userReducer';
 import {connect} from 'react-redux';
 import axios from 'axios';
@@ -25,7 +25,7 @@ const UserProfile = (props) => {
             .then((res) => {
                 setData(res.data)
                 props.getUser(res.data.user_id)
-                console.log(res.data.user_id)
+                // console.log(res.data.user_id)
             })
             .catch(err => console.log(err))
     }, [])
@@ -63,7 +63,7 @@ const UserProfile = (props) => {
                         <label>Last Name</label>
                     </div>
                     <div className='update-field'>
-                        <input type='date'  name='birthday' onChange={e => setData({...data, [e.target.name]: e.target.value})}value={data.birthday} />
+                        <input type='date'  name='birthday' onChange={e => setData({...data, [e.target.name]: e.target.value})} value={data.birthday} />
                         <label>Birthday</label>
                     </div>
                     <div className='update-field'>
@@ -83,7 +83,7 @@ const UserProfile = (props) => {
                         <label>Username</label>
                     </div>
                     <h3>Contact us to reset your password</h3>
-                    <a onClick={(e) => update(e)}>
+                    <a className='update_btn' onClick={(e) => update(e)}>
                         <span></span>
                         <span></span>
                         <span></span>

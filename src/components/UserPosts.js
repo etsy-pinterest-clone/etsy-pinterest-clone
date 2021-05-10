@@ -56,7 +56,6 @@ const UserPosts = (props) => {
                             <div>
                                 <Link to={`/user/posts/${t.post_id}`} className='link'>
                                     <div className='card' onClick={() => viewPost(t.post_id)}>
-
                                         <h1 className='title'>{t.title}</h1>
                                         <h2 className='category'>{t.category}</h2>
                                         <h2 className='description'>{t.description}</h2>

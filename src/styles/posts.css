@@ -61,8 +61,6 @@
    color: red;
 }
 
-
-
 .card {
     transform-style: preserve-3d;
     height: 255px;
@@ -140,6 +138,14 @@
 .postMedia {
     width: 50%;
     height: 50%;
+}
+
+.category {
+    font-style: italic;
+}
+
+.postData {
+    font-style: italic;
 }
 
 .commentContain {
