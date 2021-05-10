@@ -27,7 +27,7 @@
     height: 90vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center; 
     perspective: 1000px;
     flex-wrap: wrap; 
@@ -36,11 +36,12 @@
 
 .buttonContain {
     position: relative;
-    top: 0;
+    top: 1vh;
     margin-bottom: 5px;
-    width: 30vw;
+    width: 45vw;
     display: flex;
     justify-content: space-around;
+    z-index: 1;
 }
 
 .back {
@@ -68,7 +69,7 @@
     box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0 0 50px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     margin-top: 50px;
     margin-right: 50px;
@@ -78,15 +79,21 @@
 .openCard {
     position: absolute;
     top: 0px;
-    right: 37vw;
-    height: 315px;
+
+    right: 30vw;
+    height: 40vh;
+    width: 30vw;
+
+    
     width: 20vw;
+
     border-radius: 30px;
     box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0 0 50px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    padding: 25px;
     margin: 50px;
 }
 
@@ -100,7 +107,7 @@
     text-decoration: none;
 }
  .openTitle {
-    position: absolute;
+    /* position: absolute; */
     top: 5vh; 
     font-size: 1rem;
     font-weight: bold;
@@ -139,4 +146,37 @@
 
 .postData {
     font-style: italic;
+}
+
+.commentContain {
+    position: absolute;
+    top: 20vh;
+    margin-top: 325px;
+}
+
+
+.comments h2{
+    text-align: left;
+}
+.reviews{
+    width: 115px;
+    margin: 10px 0;
+}
+
+.reviews input{
+    display: none;
+}
+.reviews label{
+    color: #999;
+    margin: 5px 0;
+    padding-right: 5px;
+    cursor: pointer;
+    float: right;
+}
+.reviews input:not(:checked) ~ label:hover,
+.reviews input:not(:checked) ~ label:hover ~ label{
+    color: crimson;
+}
+.reviews input:checked ~ label{
+    color: crimson;
 }
