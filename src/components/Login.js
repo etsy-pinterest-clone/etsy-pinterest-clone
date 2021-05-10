@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom'
-import {connect} from 'react-redux'
-import {updateUser} from '../redux/userReducer' 
-import '../styles/login.css'
+import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {updateUser} from '../redux/userReducer'; 
+import '../styles/login.css';
 
 
 

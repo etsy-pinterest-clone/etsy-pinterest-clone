@@ -1,8 +1,9 @@
+import axios from 'axios';
 
 // INITIAL STATE
 const initialState = {
-    user: {},
-}
+    user: {}
+};
 
 // ACTION TYPES
 const LOGIN_USER = 'LOGIN_USER';
@@ -17,13 +18,17 @@ const UPDATE_USER = 'UPDATE_USER';
 export function loginUser(user) {
     return {
         type: LOGIN_USER
-
     }
 }
 
 export function logoutUser() {
-    return {
-     }
+    axios.delete('/auth/logout')
+        .then(response => response.data)
+        .catch(err => console.log(err));
+
+        return {
+            type: LOGOUT_USER
+        };
 }
 
 
@@ -64,10 +69,9 @@ export default function reducer(state = initialState, action) {
                 ...action.payload
             }
         case LOGOUT_USER:
-                return {
-                    state,
-                }
+                return initialState;
 
-        default: return state;
+        default: 
+            return state;
     }
 };
