@@ -2,7 +2,6 @@ require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const massive = require('massive');
-const mongoose = require('mongoose');
 const cors = require('cors')
 const authCtrl = require('./controllers/authController')
 const postCtrl = require('./controllers/postController')
@@ -15,7 +14,9 @@ const socket = require('socket.io');
 const app = express();
 app.use(express.static('.'));
 const Comments = require('../models/commentModel');
-
+//mongoDb
+const mongoose = require('mongoose');
+const mongodb = require('mongodb');
 
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET, STRIPE_KEY, MONGODB_URL, SOCKET_PORT} = process.env;
 
@@ -34,6 +35,21 @@ app.use(session({
         maxAge: 1000 * 60 * 60 * 24 * 7 * 4
     }
 }));
+
+
+//mongodb access
+mongodb.connect(MONGODB_URL, {useUnifiedTopology: true}, async (err, client) => {
+    const db = client.db()
+    //const results = await db.collection("products").find().toArray()
+    const posts = db.collection("posts")
+    await posts.insertOne({
+        category: "fashion",
+        date: "12/05/2020",
+        title: "Test post",
+        description: "this is a test post to upload to mongoDB"
+    })
+    console.log('added a post')
+})
 
 //SOCKET.IO
 
