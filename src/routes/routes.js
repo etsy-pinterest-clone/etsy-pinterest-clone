@@ -11,6 +11,8 @@ import Post from '../components/Post'
 import UserProfile from '../components/UserProfile'
 import UserData from '../components/UserData'
 import StoreData from '../components/StoreData'
+import Products from '../components/body/products/Products'
+import DetailProduct from '../components/body/detailProduct/DetailProduct'
 import Cart from '../components/Cart'
 import VisitUserProfile from '../components/VisitUserProfile';
 
