@@ -96,6 +96,7 @@
 
 
  .title {
+    padding-top: 5%;
     font-size: 1rem;
     font-weight: bold;
     transition: all 0.75s ease-out;
@@ -125,6 +126,13 @@
     color: lightgray;
 }
 
+/* temporary media style to help with space */
+.media {
+    width: 50%;
+    height: 50%;
+}
 
-
-
+.postMedia {
+    width: 50%;
+    height: 50%;
+}

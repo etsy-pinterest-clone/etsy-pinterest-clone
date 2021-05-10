@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useMediaQuery } from 'react-responsive';
 import { getUserPosts, readPost } from '../redux/postReducer';
-import DeleteSharpIcon from '@material-ui/icons/DeleteSharp';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import { Button } from '@material-ui/core';
 import { connect } from 'react-redux';
 import { useHistory, Link } from 'react-router-dom';
-import Post from './Post';
 import axios from 'axios';
 import '../styles/posts.css';
 
@@ -24,7 +20,7 @@ const UserPosts = (props) => {
     const [readPost, setReadPost] = useState(null)
 
     useEffect(() => {
-        console.log(props)
+        // console.log(props)
         axios.get('/user/posts')
             .then(res => {
                 setPosts(res.data)
@@ -54,7 +50,7 @@ const UserPosts = (props) => {
         <div className='mainContain'>
             {
                 posts.map((t, index) => {
-                    console.log(t)
+                    // console.log(t)
                     return (
                         <div key={index} className='container'>
                             <div>

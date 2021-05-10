@@ -148,7 +148,6 @@ app.delete('/auth/logout', authCtrl.logout);
 
 app.delete('/auth/user/:id', authCtrl.deleteAccount)
 
-// not sure if we need this
 app.get('/auth/session', authCtrl.getSession)
 
 
@@ -184,6 +183,8 @@ app.get('/user/userdata')
 // POST CONTROLLER ENDPOINTS
 
 app.get('/user/posts', postCtrl.getUserPosts)
+
+app.get('/user/posts/:id', postCtrl.getVisitedUserPosts)
 
 // postCtrl.getSavedPosts
 app.get('/user/savedposts')
@@ -244,11 +245,10 @@ app.get('/user/store/storedata')
 
 // EXPLORE ( SEARCH ) CONTROLLER ENDPOINTS
 
-    /* category ID */
-
 // exploreCtrl.sortNew
 app.get('/explore/new')
 
+// using .put so that we have access to req.body
 app.put('/explore/searchtitle', exploreCtrl.searchTitle)
 
 app.put('/explore/searchcategory', exploreCtrl.searchCategory)
@@ -258,7 +258,6 @@ app.put('/explore/searchdescription', exploreCtrl.searchDescription)
 app.put('/explore/searchpost', exploreCtrl.searchPost)
 
 app.put('/explore/search', exploreCtrl.searchUser)
-// using .put so that we have access to req.body
 
 // exploreCtrl.savePost
 app.put('/explore/post/:id')
