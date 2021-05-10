@@ -100,4 +100,11 @@
     color: rgba(0, 0, 0, 0.452);
 }
 
+.textInput {
+    font-family: "Poppins", sans-serif;
+    max-width:80%;
+    min-width: 20%;
+    max-height:10%;
+    min-height: 5%;
+}
 

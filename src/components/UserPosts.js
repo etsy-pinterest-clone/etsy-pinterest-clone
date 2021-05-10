@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { getUserPosts, readPost } from '../redux/postReducer';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import { connect } from 'react-redux';
-import { useHistory, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/posts.css';
 
 
 const UserPosts = (props) => {
-    const history = useHistory();
     const [posts, setPosts] = useState([{
         postId: null,
         date: null,
