@@ -31,8 +31,8 @@ const VisitUserProfile = (props) => {
     };
 
     const back = (e) => {
-        e.preventDefault()
-        history.goBack()
+        e.preventDefault();
+        history.goBack();
     }
 
     return (

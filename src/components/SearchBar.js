@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
+import { Button } from "@material-ui/core";
 import SearchSharpIcon from '@material-ui/icons/SearchSharp';
 import axios from 'axios';
 import '../styles/searchBar.css';
 
 
-function Header(props) {
+function Header() {
     const [ name, setName ] = useState([]);
 
     const [ selectedFilter, setFilter ] = useState('name');
@@ -168,7 +169,9 @@ function Header(props) {
                         value={name.first_name, name.last_name}
                         onChange={e => setSearchParams(e.target.value)}
                         />
-                    <SearchSharpIcon className='header__inputButton' onClick={handleSubmit} />
+                    <Button className='header__inputButton' onClick={handleSubmit}>
+                        <SearchSharpIcon />
+                    </Button>
                 </form>
             </div>
             <div className='user_search' onMouseLeave={() => setSearchResults('')}>{searchResults}</div>
