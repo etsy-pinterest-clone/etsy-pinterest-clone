@@ -51,17 +51,19 @@ const SubHeader = (props) => {
                 
                 : null 
                 }
-            <Button>
-                <Link to='/user/cart'>
-                    <ShoppingCartSharpIcon className='shoppingCart' />
-                </Link>
-            </Button>
+            <div className='cart_ticket'>
+                <Button>
+                    <Link to='/user/cart'>
+                        <ShoppingCartSharpIcon className='shoppingCart' />
+                    </Link>
+                </Button>
 
-            <Button>
-                <Link to='/user/createpost'>
-                    <AddCircleSharpIcon className='createTicket'/>
-                </Link>
-            </Button>
+                <Button>
+                    <Link to='/user/createpost'>
+                        <AddCircleSharpIcon className='createTicket'/>
+                    </Link>
+                </Button>
+            </div>
 
         </div>
     )
