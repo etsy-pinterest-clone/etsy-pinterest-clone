@@ -38,18 +38,18 @@ app.use(session({
 
 
 //mongodb access
-mongodb.connect(MONGODB_URL, {useUnifiedTopology: true}, async (err, client) => {
-    const db = client.db()
-    //const results = await db.collection("products").find().toArray()
-    const posts = db.collection("posts")
-    await posts.insertOne({
-        category: "fashion",
-        date: "12/05/2020",
-        title: "Test post",
-        description: "this is a test post to upload to mongoDB"
-    })
-    console.log('added a post')
-})
+// mongodb.connect(MONGODB_URL, {useUnifiedTopology: true}, async (err, client) => {
+//     const db = client.db()
+//     //const results = await db.collection("products").find().toArray()
+//     const posts = db.collection("posts")
+//     await posts.insertOne({
+//         category: "fashion",
+//         date: "12/05/2020",
+//         title: "Test post",
+//         description: "this is a test post to upload to mongoDB"
+//     })
+//     console.log('added a post')
+// })
 
 //SOCKET.IO
 

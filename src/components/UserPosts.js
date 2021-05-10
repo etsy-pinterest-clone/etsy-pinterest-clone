@@ -11,6 +11,7 @@ const UserPosts = (props) => {
     const history = useHistory();
     const [posts, setPosts] = useState([{
         postId: null,
+        username: '',
         date: null,
         category: '',
         title: '',

@@ -8,6 +8,7 @@ import About from '../components/About'
 import UserLanding from '../components/UserLanding'
 import CreatePost from '../components/CreatePost'
 import Post from '../components/Post'
+import PostCommentTest from '../components/PostCommentTest'
 import UserProfile from '../components/UserProfile'
 import UserData from '../components/UserData'
 import StoreData from '../components/StoreData'
@@ -28,7 +29,8 @@ export default (
       <Route path="/about" component={About}/>
       <Route path='/user/dash' component={UserLanding} />
       <Route path='/user/createpost' component={CreatePost} />
-      <Route path='/user/posts/:id' component={Post} />
+      <Route path='/user/posts/:id' component={PostCommentTest} />
+      {/* <Route path='/user/posts/:id' component={Post} /> */}
       <Route path='/user/userprofile' component={UserProfile}/>
       <Route path='/user/userdata' component={UserData}/>
       <Route path='/user/storedata' component={StoreData}/>

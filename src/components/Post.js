@@ -11,9 +11,12 @@ import '../styles/posts.css';
 
 
 
+
+
 const Post = (props) => {
     const [post, setPost] = useState({
         post_id: null,
+        username: null,
         date: null,
         category: '',
         title: '',
@@ -59,10 +62,11 @@ const Post = (props) => {
                         <DeleteSharpIcon className='delete' />                             
                     </Button>
                 </div>
-                <h1 className='openTitle' >{post.title}</h1>
+                <h2 className='openTitle' >{post.title}</h2>
                 <h1 className='postData' >{post.category}</h1>
                 <h1 className='postDescription' >{post.description}</h1>
                 <iframe className='postMedia' title='user_media' src={post.media} />
+                <h2 className='userName'>Author: {post.username}</h2>
                 <h1 className='date' >{post.date}</h1>
             </div>
             </div>

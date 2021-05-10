@@ -19,17 +19,17 @@ function FormInput({id, socket, rating, setReply, send, name}) {
     },[name])
 
     const commentSubmit = () => {
-        const username = nameRef.current.value
+        // const username = nameRef.current.value
         const content = contentRef.current.innerHTML
-
-        if(!username.trim()) return alert('Not Empty!')
-        if(contentRef.current.textContent.trim().length < 20)
+        
+        // if(!username.trim()) return alert('Not Empty!')
+        if(contentRef.current.textContent.trim().length < 5)
             return alert('Contents too short, must be at least 20 characters')
         
         const createdAt = new Date().toISOString()
 
         socket.emit('createComment', {
-            username, content, product_id: id, createdAt, rating, send
+             content, product_id: id, createdAt, rating, send
         })
 
         if(rating && rating !== 0){
@@ -43,8 +43,8 @@ function FormInput({id, socket, rating, setReply, send, name}) {
 
     return (
         <div className="form_input">
-            <p>Name</p>
-            <input type="text" ref={nameRef} />
+            {/* <p>Name</p>
+            <input type="text" ref={nameRef} /> */}
 
             <p>Content</p>
             <div ref={contentRef} 
