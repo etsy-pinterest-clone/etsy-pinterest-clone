@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import AddCircleSharpIcon from '@material-ui/icons/AddCircleSharp';
 import PersonIcon from '@material-ui/icons/Person';
 import { Button, CircularProgress } from "@material-ui/core";
+import StorefrontSharpIcon from '@material-ui/icons/StorefrontSharp';
 import ShoppingCartSharpIcon from '@material-ui/icons/ShoppingCartSharp';
 import {Link, useHistory} from 'react-router-dom';
 import axios from 'axios';
@@ -54,6 +55,12 @@ const SubHeader = (props) => {
             <Button>
                 <Link to='/user/cart'>
                     <ShoppingCartSharpIcon className='shoppingCart' />
+                </Link>
+            </Button>
+
+            <Button>
+                <Link to='/api/products'>
+                    <StorefrontSharpIcon className='shoppingCart' />
                 </Link>
             </Button>
 
