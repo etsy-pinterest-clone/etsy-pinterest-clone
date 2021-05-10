@@ -42,7 +42,6 @@ function Header(props) {
                     <ContactsSharpIcon />
                 </Button>
                 <Button onClick={() => history.push('/contact')}>Contact</Button>
-                <Button onClick={() => history.push('/about')}>About</Button>
             </div>
 
             <SearchBar />

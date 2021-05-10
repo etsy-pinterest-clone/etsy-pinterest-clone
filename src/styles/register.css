@@ -10,14 +10,7 @@
   justify-content: flex-start;
 }
 
-.backButton {
-  width: 2vw;
-  height: 3vh;
-  background-color: rgba(0, 0, 0, 0.267);
-  border: 1px solid #03e9f4;
-  border-radius: 5px;
-  color: white;
-}
+ 
 
 
 .register-box {
