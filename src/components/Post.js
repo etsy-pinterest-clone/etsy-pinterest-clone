@@ -75,12 +75,11 @@ const Post = (props) => {
                 <h2 className='userName'>Author: {post.username}</h2>
                 <h1 className='date' >{post.date}</h1>
             </div>
-
-            </div>
-
             <div>Comments area</div>
-
         </div>
+
+            
+
     )
 };
 

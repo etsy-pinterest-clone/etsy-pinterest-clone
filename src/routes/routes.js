@@ -1,12 +1,13 @@
 import React from 'react'
 import { Route, Switch} from 'react-router-dom'
 import App from '../App'
+import Landing from '../components/Landing/Landing'
 import Login from '../components/Login'
 import Register from '../components/Register'
 import Contact from '../components/Contact'
 import UserLanding from '../components/UserLanding'
 import CreatePost from '../components/CreatePost'
-import Post from '../components/Post'
+// import Post from '../components/Post'
 import PostCommentTest from '../components/PostCommentTest'
 import UserProfile from '../components/UserProfile'
 import UserData from '../components/UserData'
@@ -21,7 +22,7 @@ import VisitUserProfile from '../components/VisitUserProfile';
 export default (
     
     <Switch>
-      <Route exact path="/" component={App} />
+      <Route exact path="/" component={Landing} />
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Register}/>
       <Route path="/contact" component={Contact}/>
