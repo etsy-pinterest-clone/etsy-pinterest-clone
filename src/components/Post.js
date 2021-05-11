@@ -78,9 +78,6 @@ const Post = (props) => {
             <div>Comments area</div>
         </div>
 
-
-
-
     )
 };
 
