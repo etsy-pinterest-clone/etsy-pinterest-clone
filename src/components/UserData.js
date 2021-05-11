@@ -6,18 +6,21 @@ import {connect} from 'react-redux'
 import axios from 'axios'
 import {Bar, Line, Pie, Doughnut} from 'react-chartjs-2'
 import { defaults } from 'react-chartjs-2';
-import '../styles/updateProfile.css'
+import '../styles/userData.css'
 
 const UserData = (props) => {
     const history = useHistory();
     const [userId, setUserId] = useState('');
+    const [posts, setPosts] = useState(0);
+    const [savedPosts, setSavedPosts] = useState(0);
+    const [visits, setVisits] = useState(0);
 
     const [chartData, setChartData] = useState({
-        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+        labels: ['', '', ''],
         datasets:[
             {
                 label:'Posts',
-                data:[15, 35, 60, 92],
+                data:[posts],
                 backgroundColor:[
                     'rgb(241, 72, 52, 0.7)'
                 ],
@@ -38,7 +41,7 @@ const UserData = (props) => {
             },
             {
                 label:'Posts Saved by Others',
-                data:[6, 20, 43, 59],
+                data:[savedPosts],
                 backgroundColor:[
                     'rgb(249, 137, 72, 0.7)'
                 ],
@@ -59,7 +62,7 @@ const UserData = (props) => {
             },
             {
                 label:'Profile Visits',
-                data:[30, 94, 125, 241],
+                data:[visits],
                 backgroundColor:[
                     'rgb(254, 186, 85, 0.7)',
                 ],
@@ -82,21 +85,22 @@ const UserData = (props) => {
     });
 
 
-    // useEffect((props) => {
-    //     axios.get('/auth/session')
-    //         .then((res) => {
-    //             setUserId(res.data.user_id);
-    //             props.getUser(res.data.user_id);
-    //             console.log(res.data.user_id);
+    useEffect(() => {
+        axios.get('/auth/session')
+            .then((res) => {
+                setUserId(res.data.user_id);
+                console.log(res.data.user_id);
 
-    //             axios.get('/user/userdata', userId)
-    //                 .then((res) => {
-    //                     setUserData({numOfPosts: res., numPostsUsersSaved: res.data, numOfVists: res.data})
-    //                 })
-    //                 .catch(err => console.log(err))
-    //         })
-    //         .catch(err => console.log(err))
-    // }, [])
+                axios.get('/user/userdata', userId)
+                    .then((res) => {
+                        setPosts(res.data.numOfPosts); 
+                        setSavedPosts(res.data.numPostsUsersSaved); 
+                        setVisits(res.data.numOfVists)
+                    })
+                    .catch(err => console.log(err))
+            })
+            .catch(err => console.log(err))
+    }, [])
 
 
 

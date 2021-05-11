@@ -63,14 +63,6 @@ module.exports = {
         await db.auth.delete_account(user_id)
         res.status(200).send('Account successfully deleted')
         
-
-        // try {
-        //    await db.auth.delete_account(user_id)
-            
-        // } catch (err) {
-        //     console.log(err)
-        // }
-        
         await db.auth.delete_account(user_id)
         res.status(200).send('Account successfully deleted')
     },
@@ -79,10 +71,6 @@ module.exports = {
         req.session.destroy();
         res.sendStatus(200);
     },
-    
-
-//      IF NEEDED
-
     getSession: (req, res) => {
         if (req.session.user) {
             res.status(200).send(req.session.user);

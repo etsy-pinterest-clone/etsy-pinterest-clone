@@ -15,7 +15,11 @@ const CreatePost = (props) => {
         title: '',
         description: '',
         media: ''
-    })
+    });
+
+    const [ count, setCount ] = useState(0);
+
+    const [ titleCount, setTitleCount ] = useState(0);
 
     const history = useHistory();
 
@@ -61,17 +65,19 @@ const CreatePost = (props) => {
                 </div>
             <form className='createPost'>
                 <h1 className='newHeader'>Create New Post</h1>
-                <input className='newTitle' type='text' placeholder='Title' onChange={onChange} name='title' value={data.title} />
+                <input className='newTitle' type='text' placeholder='Title' onChange={onChange} name='title' value={data.title} maxLength='45' onKeyUp={e => setTitleCount(e.target.value.length)} />
+                <p>{titleCount}/45 Characters Remaining</p>
                 <select className='select' name='category' onChange={onChange} selected>
-                    <option value='' disabled selected>Please select an option </option>
+                    <option value='' disabled selected>Please select a category </option>
                     <option name='general' value='Arts and Crafts' >Arts and Crafts</option>
                     <option name='internet' value='Fashion'>Fashion</option>
                     <option name='website' value='Technology'>Technology</option>
                     <option name='suggestion' value='Tutorial'>Tutorial</option>
                     <option name='other' value='other'>Other</option>
                 </select>
-                <textarea className='textInput' type='text' placeholder='description' onChange={onChange} name='description' value={data.description} />
-                <input type='file' accept='image/*, video/*' placeholder='upload media' onChange={onFileChange} name='media' />
+                <textarea className='textInput' type='text' placeholder='Description' onChange={onChange} name='description' value={data.description} maxLength='150' onKeyUp={e => setCount(e.target.value.length)}/>
+                <p>{count}/150 Characters Remaining</p>
+                <input className='choose_file' type='file' placeholder='upload media' onChange={onFileChange} name='media' value={data.media} />
                 <button className='submitTicket' type='submit' onClick={(e) => submitPost(e)} >Submit Request</button>
             </form>
 

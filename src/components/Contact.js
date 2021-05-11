@@ -39,7 +39,7 @@ const [body, setBody] = useState({
     <div className='contact-contain' >
     <div className='contact-box'>
       <div className='button-contain'>
-          <button className='backButton' onClick={() => history.push('/user/dash')} >&#8678;</button>
+          <button className='back_Button' onClick={() => history.push('/user/dash')} >&#8678;</button>
           
       </div>
       <h2>Contact Us</h2>
@@ -57,7 +57,7 @@ const [body, setBody] = useState({
               <label>Subject</label>
           </div>
           <div className='contact-field'>
-            <textarea  className='message-field' name='message' value={body.message} onChange={onChange} />
+            <textarea  className='message-field' name='message' value={body.message} onChange={onChange} placeholder='Type your message here...'/>
               <label>Message</label>
           </div>
           <a onClick={handleSend}>
