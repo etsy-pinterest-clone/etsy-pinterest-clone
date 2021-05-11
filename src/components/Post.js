@@ -76,10 +76,7 @@ const Post = (props) => {
                 <h1 className='date' >{post.date}</h1>
             </div>
 
-            </div>
-
             <div>Comments area</div>
-
         </div>
     )
 };
