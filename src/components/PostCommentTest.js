@@ -139,60 +139,60 @@ const Post = (props) => {
     // console.log(post.post_id)
 
     return (
-        <div className='openPostContain'>
+        <div className='mainContain' >
             
-            <div>
+            <div className='openPostContain'>
+                <div className='openCard'>
+                    <div className='buttonContain'>
+                        <span  onClick={() => goBack()} className='back' >&#8678;</span>
+                        <Button onClick={() => deletePost(post.post_id)}  >
+                            <DeleteSharpIcon className='delete' />                             
+                        </Button>
+                    </div>
 
-                <div className='buttonContain'>
-                    <span  onClick={() => goBack()} className='back' >&#8678;</span>
-                    <Button onClick={() => deletePost(post.post_id)}  >
-                        <DeleteSharpIcon className='delete' />                             
-                    </Button>
+
+                    <h2 className='openTitle' >{post.title}</h2>
+                    <h1 className='postDescription' >{post.category}</h1>
+                    <h1 className='postDescription' >{post.description}</h1>
+                    <iframe className='postMedia' title='user_media' src={post.media} />
+                    <h2 className='userName'>Author: {post.username}</h2>
+                    <div>
+                        {/* <h3 style={{margin: '10px 0'}}>Rating: {post.numReviews} reviews</h3>
+                        <Rating props={post} /> */}
+                    </div>
+                    <h1 className='date' >{post.date}</h1>
                 </div>
-
-            <div className='openCard'>
-
-
-                <h2 className='openTitle' >{post.title}</h2>
-                <h1 className='postDescription' >{post.category}</h1>
-                <h1 className='postDescription' >{post.description}</h1>
-                <iframe className='postMedia' title='user_media' src={post.media} />
-                <h2 className='userName'>Author: {post.username}</h2>
-                <div>
-                    <h3 style={{margin: '10px 0'}}>Rating: {post.numReviews} reviews</h3>
-                    <Rating props={post} />
-                </div>
-                <h1 className='date' >{post.date}</h1>
-            </div>
             </div>
 
-            <div>
+            <div className='commentIndex'>
                 <div className="commentContain">
-                    <div className="reviews">
-                        
+                    <div className="rateContain">
                         <h1>Please Rate My Post!</h1>
-                        <input type="radio" name="rate" id="rd-5" onChange={() => setRating(5)} />
-                        <label htmlFor="rd-5" className="fas fa-star"></label>
+                        <div className="reviews">
+                            
+                            <input type="radio" name="rate" id="rd-5" onChange={() => setRating(5)} />
+                            <label htmlFor="rd-5" className="fas fa-star"></label>
 
-                        <input type="radio" name="rate" id="rd-4" onChange={() => setRating(4)} />
-                        <label htmlFor="rd-4" className="fas fa-star"></label>
+                            <input type="radio" name="rate" id="rd-4" onChange={() => setRating(4)} />
+                            <label htmlFor="rd-4" className="fas fa-star"></label>
 
-                        <input type="radio" name="rate" id="rd-3" onChange={() => setRating(3)} />
-                        <label htmlFor="rd-3" className="fas fa-star"></label>
+                            <input type="radio" name="rate" id="rd-3" onChange={() => setRating(3)} />
+                            <label htmlFor="rd-3" className="fas fa-star"></label>
 
-                        <input type="radio" name="rate" id="rd-2" onChange={() => setRating(2)} />
-                        <label htmlFor="rd-2" className="fas fa-star"></label>
+                            <input type="radio" name="rate" id="rd-2" onChange={() => setRating(2)} />
+                            <label htmlFor="rd-2" className="fas fa-star"></label>
 
-                        <input type="radio" name="rate" id="rd-1" onChange={() => setRating(1)} />
-                        <label htmlFor="rd-1" className="fas fa-star"></label>
+                            <input type="radio" name="rate" id="rd-1" onChange={() => setRating(1)} />
+                            <label htmlFor="rd-1" className="fas fa-star"></label>
+                        </div>
                     </div>
 
                     <FormInput id={id} socket={socket} rating={rating} />
 
-                    <div className="comments_list">
+                    <div >
                         {
                             comments.map(comment => (
-                                <CommentItem key={comment._id} comment={comment} socket={socket} />
+                                <CommentItem key={comment._id} comment={comment} socket={socket} className="comments_list"/>
                             ))
                         }
                     </div>

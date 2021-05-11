@@ -1,13 +1,21 @@
 .form_input{
-    margin: 10px 0;
+    position: relative;
+    right: 45vw;
+    margin: 70px 0;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.form_input input{
-    width: 100%;
-    margin-bottom: 10px;
+.form_input div{
+    height: 100px;
+    width: 60vw;
     border: 1px solid #ccc;
     padding: 5px 10px;
-    min-height: 40px;
     outline: none;
+    margin-bottom: 10px;
+    padding: 5px 10px;
 }
 .form_input button{
     background: #333;

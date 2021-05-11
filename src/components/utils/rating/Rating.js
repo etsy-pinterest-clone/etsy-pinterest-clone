@@ -3,7 +3,7 @@ import '../rating/Rating.css'
 
 let rate = 0;
 function Rating({props}) {
-    console.log(props)
+    console.log(props.numReviews)
     if(props.numReviews){
         rate = 100 - (props.rating / props.numReviews * 20)
     }else{
