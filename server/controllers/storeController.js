@@ -1,3 +1,5 @@
+const { searchCategory } = require("./exploreController");
+
 module.exports = {
     newItem: async (req, res) => {
         console.log(req.body)
@@ -37,14 +39,41 @@ module.exports = {
         const updatedItemList = await db.store.delete_item(id)
         res.status(200).send(updatedItemList)
     },
-    // searchStore: async (req, res) => {
-    //     const { store } = req.body;
+    searchTitle: async (req, res) => {
+        const { title } = req.body;
 
-    //     const db = req.app.get('db');
+        const db = req.app.get('db');
 
-    //     const searchResults = await db.store.search_store(`%${store}%`);
-    //     console.log(searchResults);
+        const searchResults = await db.store.search_item_title(`%${title}%`);
 
-    //     res.status(200).send(searchResults);
-    // }
+        res.status(200).send(searchResults);
+    },
+    searchCategory: async (req, res) => {
+        const { category } = req.body;
+
+        const db = req.app.get('db');
+
+        const searchResults = await db.store.search_item_category(`%${category}%`);
+
+        res.status(200).send(searchResults);
+    },
+    searchDescription: async (req, res) => {
+        const { description } = req.body;
+
+        const db = req.app.get('db');
+
+        const searchResults = await db.store.search_item_description(`%${description}%`);
+
+        res.status(200).send(searchResults);
+    },
+    searchStore: async (req, res) => {
+        const { store } = req.body;
+
+        const db = req.app.get('db');
+
+        const searchResults = await db.store.search_store(`%${store}%`);
+        console.log(searchResults);
+
+        res.status(200).send(searchResults);
+    }
 }

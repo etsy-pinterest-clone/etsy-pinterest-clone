@@ -75,6 +75,14 @@
     background-color: rgb(192, 192, 192);
 }
 
+.user_first_last {
+    width: 150px;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 13px;
+    font-weight: normal;
+}
+
 .search_post {
     width: 315px;
     display: flex;
@@ -177,4 +185,33 @@
 .search_link {
     text-decoration: none;
     color: black;
+}
+
+.search_item {
+    width: 315px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px dotted black;
+    cursor: pointer;
+}
+
+.search_item:hover {
+    background-color: lightgray;
+}
+
+.search_item:active {
+    background-color: rgb(192, 192, 192);
+}
+
+.search_store_item {
+    width: 150px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+}
+
+.store_item_price {
+    width: 50px;
+    font-style: italic;
 }
