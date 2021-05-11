@@ -12,6 +12,7 @@ import axios from 'axios';
 
 
 const UserProducts = (props) => {
+    console.log(props)
     const history = useHistory();
     const [products, setProducts] = useState([{
         productId: null,
@@ -34,16 +35,6 @@ const UserProducts = (props) => {
     }, [])
 
 
-    // useEffect(() => {
-    //     const script = document.createElement('script');
-    //     script.src = "../scripts/3d.js";
-    //     script.async = true;
-    //     document.body.appendChild(script);
-    //     return () => {
-    //         document.body.removeChild(script);
-    //     }
-    // }, []);
-
 
     const viewProduct = (productId) => {
         setReadProduct(productId)
@@ -62,12 +53,12 @@ const UserProducts = (props) => {
             </Button>
             {
                 products.map((t, index) => {
-                    console.log(t)
+                    console.log(products)
                     return (
                         <div key={index} className='container'>
                             <div>
-                                <Link to={`/user/store/item/${t.product_id}`} className='link'>
-                                    <div className='card' onClick={() => viewProduct(t.product_id)}>
+                                <Link to={`/user/store/item/${t.post_id}`} className='link'>
+                                    <div className='card' onClick={() => viewProduct(t.post_id)}>
 
                                         <h1 className='title'>{t.title}</h1>
                                         <h2 className='category'>{t.category}</h2>
