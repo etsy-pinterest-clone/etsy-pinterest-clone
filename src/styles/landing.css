@@ -1,26 +1,70 @@
+.logo{
+  width: 800px;
+}
 .background-one {
   width: 100vw;
-  height: 100vh;
+  height: 75vh;
   position: relative;
-  background: url('../components/Landing/images/explore.jpeg') no-repeat center center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.623) 0%, rgba(0, 0, 0, 0.856) 75%, #000000 100%),url('../components/Landing/images/8.png') no-repeat center center;
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .background-two {
   width: 100vw;
-  height: 100vh;
+  height: 75vh;
   position: relative;
-  background: url('../components/Landing/images/create.jpeg') no-repeat center center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.466) 0%, rgba(0, 0, 0, 0.493) 75%, #000000 100%),url('../components/Landing/images/6.png') no-repeat center center;
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .background-three {
   width: 100vw;
-  height: 100vh;
+  height: 75vh;
   position: relative;
-  background: url('../components/Landing/images/sell.webp') no-repeat center center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.466) 0%, rgba(0, 0, 0, 0.493) 75%, #000000 100%),url('../components/Landing/images/7.png') no-repeat center center;
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
+
+.background-four {
+  width: 100vw;
+  height: 75vh;
+  position: relative;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.555) 0%, rgba(0, 0, 0, 0.493) 75%, #000000 100%), url('../components/Landing/images/5.png') no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.landing-pgtext{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  height: 40vh;
+  color: white;
+  opacity: .90;
+  background-color: black;
+}
+
+.landing-H1 {
+  font-family: 'Pacifico', cursive; 
+  font-size: 100px;
+  line-height: 190%;
+}
+
+
 
 .loginReg {
   position: fixed;
