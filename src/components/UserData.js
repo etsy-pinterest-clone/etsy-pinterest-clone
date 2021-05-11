@@ -11,33 +11,16 @@ import '../styles/userData.css'
 const UserData = (props) => {
     const history = useHistory();
     const [userId, setUserId] = useState('');
-    const [week1Data, setWeek1Data] = useState({
-        numOfPosts: 0,
-        numOfPostOthersSaved: 0,
-        numOfVisits: 0,
-    });
-    const [week2Data, setWeek2Data] = useState({
-        numOfPosts: 0,
-        numOfPostOthersSaved: 0,
-        numOfVisits: 0,
-    });
-    const [week3Data, setWeek3Data] = useState({
-        numOfPosts: 0,
-        numOfPostOthersSaved: 0,
-        numOfVisits: 0,
-    });
-    const [week4Data, setWeek4Data] = useState({
-        numOfPosts: 0,
-        numOfPostOthersSaved: 0,
-        numOfVisits: 0,
-    });
+    const [posts, setPosts] = useState(0);
+    const [savedPosts, setSavedPosts] = useState(0);
+    const [visits, setVisits] = useState(0);
 
     const [chartData, setChartData] = useState({
-        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+        labels: ['', '', ''],
         datasets:[
             {
                 label:'Posts',
-                data:[week1Data.numOfPosts, week2Data.numOfPosts, week3Data.numOfPosts, week4Data.numOfPosts],
+                data:[posts],
                 backgroundColor:[
                     'rgb(241, 72, 52, 0.7)'
                 ],
@@ -58,7 +41,7 @@ const UserData = (props) => {
             },
             {
                 label:'Posts Saved by Others',
-                data:[week1Data.numOfPostOthersSaved, week2Data.numOfPostOthersSaved, week3Data.numOfPostOthersSaved, week4Data.numOfPostOthersSaved],
+                data:[savedPosts],
                 backgroundColor:[
                     'rgb(249, 137, 72, 0.7)'
                 ],
@@ -79,7 +62,7 @@ const UserData = (props) => {
             },
             {
                 label:'Profile Visits',
-                data:[week1Data.numOfVisits, week2Data.numOfVisits, week3Data.numOfVisits, week4Data.numOfVisits],
+                data:[visits],
                 backgroundColor:[
                     'rgb(254, 186, 85, 0.7)',
                 ],
@@ -102,21 +85,22 @@ const UserData = (props) => {
     });
 
 
-    // useEffect((props) => {
-    //     axios.get('/auth/session')
-    //         .then((res) => {
-    //             setUserId(res.data.user_id);
-    //             props.getUser(res.data.user_id);
-    //             console.log(res.data.user_id);
+    useEffect(() => {
+        axios.get('/auth/session')
+            .then((res) => {
+                setUserId(res.data.user_id);
+                console.log(res.data.user_id);
 
-    //             axios.get('/user/userdata', userId)
-    //                 .then((res) => {
-    //                     setUserData({numOfPosts: res., numPostsUsersSaved: res.data, numOfVists: res.data})
-    //                 })
-    //                 .catch(err => console.log(err))
-    //         })
-    //         .catch(err => console.log(err))
-    // }, [])
+                axios.get('/user/userdata', userId)
+                    .then((res) => {
+                        setPosts(res.data.numOfPosts); 
+                        setSavedPosts(res.data.numPostsUsersSaved); 
+                        setVisits(res.data.numOfVists)
+                    })
+                    .catch(err => console.log(err))
+            })
+            .catch(err => console.log(err))
+    }, [])
 
 
 

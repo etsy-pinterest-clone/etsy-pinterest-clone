@@ -11,37 +11,25 @@ import '../styles/storeData.css'
 const UserData = (props) => {
     const history = useHistory();
     const [userId, setUserId] = useState('');
-    const [week1Data, setWeek1Data] = useState({
+    const [visits, setVisits] = useState({
         numOfVisits: 0,
-        numOfPurchases: 0,
-        mostPopularItems: [],
-        revenue: 0,
     });
-    const [week2Data, setWeek2Data] = useState({
-        numOfVisits: 0,
+    const [purchases, setPurchases] = useState({
         numOfPurchases: 0,
-        mostPopularItems: [],
-        revenue: 0,
     });
-    const [week3Data, setWeek3Data] = useState({
-        numOfVisits: 0,
-        numOfPurchases: 0,
+    const [popularItems, setPopularItems] = useState({
         mostPopularItems: [],
-        revenue: 0,
     });
-    const [week4Data, setWeek4Data] = useState({
-        numOfVisits: 0,
-        numOfPurchases: 0,
-        mostPopularItems: [],
+    const [revenue, setrevenue] = useState({
         revenue: 0,
     });
 
     const [chartData, setChartData] = useState({
-        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+        labels: ['', '', '', ''],
         datasets:[
             {
                 label:'Visitors',
-                data:[week1Data.numOfVisits, week2Data.numOfVisits, week3Data.numOfVisits, week4Data.numOfVisits],
+                data:[visits.numOfVisits],
                 backgroundColor:[
                     'rgb(241, 72, 52, 0.7)'
                 ],
@@ -62,7 +50,7 @@ const UserData = (props) => {
             },
             {
                 label:'Purchases',
-                data:[week1Data.numOfPurchases, week2Data.numOfPurchases, week3Data.numOfPurchases, week4Data.numOfPurchases],
+                data:[purchases.numOfPurchases],
                 backgroundColor:[
                     'rgb(249, 137, 72, 0.7)'
                 ],
@@ -83,7 +71,7 @@ const UserData = (props) => {
             },
             {
                 label:'Revenue',
-                data:[week1Data.revenue, week2Data.revenue, week3Data.revenue, week4Data.revenue],
+                data:[revenue.revenue],
                 backgroundColor:[
                     'rgb(254, 186, 85, 0.7)',
                 ],

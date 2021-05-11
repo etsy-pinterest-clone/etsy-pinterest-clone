@@ -97,7 +97,7 @@ app.delete('/user/message/:id')
 app.get('/user/userdata', userCtrl.getUserData)
 
 // userCtrl.updateUserData
-app.put('/user/userdata', userCtrl.updateUserData)
+app.put('/user/userdata/:id', userCtrl.updateUserData)
 
 // POST CONTROLLER ENDPOINTS
 

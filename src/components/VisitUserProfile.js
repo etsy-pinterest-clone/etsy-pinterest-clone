@@ -1,20 +1,10 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react'
-import { useHistory } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import {getUser, updateUser} from '../redux/userReducer';
 import {connect} from 'react-redux';
-import axios from 'axios';
-=======
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { useHistory, useParams } from 'react-router';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { getUserPosts, readPost } from '../redux/postReducer';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import '../styles/visitUserProfile.css';
-import '../styles/posts.css';
->>>>>>> c210361774922094a55e188ce4832d254ac5d330
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
 const VisitUserProfile = (props) => {
@@ -96,12 +86,4 @@ const mapStateToProps = (state) => {
     return state
 }
 
-<<<<<<< HEAD
-const mapStateToProps = (state) => {
-    return state
-}
-
 export default connect(mapStateToProps, {getUser, updateUser})(VisitUserProfile);
-=======
-export default connect(mapStateToProps, { getUserPosts, readPost })(VisitUserProfile);
->>>>>>> c210361774922094a55e188ce4832d254ac5d330
