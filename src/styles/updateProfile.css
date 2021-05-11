@@ -10,10 +10,10 @@
 
 .update-box {
     position: absolute;
-    top: 50%;
+    top: 58%;
     left: 50%;
     width: 40vw;
-    height: 80vh;
+    height: 750px;
     padding: 40px;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, 0.5);
@@ -167,5 +167,9 @@
     50%,100% {
       bottom: 100%;
     }
+  }
+
+  .update_btn {
+    cursor: pointer;
   }
   

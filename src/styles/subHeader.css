@@ -17,7 +17,7 @@
     width: 2.5vw;
     height: 4vh;
     border-radius: 100%;
-    margin-right: 60vw;
+    /* margin-right: 60vw; */
 }
 
 .shoppingCart {
@@ -28,5 +28,12 @@
 .createTicket {
     font-size: 40px;
     color: lightgreen;
-    margin-left: 2vw;
+    /* margin-left: 2vw; */
+}
+
+.cart_ticket {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 60vw;
 }

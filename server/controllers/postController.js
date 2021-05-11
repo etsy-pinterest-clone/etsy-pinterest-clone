@@ -7,7 +7,7 @@ module.exports = {
         const date = new Date();
         
         console.log(user_id)
-        if (user_id) {       
+        if (user_id) { 
            const createNew = await db.posts.create_post([user_id, category, date, title, description, media])
                 res.status(200).send(createNew)
         } else {

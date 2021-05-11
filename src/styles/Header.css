@@ -1,4 +1,3 @@
-
 .header {
     height: 8vh;
     display: flex;
@@ -13,31 +12,16 @@
 .header__logo {
     height: 25px;
     object-fit: contain;
-    margin-left: 25px;
+    /* margin-left: 25px; */
 }
 
-/* .header__input {
+.header__left {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40%; */
-    /* border: 1px solid black; */
-/* } */
+    position: relative;
+    left: 25px;
+}
 
-/* .header__inputSearch {
-    width: 60%;
-    height: 3vh;
-    padding-left: 5px;
-    margin-right: 10px;
-    border: none;
-    border-radius: 5px;
-} */
-
-
-        /* Might move the results elsewhere.... */
-
-/* .user_search {
-    top: 300px;
-    left: 50px;
-    position: absolute;
-} */
+.header__right {
+    position: relative;
+    right: 25px;
+}
