@@ -1,17 +1,36 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react'
 import { useHistory, useParams } from 'react-router';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { getUserPosts, readPost } from '../redux/postReducer';
+import {getUser, updateUser} from '../redux/userReducer';
+import {connect} from 'react-redux';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import '../styles/visitUserProfile.css';
-import '../styles/posts.css';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
 const VisitUserProfile = (props) => {
 
     const history = useHistory();
+    const [userId, setUserId] = useState(null);
+
+    useEffect(()=> {
+        // axios.post('/auth/register', data1)
+        //   .then (res => {
+        //       props.updateUser({username: res.data.username, id: res.data.user_id})
+        //       history.push('/user/dash')
+        //   })
+        //   .catch(err => console.log(err))
+        axios.post('')
+        setUserId(props.match.perams)
+    },[])
+
+    const showUserPage = () => {
+      
+      return(
+
+      <div>
+
+      </div>)
+      }
 
     const [ result, setResult ] = useState([]);
     
@@ -67,4 +86,4 @@ const mapStateToProps = (state) => {
     return state
 }
 
-export default connect(mapStateToProps, { getUserPosts, readPost })(VisitUserProfile);
+export default connect(mapStateToProps, {getUser, updateUser})(VisitUserProfile);
