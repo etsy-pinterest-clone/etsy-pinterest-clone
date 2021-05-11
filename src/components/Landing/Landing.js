@@ -5,10 +5,10 @@ import '../../styles/landing.css'
 
 export default function Landing() {
   return (
-    <div>
-      <div>
-        <Link to='/login' className='loginReg'>Login or Register</Link>
-      </div>
+    <div className='landing-Pg'>
+      
+        {/* <button><Link to='/login' className='loginReg'>Login or Register</Link></button> */}
+      
       <section className="background-one">
         <img className='logo' src={Logo} alt='Logo'/>
       </section>

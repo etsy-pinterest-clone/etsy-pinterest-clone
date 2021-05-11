@@ -1,8 +1,16 @@
 .login-contain {
-    margin:0;
+    /* margin:0;
     padding:0;
     font-family: sans-serif;
-    background: linear-gradient(#141e30, #243b55);
+    background: linear-gradient(#141e30, #3d90f0); */
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background:  linear-gradient(to bottom, rgba(0, 0, 0, 0.623) 0%, rgba(0, 0, 0, 0.856) 75%, #000000 100%),url('../components/Landing/images/5.png') no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
 
 .login-box {
@@ -10,13 +18,17 @@
     top: 50%;
     left: 50%;
     width: 400px;
-    padding: 40px;
+    padding: 100px;
     transform: translate(-50%, -50%);
-    background: rgba(0,0,0,.5);
+    background: rgba(182, 182, 182, 0.342);
     box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
-    border-radius: 10px;
-  }
+    box-shadow: 0 15px 25px rgba(43, 43, 43, 0.6);
+    border-radius: 0px;
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
+}
   
   .login-box h2 {
     margin: 0 0 30px;
