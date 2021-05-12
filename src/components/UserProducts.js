@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import { useHistory, Link } from 'react-router-dom';
 import Post from './Post';
 import axios from 'axios';
+import SubHeader from './SubHeader';
 
 
 const UserProducts = (props) => {
@@ -45,7 +46,11 @@ const UserProducts = (props) => {
 
     return (
 
+        
+
         <div className=''>
+
+            {/* <SubHeader/> */}
             <Button>
                 <Link to='/user/store/createitem'>
                     <AddCircleSharpIcon className='createTicket' />
@@ -57,7 +62,7 @@ const UserProducts = (props) => {
                     return (
                         <div key={index} className='container'>
                             <div>
-                                <Link to={`/user/store/item/${t.post_id}`} className='link'>
+                                <Link to={`/user/store/item/${index + 1}`} className='link'>
                                     <div className='card' onClick={() => viewProduct(t.post_id)}>
 
                                         <h1 className='title'>{t.title}</h1>

@@ -47,8 +47,8 @@ const Product = (props) => {
             })
             .catch(err => console.log(err))
     }
-    console.log(product.product_id)
-    // console.log(props.postReducer.post.user_id)
+    // console.log(props.userReducer.id)
+    // console.log(props.productReducer.product.user_id)
     // console.log(props.userReducer.id)
 
     return (
@@ -66,16 +66,17 @@ const Product = (props) => {
                     <h1 className='postData' >{product.category}</h1>
                     <h1 className='postDescription' >{product.description}</h1>
                     <iframe className='postMedia' title='user_media' src={product.media} />
+                    <h1 className='price' title='postPrice'>${product.price}</h1>
                     <h1 className='date' >{product.date}</h1>
                 </div>
 
-                <h2 className='openTitle' >{product.title}</h2>
+                {/* <h2 className='openTitle' >{product.title}</h2>
                 <h1 className='postData' >{product.category}</h1>
                 <h1 className='postDescription' >{product.description}</h1>
                 <iframe className='postMedia' title='user_media' src={product.media} />
                 <h2 className='userName'>Author: {product.username}</h2>
                 <h2>${product.price}</h2>
-                <h1 className='date' >{product.date}</h1>
+                <h1 className='date' >{product.date}</h1> */}
             </div>
             <div>Comments area</div>
         </div>
