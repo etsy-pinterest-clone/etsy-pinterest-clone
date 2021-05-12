@@ -17,17 +17,18 @@ module.exports = {
 
     getUserData: async (req, res) => {
          const db = req.app.get('db');
-         const userId = req.body;
-         const userData = await db.user.userData.get_user_data({
-             numOfPosts: '', 
-             numPostsUsersSaved: '', 
-             numOfVists: '', 
-         })
-       res.status(200).send(userData) 
-        },
+         const {id} = req.params;
+         console.log(id)
+         const [userData] = await db.user.userData.get_user_data(id)
+            if (userData){
+                res.status(200).send(userData)
+                }else{
+                    res.status(400).send('data not found')
+                }
+    },
     
 
-    updateUserData: async(req, res) => {
+    updateUserData: async(req, res) => {rs
 
 // UPDATE user_data SET user_id = $1, number_of_posts = $2, number_posts_others_saved = $3, profile_visits = $4, revenue = $5, average_rating = $6, store_visits = $7
 // WHERE user_id = $8

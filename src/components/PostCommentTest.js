@@ -189,7 +189,7 @@ const Post = (props) => {
 
                     <FormInput id={id} socket={socket} rating={rating} />
 
-                    <div >
+                    <div className='comment_item_area'>
                         {
                             comments.map(comment => (
                                 <CommentItem key={comment._id} comment={comment} socket={socket} className="comments_list"/>

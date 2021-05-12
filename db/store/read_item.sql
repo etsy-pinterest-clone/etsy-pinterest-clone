@@ -1,3 +1,3 @@
-SELECT * FROM store_items
-WHERE item_id = $1;
+SELECT * FROM store_product
+WHERE post_id = $1;
 -- RETURN *;
