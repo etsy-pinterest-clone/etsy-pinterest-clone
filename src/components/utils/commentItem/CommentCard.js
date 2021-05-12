@@ -8,9 +8,9 @@ function CommentCard({children, comment}) {
         <div className="comment_card">
             <div className="comment_card_row">
                 <h3>{comment.username}</h3>
-                {
+                {/* {
                     comment.rating !== 0 && <Rating props={comment} />
-                }
+                } */}
             </div>
 
             <span>{moment(comment.createdAt).fromNow()}</span>

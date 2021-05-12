@@ -166,7 +166,7 @@ const Post = (props) => {
 
             <div className='commentIndex'>
                 <div className="commentContain">
-                    <div className="rateContain">
+                    {/* <div className="rateContain">
                         <h1>Please Rate My Post!</h1>
                         <div className="reviews">
                             
@@ -185,7 +185,7 @@ const Post = (props) => {
                             <input type="radio" name="rate" id="rd-1" onChange={() => setRating(1)} />
                             <label htmlFor="rd-1" className="fas fa-star"></label>
                         </div>
-                    </div>
+                    </div> */}
 
                     <FormInput id={id} socket={socket} rating={rating} />
 

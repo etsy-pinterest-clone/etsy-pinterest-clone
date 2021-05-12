@@ -26,7 +26,13 @@ function Header() {
                             return (
                                 <Link to={`/visitUserProfile/${user.user_id}`} key={index} className='search_link'>
                                     <div className='search_name'>
-                                        <div>{user.username}</div>
+                                        <div>
+                                            {user.username}
+                                            <div className='user_first_last'>
+                                                <div>{user.first_name}</div>
+                                                <div>{user.last_name}</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </Link>
                             );
@@ -131,6 +137,27 @@ function Header() {
         }
     };
 
+    const handleStoreSearch = async () => {
+        let body = { store: searchParams };
+        try {
+            await axios
+                    .put('/user/store/searchitem', body)
+                    .then(res => {
+                        const mappedStoreItem = res.data.map((item, index) => {
+                            return (
+                                <div key={index} className='search_item'>
+                                    <div className='search_store_item'>{item.title}</div>
+                                    <div className='store_item_price'>${item.price}</div>
+                                </div>
+                            );
+                        })
+                        setSearchResults(mappedStoreItem)
+                    })
+        } catch (err) {
+            console.log(err)
+        }
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault(e)
         if (searchParams === '') {
@@ -146,6 +173,8 @@ function Header() {
             handleTitleSearch()
         } else if (selectedFilter === 'description') {
             handleDescriptionSearch()
+        } else if (selectedFilter === 'store') {
+            handleStoreSearch()
         } else {
             return null;
         }
@@ -161,9 +190,10 @@ function Header() {
                         <option value='category'>Category</option>
                         <option value='title'>Title</option>
                         <option value='description'>Description</option>
+                        <option value='store'>Our Store</option>
                     </select>
                     <input
-                        placeholder='Search...'
+                        placeholder='Find friends, posts, etc...'
                         type='text'
                         className='header__inputSearch'
                         value={name.first_name, name.last_name}

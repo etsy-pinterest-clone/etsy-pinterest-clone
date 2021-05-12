@@ -89,7 +89,8 @@
 }
 
 .landing-H1 {
-  font-family: 'Pacifico', cursive; 
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
   font-size: 100px;
   line-height: 190%;
 }
