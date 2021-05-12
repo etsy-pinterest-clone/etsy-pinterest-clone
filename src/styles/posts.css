@@ -8,10 +8,12 @@
 .mainContain {
     font-family: "Poppins", sans-serif;
     position: relative;
+    height: 150vh;
     height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: space-between; 
+    background-color: #999;
 }
 
 .openPostContain {
@@ -27,7 +29,7 @@
 }
 
 .commentContain {
-    position: absolute;
+    position: relative;
     top: 45vh;
     left: 45vw;
     margin-top: 200px;

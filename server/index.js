@@ -192,7 +192,7 @@ app.post('/user/message/:id')
 app.delete('/user/message/:id')
 
 // userCtrl.getUserData
-app.get('/user/userdata', userCtrl.getUserData)
+app.get('/user/userdata/:id', userCtrl.getUserData)
 
 // userCtrl.updateUserData
 app.put('/user/userdata/:id', userCtrl.updateUserData)
