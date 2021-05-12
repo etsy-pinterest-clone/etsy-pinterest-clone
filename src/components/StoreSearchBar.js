@@ -5,7 +5,7 @@ import SearchSharpIcon from '@material-ui/icons/SearchSharp';
 import axios from 'axios';
 // import '../styles/searchBar.css';
 import '../styles/storeSearchBar.css';
-import '../components/utils/productCard/ProductCard.css'
+import '../styles/ProductCard.css';
 
 /* The styling for this is temporary and is being taken from the other search bar styling. Feel free to change className's and add styling :) */
 

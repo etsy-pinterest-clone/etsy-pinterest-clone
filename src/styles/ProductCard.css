@@ -11,16 +11,19 @@
     border-radius: 5px;
     background-color: white;
 }
+
 .product_card img {
     width: 100%;
     display: block;
     object-fit: cover;
     height: 250px;
 }
+
 .search_product_title {
     text-transform: uppercase;
     margin: 5px 0;
 }
+
 .product_card span {
     color: crimson;
 }
@@ -30,6 +33,7 @@
     justify-content: space-between;
     margin: 10px 0;
 }
+
 .product_card_row a,
 .product_card_row button {
     text-decoration: none;
@@ -38,11 +42,13 @@
     padding: 10px 0;
     border-radius: 5px;
 }
+
 .product_card_row a {
     color: white;
     background: teal;
     margin-right: 5px;
 }
+
 .product_card_row button {
     color: white;
     background: #333;
