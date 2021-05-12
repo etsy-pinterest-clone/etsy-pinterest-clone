@@ -10,6 +10,10 @@ import { useHistory, Link } from 'react-router-dom';
 import Post from './Post';
 import axios from 'axios';
 import SubHeader from './SubHeader';
+import StoreSearchBar from './StoreSearchBar';
+import '../styles/ProductCard.css';
+import '../styles/storeSearchBar.css';
+import '../styles/userProducts.css';
 
 
 const UserProducts = (props) => {
@@ -56,20 +60,28 @@ const UserProducts = (props) => {
                     <AddCircleSharpIcon className='createTicket' />
                 </Link>
             </Button>
+            <StoreSearchBar />
+            <br />
+            <br />
+            <br />
+            <div className='my_products'>
+                <h2>My Products</h2>
+            </div>
+            <div className='product_container'>
             {
                 products.map((t, index) => {
                     console.log(t)
                     return (
                         <div key={index} className='container'>
                             <div>
-                                <Link to={`/user/store/item/${t.post_id}`} className='link'>
-                                    <div className='card' onClick={() => viewProduct(t.post_id)}>
+                                <Link to={`/user/store/item/${t.post_id}`} className='product_link'>
+                                    <div className='product_card' onClick={() => viewProduct(t.post_id)}>
 
-                                        <h1 className='title'>{t.title}</h1>
-                                        <h2 className='category'>{t.category}</h2>
-                                        <h2 className='description'>{t.description}</h2>
-                                        <iframe className='media' src={t.media} />
-                                        <h2 className='price'>${t.price}</h2>
+                                        <div className='search_post_category'>{t.category}</div>
+                                        <img src={t.media} alt='product_image'/>
+                                        <div className='search_product_title'>{t.title}</div>
+                                        <span className='price'>${t.price}</span>
+                                        <p>{t.description}</p>
                                         <FavoriteIcon className='save' />
                                         <h2 className='date'>{t.date}</h2>
                                     </div>
@@ -79,6 +91,7 @@ const UserProducts = (props) => {
                     )
                 })
             }
+            </div>
         </div>
     )
 };

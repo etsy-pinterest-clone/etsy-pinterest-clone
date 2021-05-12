@@ -1,0 +1,27 @@
+.product_link {
+    text-decoration: none;
+    color: black;
+}
+
+.product_container {
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 0 50px;
+}
+
+.my_products {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid black;
+}
+
+.my_products h2 {
+    width: 200px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    font-size: 30px;
+    padding: 5px;
+    background: linear-gradient(to bottom, #929292 0%,#a8a8a8 22%,#d8d8d8 87%,#ececec 100%);
+}
