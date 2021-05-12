@@ -58,11 +58,11 @@ const UserProducts = (props) => {
             </Button>
             {
                 products.map((t, index) => {
-                    console.log(products)
+                    console.log(t)
                     return (
                         <div key={index} className='container'>
                             <div>
-                                <Link to={`/user/store/item/${index + 1}`} className='link'>
+                                <Link to={`/user/store/item/${t.post_id}`} className='link'>
                                     <div className='card' onClick={() => viewProduct(t.post_id)}>
 
                                         <h1 className='title'>{t.title}</h1>
