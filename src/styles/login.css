@@ -6,7 +6,7 @@
     width: 100vw;
     height: 100vh;
     position: relative;
-    background:  linear-gradient(to bottom, rgba(0, 0, 0, 0.623) 0%, rgba(0, 0, 0, 0.856) 75%, #000000 100%),url('../components/Landing/images/5.png') no-repeat center center;
+    background:  linear-gradient(to bottom, rgba(0, 0, 0, 0.623) 0%, rgba(0, 0, 0, 0.651) 75%, #000000 100%),url('../components/Landing/images/23.png') no-repeat center center;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -14,15 +14,16 @@
   }
 
 .login-box {
+    font-family: 'Montserrat', sans-serif;
     position: absolute;
     top: 50%;
     left: 50%;
     width: 400px;
     padding: 100px;
     transform: translate(-50%, -50%);
-    background: rgba(182, 182, 182, 0.342);
+    background: rgba(182, 182, 182, 0.459);
     box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(43, 43, 43, 0.6);
+    box-shadow: 0 15px 25px rgba(0, 0, 0,.6);
     border-radius: 0px;
     -webkit-border-radius:;
     -moz-border-radius:;
@@ -33,6 +34,8 @@
   .login-box h2 {
     margin: 0 0 30px;
     padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
     color: #fff;
     text-align: center;
   }
