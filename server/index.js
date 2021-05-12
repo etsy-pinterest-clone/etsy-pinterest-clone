@@ -273,6 +273,9 @@ app.get('/user/store/storedata')
 // exploreCtrl.sortNew
 app.get('/explore/new')
 
+//Explore to get all posts
+app.get('/explore', exploreCtrl.getAll)
+
 // using .put so that we have access to req.body
 app.put('/explore/searchtitle', exploreCtrl.searchTitle)
 

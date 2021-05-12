@@ -47,7 +47,9 @@ function Header(props) {
                 <ReactTooltip id='authTip' place='bottom' effect='solid'>Login/ Register</ReactTooltip>
                 <Button data-tip data-for="contactTip" onClick={() => history.push('/contact')}><EmailIcon/></Button>
                 <ReactTooltip id='contactTip' place='bottom' effect='solid'>Send us a message</ReactTooltip>
+                <Link to='/explore' className="exploreLink">Explore</Link>
             </div>
+            
 
             <SearchBar />
 
