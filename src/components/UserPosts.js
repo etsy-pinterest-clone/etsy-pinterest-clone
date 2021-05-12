@@ -41,7 +41,7 @@ const UserPosts = (props) => {
         <div className='mainContain'>
             {
                 posts.map((t, index) => {
-                    // console.log(t)
+                    console.log(t.post_id)
                     return (
                         <div key={index} className='container'>
                             <div>
