@@ -70,11 +70,11 @@ const UserProducts = (props) => {
             <div className='product_container'>
             {
                 products.map((t, index) => {
-                    console.log(products)
+                    console.log(t)
                     return (
                         <div key={index} className='container'>
                             <div>
-                                <Link to={`/user/store/item/${index + 1}`} className='product_link' >
+                                <Link to={`/user/store/item/${t.post_id}`} className='product_link'>
                                     <div className='product_card' onClick={() => viewProduct(t.post_id)}>
 
                                         <div className='search_post_category'>{t.category}</div>

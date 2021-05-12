@@ -32,8 +32,9 @@ const CreateProduct = (props) => {
 
         axios.post('/user/store/createitem', data1)
             .then(res => {
+                console.log(data1)
                 
-                props.createProduct({ date: res.data.date, category: res.data.category, title: res.data.title, description: res.data.description, price: res.data.price, media: res.data.media })
+                props.createProduct({date: res.data.date, category: res.data.category, title: res.data.title, description: res.data.description, price: res.data.price, media: res.data.media })
                 alert('Product successfully submitted')
                 history.push('/user/store/')
             })
