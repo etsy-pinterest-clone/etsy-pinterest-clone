@@ -16,9 +16,13 @@ import Products from '../components/body/products/Products'
 import DetailProduct from '../components/body/detailProduct/DetailProduct'
 import Cart from '../components/Cart'
 import VisitUserProfile from '../components/VisitUserProfile';
+<<<<<<< HEAD
 import UserProducts from '../components/UserProducts'
 import CreateProduct from '../components/CreateProduct'
 import Product from '../components/Product'
+=======
+import Explore from '../components/Explore';
+>>>>>>> 943ef1ab9da50f7040172a92d755aec896ed398d
 
 
 
@@ -37,6 +41,7 @@ export default (
       <Route path='/user/userdata' component={UserData}/>
       <Route path='/user/storedata' component={StoreData}/>
       <Route path='/user/cart' component={Cart} />
+      <Route path ='/explore' component={Explore} />
 
       {/* socket io */}
       <Route path="/api/products" component={Products} exact />

@@ -1,3 +1,33 @@
+.landing-Pg{
+  width: 100vw;
+  height: 100vh;
+}
+/* .loginReg {
+  position: fixed;
+  left: 1vw;
+  top: 10vh;
+  width: 6vw;
+  height: 4vh;
+  background-color: rgba(0, 0, 0, 0.267);
+  border: 1px solid #03e9f4;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px;
+  z-index: 1;
+}
+
+.loginReg:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 15px #03e9f4,
+              0 0 20px #03e9f4,
+              0 0 50px #03e9f4;
+} */
+
 .logo{
   width: 800px;
 }
@@ -59,35 +89,11 @@
 }
 
 .landing-H1 {
-  font-family: 'Pacifico', cursive; 
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
   font-size: 100px;
   line-height: 190%;
 }
 
 
 
-.loginReg {
-  position: fixed;
-  left: 1vw;
-  top: 10vh;
-  width: 4vw;
-  height: 6vh;
-  background-color: rgba(0, 0, 0, 0.267);
-  border: 1px solid #03e9f4;
-  border-radius: 5px;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  padding: 10px;
-  z-index: 1;
-}
-
-.loginReg:hover {
-  background: #03e9f4;
-  color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #03e9f4,
-              0 0 15px #03e9f4,
-              0 0 20px #03e9f4,
-              0 0 50px #03e9f4;
-}

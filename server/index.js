@@ -239,6 +239,14 @@ app.get('/user/store/item/:id', storeCtrl.openItem)
 
 app.get('/user/store/cart/:id', storeCtrl.getUserItems)
 
+app.put('/user/store/searchtitle', storeCtrl.searchTitle)
+
+app.put('/user/store/searchcategory', storeCtrl.searchCategory)
+
+app.put('/user/store/searchdescription', storeCtrl.searchDescription)
+
+app.put('/user/store/searchitem', storeCtrl.searchStore)
+
 // storeCtrl.editItem
 app.put('/user/store/item/:id')
 
@@ -264,6 +272,9 @@ app.get('/user/store/storedata')
 
 // exploreCtrl.sortNew
 app.get('/explore/new')
+
+//Explore to get all posts
+app.get('/explore', exploreCtrl.getAll)
 
 // using .put so that we have access to req.body
 app.put('/explore/searchtitle', exploreCtrl.searchTitle)

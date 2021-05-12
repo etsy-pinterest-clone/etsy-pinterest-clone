@@ -4,7 +4,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import '../styles/posts.css';
+import '../styles/explore.css';
 
 
 const UserPosts = (props) => {
@@ -20,9 +20,9 @@ const UserPosts = (props) => {
     const [readPost, setReadPost] = useState(null)
 
     useEffect(() => {
-        // console.log(props)
-        axios.get('/user/posts')
-            .then(res => {
+        axios.get('/explore')
+        .then(res => {
+                // console.log(res.data)
                 setPosts(res.data)
             })
     }, [])

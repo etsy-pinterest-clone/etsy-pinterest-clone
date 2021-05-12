@@ -58,9 +58,9 @@ const Product = (props) => {
                 <div className='openCard'>
                     <div className='buttonContain'>
                         <span onClick={goBack} className='back' >&#8678;</span>
-                        {/* <Button onClick={props.productReducer.product.user_id === props.userReducer.id ? () => deleteProduct(product.product_id) : () => alert('You cannot delete this post')}>
+                        {/* {/* <Button onClick={props.productReducer.product.user_id === props.userReducer.id ? () => deleteProduct(product.product_id) : () => alert('You cannot delete this post')}> */}
                             <DeleteSharpIcon className='delete' />
-                        </Button> */}
+                        {/* </Button> */} 
                     </div>
                     <h1 className='openTitle' >{product.title}</h1>
                     <h1 className='postData' >{product.category}</h1>

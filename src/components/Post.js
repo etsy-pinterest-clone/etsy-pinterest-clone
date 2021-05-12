@@ -77,7 +77,6 @@ const Post = (props) => {
             </div>
             <div>Comments area</div>
         </div>
-
     )
 };
 
