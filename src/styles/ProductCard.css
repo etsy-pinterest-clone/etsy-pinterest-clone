@@ -10,6 +10,7 @@
     margin-right: 50px;
     border-radius: 5px;
     background-color: white;
+    font-family: sans-serif;
 }
 
 .product_card img {
@@ -25,7 +26,8 @@
 }
 
 .product_card span {
-    color: crimson;
+    /* color: crimson; */
+    font-weight: 600;
 }
 
 .product_card_row {
@@ -45,7 +47,7 @@
 
 .product_card_row a {
     color: white;
-    background: teal;
+    background-color: rgb(124, 96, 64);
     margin-right: 5px;
 }
 
