@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import { Button } from "@material-ui/core";
 import SearchSharpIcon from '@material-ui/icons/SearchSharp';
 import axios from 'axios';
-import '../styles/searchBar.css';
+// import '../styles/searchBar.css';
 import '../styles/storeSearchBar.css';
+import '../components/utils/productCard/ProductCard.css'
 
 /* The styling for this is temporary and is being taken from the other search bar styling. Feel free to change className's and add styling :) */
 
@@ -27,12 +28,16 @@ function Header() {
                     .then(res => {
                         const mappedTitles = res.data.map((postTitle, index) => {
                             return (         
-                                <div key={index} className='search_title'>
-                                    {/* rendering all of these just to make sure it is working... */}                
+                                <div key={index} className='product_card'>
                                     <div className='search_post_category'>{postTitle.category}</div>
-                                    <div className='search_post_title'>{postTitle.title}</div>
-                                    <div className='search_post_title'>{postTitle.description}</div>
-                                    <div className='search_post_title'>${postTitle.price}</div>
+                                    <img src={postTitle.media} alt='product_photo'/>
+                                    <div className='search_product_title'>{postTitle.title}</div>
+                                    <span>${postTitle.price}</span>
+                                    <p>{postTitle.description}</p>
+                                    <div className='product_card_row'>
+                                        <Link>View</Link>
+                                        <button>Buy</button>
+                                    </div>
                                 </div>
                             );
                         })
@@ -52,9 +57,16 @@ function Header() {
                     .then(res => {
                         const mappedCategories = res.data.map((postCat, index) => {
                             return (
-                                <div key={index} className='search_category'>
+                                <div key={index} className='product_card'>
                                     <div className='search_post_category'>{postCat.category}</div>
-                                    <div className='search_post_title'>{postCat.title}</div>
+                                    <img src={postCat.media} alt='product_photo'/>
+                                    <div className='search_product_title'>{postCat.title}</div>
+                                    <span>${postCat.price}</span>
+                                    <p>{postCat.description}</p>
+                                    <div className='product_card_row'>
+                                        <Link>View</Link>
+                                        <button>Buy</button>
+                                    </div>
                                 </div>
                             );
                         })
@@ -74,9 +86,16 @@ function Header() {
                     .then(res => {
                         const mappedDescriptions = res.data.map((postDescription, index) => {
                             return (
-                                <div key={index} className='search_description'>
-                                    <div className='search_description_title'>{postDescription.title}</div>
-                                    <div className='search_by_description'>{postDescription.description}</div>
+                                <div key={index} className='product_card'>
+                                    <div className='search_post_category'>{postDescription.category}</div>
+                                    <img src={postDescription.media} alt='product_photo'/>
+                                    <div className='search_product_title'>{postDescription.title}</div>
+                                    <span>${postDescription.price}</span>
+                                    <p>{postDescription.description}</p>
+                                    <div className='product_card_row'>
+                                        <Link>View</Link>
+                                        <button>Buy</button>
+                                    </div>
                                 </div>
                             );
                         })
@@ -95,9 +114,16 @@ function Header() {
                     .then(res => {
                         const mappedStoreItem = res.data.map((item, index) => {
                             return (
-                                <div key={index} className='search_item'>
-                                    <div className='search_store_item'>{item.title}</div>
-                                    <div className='store_item_price'>${item.price}</div>
+                                <div key={index} className='product_card'>
+                                    <div className='search_post_category'>{item.category}</div>
+                                    <img src={item.media} alt='product_photo'/>
+                                    <div className='search_product_title'>{item.title}</div>
+                                    <span>${item.price}</span>
+                                    <p>{item.description}</p>
+                                    <div className='product_card_row'>
+                                        <Link>View</Link>
+                                        <button>Buy</button>
+                                    </div>
                                 </div>
                             );
                         })

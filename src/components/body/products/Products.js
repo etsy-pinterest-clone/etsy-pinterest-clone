@@ -3,6 +3,7 @@ import { DataContext } from '../../../GlobalState';
 import ProductCard from '../../utils/productCard/ProductCard';
 import StoreSearchBar from '../../StoreSearchBar';
 import { useHistory } from 'react-router-dom';
+import './Products.css';
 
 function Products() {
     const state = useContext(DataContext);
@@ -19,13 +20,14 @@ function Products() {
     return (
         <div>
             <div>
-                <button onClick={back}>&#8678;</button>
+                <button className='goBack' onClick={back}>&#8678;</button>
                 <h2 className="app_title">
                         Realtime website ( chat, comments ... ) with MERN Stack and Socket.io
                 </h2>
+                <h2>not MERN anymore....</h2>
             </div>
             <br />
-            <h1>Styling for searchbar and search results is being borrowed from the other search bar and is only being used to help me see the results at the moment</h1>
+            <h1>Styling for search results is being used from ProductCard.css. Feel free to edit the styling for the search bar and the results.</h1>
             <StoreSearchBar/>
         
             <div className="products_page">

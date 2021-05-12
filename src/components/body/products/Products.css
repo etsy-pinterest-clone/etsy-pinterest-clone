@@ -9,3 +9,25 @@
     color: #555;
     margin: 20px 0;
 }
+
+.goBack {
+    width: 35px;
+    height: 27px;
+    position: absolute;
+    left: 50px;
+    background-color: rgba(0, 0, 0, 0.267);
+    border: 1px solid #03e9f4;
+    border-radius: 5px;
+    color: white;
+}
+
+.goBack:hover {
+    cursor: pointer;
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 15px #03e9f4,
+                0 0 20px #03e9f4,
+                0 0 50px #03e9f4;
+  }
