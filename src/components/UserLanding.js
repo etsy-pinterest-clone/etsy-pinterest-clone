@@ -3,6 +3,7 @@ import SubHeader from '../components/SubHeader';
 import UserPosts from './UserPosts';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import '../styles/userLanding.css';
 
 const UserLanding = () => {
     const [user, setUser] = useState();
@@ -18,7 +19,7 @@ const UserLanding = () => {
     }, [])
 
     return (
-        <div>
+        <div className='userBackground'>
             <SubHeader />
             <UserPosts />
         </div>

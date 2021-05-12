@@ -1,4 +1,20 @@
 module.exports = {
+    // getAll: async (req, res) => {
+    //     const db = await req.app.get('db');
+    //      db.explore.get_all_posts()
+    //         .then(dbRes => res.status(200).send(dbRes));
+        
+    // },
+    getAll: (req, res) => {
+     const db = req.app.get('db')
+     db.explore.get_all_posts()
+         .then(dbres => {
+            //  console.log(dbres)
+             res.status(200).send(dbres)
+             })
+             .catch(err => console.log(err))
+    },
+
     searchUser: async (req, res) => {
         const { name } = req.body;
         // make sure frontend axios call is named 'name'

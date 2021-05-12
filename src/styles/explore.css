@@ -1,0 +1,5 @@
+.mainContain {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+}

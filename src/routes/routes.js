@@ -17,6 +17,13 @@ import DetailProduct from '../components/body/detailProduct/DetailProduct'
 import Cart from '../components/Cart'
 import VisitUserProfile from '../components/VisitUserProfile';
 
+import UserProducts from '../components/UserProducts'
+import CreateProduct from '../components/CreateProduct'
+import Product from '../components/Product'
+
+import Explore from '../components/Explore';
+
+
 
 
 export default (
@@ -34,11 +41,17 @@ export default (
       <Route path='/user/userdata' component={UserData}/>
       <Route path='/user/storedata' component={StoreData}/>
       <Route path='/user/cart' component={Cart} />
+      <Route path ='/explore' component={Explore} />
 
       {/* socket io */}
       <Route path="/api/products" component={Products} exact />
       <Route path="/api/product/:id" component={DetailProduct} exact />
 
       <Route path='/visitUserProfile/:id' component={VisitUserProfile}/>
+
+      <Route exact path='/user/store' component={UserProducts} />
+      <Route path='/user/store/createitem' component={CreateProduct}/>
+      <Route path='/user/store/item/:id' component={Product} />
+
     </Switch>
   )
