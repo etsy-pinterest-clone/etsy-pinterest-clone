@@ -9,6 +9,21 @@
     background: linear-gradient(to bottom, #929292 0%,#a8a8a8 22%,#d8d8d8 87%,#ececec 100%);
 }
 
+.exploreLink {
+    position: relative;
+    text-align: center;
+    align-self: center;
+    font-family: sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+.exploreLink:hover {
+    cursor: pointer;
+    /* color: rgb(0, 233, 233); */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
 .logo2 {
     width: 85px;
     object-fit: contain;

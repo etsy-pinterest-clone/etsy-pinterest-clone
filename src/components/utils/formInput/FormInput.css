@@ -12,11 +12,26 @@
     height: 100px;
     width: 60vw;
     border: 1px solid #ccc;
+    background-color: white;
     padding: 5px 10px;
     outline: none;
     margin-bottom: 10px;
     padding: 5px 10px;
+    border-radius: 3px;
 }
+
+.form_input input {
+    height: 50px;
+    width: 60vw;
+    border: 1px solid #ccc;
+    background-color: rgb(255, 255, 255);
+    padding: 5px 10px;
+    outline: none;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
 .form_input button{
     background: #333;
     color: white;
