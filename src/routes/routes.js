@@ -16,7 +16,13 @@ import Products from '../components/body/products/Products'
 import DetailProduct from '../components/body/detailProduct/DetailProduct'
 import Cart from '../components/Cart'
 import VisitUserProfile from '../components/VisitUserProfile';
+<<<<<<< HEAD
+import UserProducts from '../components/UserProducts'
+import CreateProduct from '../components/CreateProduct'
+import Product from '../components/Product'
+=======
 import Explore from '../components/Explore';
+>>>>>>> 943ef1ab9da50f7040172a92d755aec896ed398d
 
 
 
@@ -42,5 +48,10 @@ export default (
       <Route path="/api/product/:id" component={DetailProduct} exact />
 
       <Route path='/visitUserProfile/:id' component={VisitUserProfile}/>
+
+      <Route exact path='/user/store' component={UserProducts} />
+      <Route path='/user/store/createitem' component={CreateProduct}/>
+      <Route path='/user/store/item/:id' component={Product} />
+
     </Switch>
   )

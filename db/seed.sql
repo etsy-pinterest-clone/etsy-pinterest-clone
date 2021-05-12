@@ -28,7 +28,7 @@ category VARCHAR(50),
 title VARCHAR(255),
 description VARCHAR(255),
 media TEXT,
-price INT,
+price FLOAT,
 item_rating INT
 );
 
@@ -40,5 +40,17 @@ profile_visits INT,
 revenue INT,
 average_rating INT,
 store_visits INT
+);
+
+CREATE TABLE store_product (
+post_id SERIAL PRIMARY KEY,
+user_id INT REFERENCES user_info(user_id),
+date DATE,
+category VARCHAR(50),
+title VARCHAR(255),
+description VARCHAR(255),
+media TEXT,
+price FLOAT,
+item_rating INT
 );
 
