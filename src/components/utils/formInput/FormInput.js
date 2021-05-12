@@ -43,19 +43,11 @@ function FormInput({id, socket, rating, setReply, send, name}) {
 
     return (
         <div className="form_input">
-            {/* <p>Name</p>
-            <input type="text" ref={nameRef} /> */}
+            <p>Name</p>
+            <input type="text" ref={nameRef} /> 
 
-            <p>Content</p>
-            <div ref={contentRef} 
-                contentEditable="true"
-                style={{
-                    height: '100px',
-                    border: '1px solid #ccc',
-                    padding: '5px 10px',
-                    outline: 'none'
-                }}
-            />
+             <p>Comment</p>
+            <div ref={contentRef} contentEditable="true"/>
 
             <button onClick={commentSubmit}>Send</button>
         </div>

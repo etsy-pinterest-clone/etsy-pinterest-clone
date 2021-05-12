@@ -60,7 +60,7 @@ const SubHeader = (props) => {
                 </Button>
 
             <Button>
-                <Link to='/api/products'>
+                <Link to='/user/store'>
                     <StorefrontSharpIcon className='shoppingCart' />
                 </Link>
             </Button>

@@ -1,3 +1,3 @@
-DELETE FROM store_items
+DELETE FROM store_product
 WHERE item_id = $1;
 

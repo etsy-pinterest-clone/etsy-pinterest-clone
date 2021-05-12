@@ -4,11 +4,12 @@
     overflow: hidden;
     max-height: 450px;
     padding: 10px;
-    box-shadow: 0 0 25px #ddd;
+    box-shadow: 0 0 10px rgb(51, 51, 51);
     margin: 10px;
     margin-left: 50px;
     margin-right: 50px;
     border-radius: 5px;
+    background-color: white;
 }
 .product_card img {
     width: 100%;

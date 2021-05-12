@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import {readPost, deleteUserPost} from '../redux/postReducer';
+import { readPost, deleteUserPost } from '../redux/postReducer';
 import DeleteSharpIcon from '@material-ui/icons/DeleteSharp';
-import {Button} from '@material-ui/core';
-import {useHistory} from 'react-router-dom';
+import { Button } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 import '../styles/posts.css';
 
 const Post = (props) => {
@@ -25,11 +25,11 @@ const Post = (props) => {
         // console.log(props.match.params.id)
         axios
             .get(`/user/post/${props.match.params.id}`)
-            .then(res =>{
+            .then(res => {
                 setPost(res.data)
                 props.readPost(res.data)
             })
-            .catch(err => console.log(err))    
+            .catch(err => console.log(err))
     }, [])
 
     const goBack = (e) => {
@@ -49,16 +49,16 @@ const Post = (props) => {
     // console.log(post.post_id)
     // console.log(props.postReducer.post.user_id)
     // console.log(props.userReducer.id)
-    
+
     return (
         <div className='openPostContain'>
-            
+
             <div>
                 <div className='openCard'>
                     <div className='buttonContain'>
                         <span onClick={goBack} className='back' >&#8678;</span>
                         <Button onClick={props.postReducer.post.user_id === props.userReducer.id ? () => deletePost(post.post_id) : () => alert('You cannot delete this post')}>
-                            <DeleteSharpIcon className='delete' />                             
+                            <DeleteSharpIcon className='delete' />
                         </Button>
                     </div>
                     <h1 className='openTitle' >{post.title}</h1>
@@ -84,4 +84,4 @@ const mapStateToProps = (state) => {
     return state;
 }
 
-export default connect(mapStateToProps, {readPost, deleteUserPost})(Post);
+export default connect(mapStateToProps, { readPost, deleteUserPost })(Post);

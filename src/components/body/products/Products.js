@@ -5,6 +5,10 @@ import StoreSearchBar from '../../StoreSearchBar';
 import { useHistory } from 'react-router-dom';
 import './Products.css';
 
+
+// NO LONGER USING THIS COMPONENT. STORE SEARCH BAR IS NOW BEING RENDERED IN USERPRODUCTS.JS
+
+
 function Products() {
     const state = useContext(DataContext);
     console.log(state)

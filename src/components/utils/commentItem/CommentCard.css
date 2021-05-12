@@ -1,8 +1,15 @@
 .comment_card{
+    position: absolute;
+    right: 65vw;
+    width: 60vw;
     border: 2px solid #ccc;
+    background-color: white;
     padding: 10px;
-    margin: 15px 0;
+    margin-bottom: 50px;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 .comment_card h3{
     text-transform: capitalize;
