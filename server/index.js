@@ -36,6 +36,8 @@ app.use(session({
     }
 }));
 
+app.use(express.static(`${__dirname}/../build`));
+
 
 //mongodb access
 // mongodb.connect(MONGODB_URL, {useUnifiedTopology: true}, async (err, client) => {
@@ -192,7 +194,7 @@ app.post('/user/message/:id')
 app.delete('/user/message/:id')
 
 // userCtrl.getUserData
-app.get('/user/userdata', userCtrl.getUserData)
+app.get('/user/userdata/:id', userCtrl.getUserData)
 
 // userCtrl.updateUserData
 app.put('/user/userdata/:id', userCtrl.updateUserData)
@@ -329,5 +331,9 @@ massive({
 .catch(err => {
     console.log(err)
 });
+
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../build/index.html'))
+//   })
 
 
