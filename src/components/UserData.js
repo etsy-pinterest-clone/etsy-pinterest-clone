@@ -6,17 +6,18 @@ import {connect} from 'react-redux'
 import axios from 'axios'
 import {Bar, Line, Pie, Doughnut} from 'react-chartjs-2'
 import { defaults } from 'react-chartjs-2';
-import '../styles/userData.css'
+import '../styles/data.css'
 
 const UserData = (props) => {
     const history = useHistory();
     const [userId, setUserId] = useState('');
-    const [posts, setPosts] = useState(0);
+    const [aveRating, setAveRating] = useState(0);
+    const [posts, setPosts] = useState();
     const [savedPosts, setSavedPosts] = useState(0);
     const [visits, setVisits] = useState(0);
 
-    const [chartData, setChartData] = useState({
-        labels: ['', '', ''],
+    const chartData = {
+        labels: ['Profile Data'],
         datasets:[
             {
                 label:'Posts',
@@ -82,7 +83,7 @@ const UserData = (props) => {
                 }
             }
         ]
-    });
+    };
 
 
     useEffect(() => {
@@ -91,23 +92,24 @@ const UserData = (props) => {
                 setUserId(res.data.user_id);
                 console.log(res.data.user_id);
 
-                axios.get('/user/userdata', userId)
+                axios.get(`/user/userdata/${res.data.user_id}`)
                     .then((res) => {
-                        setPosts(res.data.numOfPosts); 
-                        setSavedPosts(res.data.numPostsUsersSaved); 
-                        setVisits(res.data.numOfVists)
+                        console.log(res)
+                        setPosts(+res.data.number_of_posts); 
+                        setSavedPosts(+res.data.number_posts_others_saved); 
+                        setVisits(+res.data.profile_visits)
                     })
                     .catch(err => console.log(err))
+                    console.log(visits)
             })
             .catch(err => console.log(err))
-    }, [])
+    })
 
 
 
     return(
         <div className='chartPage'>
             <SubHeader/>
-            <h1 className='chartHeader'>My Profile Data</h1>
             <div className='barChart'>
                 <Bar
                     data={chartData}
