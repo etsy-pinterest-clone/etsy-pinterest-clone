@@ -102,6 +102,7 @@ const UserData = (props) => {
                     data={chartData}
                     height={200}
                     options={{
+                        indexAxis:'y',
                         title:{
                             display:true,
                             text:'My Data',
