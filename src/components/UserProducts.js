@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { useHistory, Link } from 'react-router-dom';
 import Post from './Post';
 import axios from 'axios';
-import SubHeader from './SubHeader';
+import ProductSubHeader from './ProductSubHeader';
 import StoreSearchBar from './StoreSearchBar';
 import '../styles/ProductCard.css';
 import '../styles/storeSearchBar.css';
@@ -54,12 +54,7 @@ const UserProducts = (props) => {
 
         <div className=''>
 
-            {/* <SubHeader/> */}
-            <Button>
-                <Link to='/user/store/createitem'>
-                    <AddCircleSharpIcon className='createTicket' />
-                </Link>
-            </Button>
+            <ProductSubHeader/>
             <StoreSearchBar />
             <br />
             <div className='my_products'>
