@@ -22,8 +22,15 @@
     margin: 5px 0;
     cursor: pointer;
 }
+
+
 .comment_card span{
-    margin-right: 10px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    color: lightgray;
+    font-size: 14px;
+    margin: 5px;
 }
 .comment_card p{
     color: #444;
