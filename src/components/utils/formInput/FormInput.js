@@ -19,12 +19,12 @@ function FormInput({id, socket, rating, setReply, send, name}) {
     },[name])
 
     const commentSubmit = () => {
-        // const username = nameRef.current.value
+        const username = nameRef.current.value
         const content = contentRef.current.innerHTML
         
-        // if(!username.trim()) return alert('Not Empty!')
+        if(!username.trim()) return alert('Not Empty!')
         if(contentRef.current.textContent.trim().length < 5)
-            return alert('Contents too short, must be at least 20 characters')
+            return alert('Contents too short, must be at least 5 characters')
         
         const createdAt = new Date().toISOString()
 
