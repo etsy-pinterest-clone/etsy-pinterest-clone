@@ -80,9 +80,6 @@ const CreatePost = (props) => {
                 <p className='count'>{count}/150 Characters Remaining</p>
                 <input className='choose_file' type='file' placeholder='upload media' onChange={onFileChange} name='media' value={data.media} />
 
-                <p>{count}/150 Characters Remaining</p>
-                <input className='choose_file' type='file' placeholder='upload media' onChange={onFileChange} name='media' />
-
                 <button className='submitTicket' type='submit' onClick={(e) => submitPost(e)} >Submit Request</button>
             </form>
 
