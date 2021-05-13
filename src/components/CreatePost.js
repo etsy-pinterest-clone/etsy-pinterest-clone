@@ -65,7 +65,9 @@ const CreatePost = (props) => {
             <form className='createPost'>
                 <h1 className='newHeader'>Create A New Post</h1>
                     <input className='newTitle' type='text' placeholder='Title' onChange={onChange} name='title' value={data.title} maxLength='45' onKeyUp={e => setTitleCount(e.target.value.length)} />
+
                     <p className='count'>{titleCount}/45 Characters Remaining</p>
+                    
                 <select className='select' name='category' onChange={onChange} selected>
                     <option value='' disabled selected>Please select a category </option>
                     <option name='general' value='Arts and Crafts' >Arts and Crafts</option>
@@ -74,6 +76,7 @@ const CreatePost = (props) => {
                     <option name='suggestion' value='Tutorial'>Tutorial</option>
                     <option name='other' value='other'>Other</option>
                 </select>
+
                 <textarea className='textInput' type='text' placeholder='Description' onChange={onChange} name='description' value={data.description} maxLength='150' onKeyUp={e => setCount(e.target.value.length)}/>
 
                 <p className='count'>{count}/150 Characters Remaining</p>
