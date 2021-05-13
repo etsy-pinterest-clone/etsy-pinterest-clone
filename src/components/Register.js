@@ -43,7 +43,6 @@ const Register = (props) => {
           <div className='register-box'>
             <div className='button-contain'>
                 <button className='backButton' onClick={() => history.push('/')} >&#8678;</button>
-                {/* <button className='cancel' onClick={() => history.push('/')}>cancel</button> */}
             </div>
             <h2>Register</h2>
             <form >

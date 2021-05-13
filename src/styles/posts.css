@@ -6,12 +6,15 @@
     
 }
 
+.parentContain {
+    height: 125vh;
+}
+
 .mainContain {
     /* font-family: "Poppins", sans-serif; */
     font-family: 'Montserrat', sans-serif;
     position: relative;
-    height: 150vh;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     display: flex;
     justify-content: space-between; 
@@ -83,7 +86,7 @@
 
 .link {
     text-decoration: none;
-    
+    color: black;
 }
 
 

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { createPost } from '../redux/postReducer';
@@ -25,7 +24,7 @@ const CreatePost = (props) => {
 
     const submitPost = (e) => {
         e.preventDefault();
-        console.log(props)
+        // console.log(props)
         const { id } = props;
         const data1 = { id: id, date: data.date, category: data.category, title: data.title, description: data.description, media: data.media };
 
@@ -65,8 +64,10 @@ const CreatePost = (props) => {
                 </div>
             <form className='createPost'>
                 <h1 className='newHeader'>Create A New Post</h1>
-                <input className='newTitle' type='text' placeholder='Title' onChange={onChange} name='title' value={data.title} maxLength='45' onKeyUp={e => setTitleCount(e.target.value.length)} />
-                <p className='count'>{titleCount}/45 Characters Remaining</p>
+                    <input className='newTitle' type='text' placeholder='Title' onChange={onChange} name='title' value={data.title} maxLength='45' onKeyUp={e => setTitleCount(e.target.value.length)} />
+
+                    <p className='count'>{titleCount}/45 Characters Remaining</p>
+                    
                 <select className='select' name='category' onChange={onChange} selected>
                     <option value='' disabled selected>Please select a category </option>
                     <option name='general' value='Arts and Crafts' >Arts and Crafts</option>
@@ -75,10 +76,11 @@ const CreatePost = (props) => {
                     <option name='suggestion' value='Tutorial'>Tutorial</option>
                     <option name='other' value='other'>Other</option>
                 </select>
+
                 <textarea className='textInput' type='text' placeholder='Description' onChange={onChange} name='description' value={data.description} maxLength='150' onKeyUp={e => setCount(e.target.value.length)}/>
 
                 <p className='count'>{count}/150 Characters Remaining</p>
-                <input className='choose_file' type='file' placeholder='upload media' onChange={onFileChange} name='media' value={data.media} />
+                <input className='choose_file' type='file' placeholder='upload media' accept='image/*, video/*' onChange={onFileChange} name='media'  />
 
                 <button className='submitTicket' type='submit' onClick={(e) => submitPost(e)} >Submit Request</button>
             </form>

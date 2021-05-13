@@ -26,13 +26,13 @@ const CreateProduct = (props) => {
 
     const submitPost = (e) => {
         e.preventDefault();
-        console.log(props)
+        // console.log(props)
         const { id } = props;
         const data1 = { id: id, date: data.date, category: data.category, title: data.title, description: data.description, price: data.price, media: data.media };
 
         axios.post('/user/store/createitem', data1)
             .then(res => {
-                console.log(data1)
+                // console.log(data1)
                 
                 props.createProduct({date: res.data.date, category: res.data.category, title: res.data.title, description: res.data.description, price: res.data.price, media: res.data.media })
                 alert('Product successfully submitted')

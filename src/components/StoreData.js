@@ -71,7 +71,7 @@ const UserData = (props) => {
         axios.get('/auth/session')
             .then((res) => {
                 setUserId(res.data.user_id);
-                console.log(res.data.user_id);
+                // console.log(res.data.user_id);
 
                 axios.get(`/user/userdata/${res.data.user_id}`)
                     .then((res) => {
@@ -82,7 +82,7 @@ const UserData = (props) => {
                         setAveRating(+res.data.average_rating)
                     })
                     .catch(err => console.log(err))
-                    console.log(visits)
+                    // console.log(visits)
             })
             .catch(err => console.log(err))
     })

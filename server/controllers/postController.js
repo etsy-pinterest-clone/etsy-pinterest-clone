@@ -1,12 +1,12 @@
 module.exports = {
     newPost: async (req, res) => {
-        console.log(req.body)
+        // console.log(req.body)
         const db = req.app.get('db');
         const {user_id} = req.session.user;
         const {title, category, description, media} = req.body;
         const date = new Date();
         
-        console.log(user_id)
+        // console.log(user_id)
         if (user_id) { 
            const createNew = await db.posts.create_post([user_id, category, date, title, description, media])
                 res.status(200).send(createNew)

@@ -35,7 +35,7 @@ function Header() {
                                     <span>${postTitle.price}</span>
                                     <p>{postTitle.description}</p>
                                     <div className='product_card_row'>
-                                        <Link>View</Link>
+                                        <Link to={`/user/store/item/${postTitle.post_id}`}>View</Link>
                                         <button>Buy</button>
                                     </div>
                                 </div>
@@ -64,7 +64,7 @@ function Header() {
                                     <span>${postCat.price}</span>
                                     <p>{postCat.description}</p>
                                     <div className='product_card_row'>
-                                        <Link>View</Link>
+                                        <Link to={`/user/store/item/${postCat.post_id}`}>View</Link>
                                         <button>Buy</button>
                                     </div>
                                 </div>
@@ -93,7 +93,7 @@ function Header() {
                                     <span>${postDescription.price}</span>
                                     <p>{postDescription.description}</p>
                                     <div className='product_card_row'>
-                                        <Link>View</Link>
+                                        <Link to={`/user/store/item/${postDescription.post_id}`}>View</Link>
                                         <button>Buy</button>
                                     </div>
                                 </div>
@@ -121,7 +121,7 @@ function Header() {
                                     <span>${item.price}</span>
                                     <p>{item.description}</p>
                                     <div className='product_card_row'>
-                                        <Link>View</Link>
+                                        <Link to={`/user/store/item/${item.post_id}`}>View</Link>
                                         <button>Buy</button>
                                     </div>
                                 </div>
