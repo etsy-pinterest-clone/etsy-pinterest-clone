@@ -1,12 +1,15 @@
 .form_input{
     position: relative;
     right: 45vw;
-    margin: 70px 0;
+    bottom: 10vh;
+    margin-top: 70px;
+    margin-bottom: -100px;
     width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: scroll;
 }
 .form_input div{
     height: 100px;
@@ -18,6 +21,8 @@
     margin-bottom: 10px;
     padding: 5px 10px;
     border-radius: 3px;
+    text-align: left;
+    overflow: scroll;
 }
 
 .form_input input {
@@ -38,4 +43,15 @@
     padding: 10px 0;
     width: 150px;
     margin: 20px 0;
+}
+
+.form_input button:hover {
+    cursor: pointer;
+    background-color: rgb(140, 147, 153);
+}
+
+.form_input p {
+    color: white;
+    margin: 15px 0px;
+    font-size: 20px;
 }
