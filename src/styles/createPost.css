@@ -109,9 +109,11 @@
 
 .createPost p {
     font-size: 12px;
-    margin-top: -60px;
+    margin-top: -40px;
     color: rgba(155, 155, 155, 0.795);
 }
+
+
 
 .textInput {
     font-family: "Poppins", sans-serif;
