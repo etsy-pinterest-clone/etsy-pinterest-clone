@@ -13,7 +13,7 @@ const UserLanding = () => {
             .then((res) => {
                 setUser(res.data)
                 props.updateUser(res.data.user_id)
-                console.log(res.data.user_id)
+                // console.log(res.data.user_id)
             })
             .catch(err => console.log(err))
     }, [])

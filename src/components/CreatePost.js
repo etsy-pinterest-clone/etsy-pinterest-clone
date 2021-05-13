@@ -25,7 +25,7 @@ const CreatePost = (props) => {
 
     const submitPost = (e) => {
         e.preventDefault();
-        console.log(props)
+        // console.log(props)
         const { id } = props;
         const data1 = { id: id, date: data.date, category: data.category, title: data.title, description: data.description, media: data.media };
 
