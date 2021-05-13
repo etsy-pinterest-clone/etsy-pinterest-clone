@@ -21,7 +21,7 @@ module.exports = {
         if (user_id) {
              const results = await db.store.get_user_items(user_id)
                 // .then(dbRes => res.status(200).send(dbRes))
-                console.log(results)
+                // console.log(results)
                 res.status(200).send(results)
         } else {
             res.sendStatus(403)
