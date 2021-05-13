@@ -12,11 +12,8 @@ function CommentCard({children, comment}) {
                     comment.rating !== 0 && <Rating props={comment} />
                 } */}
             </div>
-
-            <span>{moment(comment.createdAt).fromNow()}</span>
-
-            <span>{new Date(comment.createdAt).toLocaleString()}</span>
-
+                <span>{new Date(comment.createdAt).toLocaleString()}</span>
+                {/* <span className='time'>{moment(comment.createdAt).fromNow()}</span> */}
             <p dangerouslySetInnerHTML={{__html: comment.content}} />
 
             {children}

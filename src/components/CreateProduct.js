@@ -66,7 +66,7 @@ const CreateProduct = (props) => {
                 <button type='button' className='backBt' onClick={() => goBack()} >&#8678;</button>
             </div>
             <form className='createPost'>
-                <h1 className='newHeader'>Create New Post</h1>
+                <h1 className='newHeader'>Create New Product</h1>
                 <input className='newTitle' type='text' placeholder='Title' onChange={onChange} name='title' value={data.title} maxLength='45' onKeyUp={e => setTitleCount(e.target.value.length)} />
                 <p>{titleCount}/45 Characters Remaining</p>
                 <select className='select' name='category' onChange={onChange} selected>

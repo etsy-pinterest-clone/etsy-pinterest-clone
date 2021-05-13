@@ -15,7 +15,6 @@
     width: 100vw;
     display: flex;
     justify-content: space-between; 
-    background-color: #999;
 }
 
 .openPostContain {
@@ -52,7 +51,7 @@
 .openCard {
     position: fixed;
     top: 5vh;
-    height: 60vh;
+    height: 50vh;
     width: 50vw;
     border-radius: 0px;
     background-color: white;

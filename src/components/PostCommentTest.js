@@ -155,7 +155,7 @@ const Post = (props) => {
                     <h1 className='postDescription' >{post.category}</h1>
                     <h1 className='postDescription' >{post.description}</h1>
                     <iframe className='postMedia' title='user_media' src={post.media} />
-                    <h2 className='userName'>Author: {post.username}</h2>
+                    {/* <h2 className='userName'>Author: {post.username}</h2> */}
                     <div>
                         {/* <h3 style={{margin: '10px 0'}}>Rating: {post.numReviews} reviews</h3>
                         <Rating props={post} /> */}
