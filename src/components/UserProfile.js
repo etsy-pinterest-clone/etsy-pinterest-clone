@@ -49,7 +49,7 @@ const UserProfile = (props) => {
     }
 
     return(
-        <div>
+        <div className='update_profile_pg'>
             <SubHeader />
             <div className='update-box'>
                 <h2>Update Your Profile</h2>

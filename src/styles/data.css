@@ -1,4 +1,13 @@
 .chartPage{
+    font-family: 'Montserrat', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.116) 0%, rgba(0, 0, 0, 0) 75%, #00000036 100%),url('../components/Landing/images/25.png') no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 .chartHeader{

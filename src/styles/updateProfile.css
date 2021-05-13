@@ -1,3 +1,14 @@
+.update_profile_pg {
+  font-family: 'Montserrat', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.623) 0%, rgba(0, 0, 0, 0.205) 75%, #000000 100%),url('../components/Landing/images/19.png') no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
 .backButton {
   width: 2vw;
   height: 3vh;
@@ -16,11 +27,14 @@
     height: 750px;
     padding: 40px;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(182, 182, 182, 0.459);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
-    border-radius: 10px;
-    font-family: sans-serif;
+    border-radius: 0px;
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
   }
   
   .update-box h2, h3 {
