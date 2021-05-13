@@ -1,6 +1,6 @@
 module.exports = {
     updateProfile: async (req, res) => {
-         console.log(req.session.user)
+        //  console.log(req.session.user)
         const db = req.app.get('db');
         const {first_name, last_name, birthday, email, phone_number, username} = req.body;
         const phoneNumber = parseInt(phone_number);
@@ -12,13 +12,13 @@ module.exports = {
         req.session.user = updateProfile;
         
         res.status(200).send(req.session.user)
-        console.log(req.session.user)
+        // console.log(req.session.user)
     },
 
     getUserData: async (req, res) => {
          const db = req.app.get('db');
          const {id} = req.params;
-         console.log(id)
+        //  console.log(id)
          const [userData] = await db.user.userData.get_user_data(id)
             if (userData){
                 res.status(200).send(userData)
@@ -41,6 +41,6 @@ module.exports = {
         req.session.user = updateUserData;
 
         res.status(200).send(req.session.user)
-        console.log(req.session.user)
+        // console.log(req.session.user)
     }
 }

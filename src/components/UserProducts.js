@@ -17,7 +17,7 @@ import '../styles/userProducts.css';
 
 
 const UserProducts = (props) => {
-    console.log(props)
+    // console.log(props)
     const history = useHistory();
     const [products, setProducts] = useState([{
         productId: null,
@@ -31,7 +31,7 @@ const UserProducts = (props) => {
     const [readProduct, setReadProduct] = useState(null)
 
     useEffect(() => {
-        console.log(props)
+        // console.log(props)
         axios.get('/user/store/items')
             .then(res => {
                 setProducts(res.data)
@@ -56,22 +56,19 @@ const UserProducts = (props) => {
 
             <ProductSubHeader/>
             <StoreSearchBar />
-            <br />
-            <br />
-            <br />
+            {/* <br /> */}
             <div className='my_products'>
                 <h2>My Products</h2>
             </div>
             <div className='product_container'>
             {
                 products.map((t, index) => {
-                    console.log(t)
+                    // console.log(t)
                     return (
                         <div key={index} className='container'>
                             <div>
                                 <Link to={`/user/store/item/${t.post_id}`} className='product_link'>
                                     <div className='product_card' onClick={() => viewProduct(t.post_id)}>
-
                                         <div className='search_post_category'>{t.category}</div>
                                         <img src={t.media} alt='product_image'/>
                                         <div className='search_product_title'>{t.title}</div>
