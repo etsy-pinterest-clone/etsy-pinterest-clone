@@ -77,7 +77,7 @@ const CreatePost = (props) => {
                 </select>
                 <textarea className='textInput' type='text' placeholder='Description' onChange={onChange} name='description' value={data.description} maxLength='150' onKeyUp={e => setCount(e.target.value.length)}/>
                 <p>{count}/150 Characters Remaining</p>
-                <input className='choose_file' type='file' placeholder='upload media' onChange={onFileChange} name='media' value={data.media} />
+                <input className='choose_file' type='file' placeholder='upload media' onChange={onFileChange} name='media' />
                 <button className='submitTicket' type='submit' onClick={(e) => submitPost(e)} >Submit Request</button>
             </form>
 
