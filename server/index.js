@@ -36,6 +36,8 @@ app.use(session({
     }
 }));
 
+app.use(express.static(`${__dirname}/../build`));
+
 
 //mongodb access
 // mongodb.connect(MONGODB_URL, {useUnifiedTopology: true}, async (err, client) => {
@@ -329,5 +331,9 @@ massive({
 .catch(err => {
     console.log(err)
 });
+
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../build/index.html'))
+//   })
 
 

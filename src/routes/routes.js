@@ -16,13 +16,10 @@ import Products from '../components/body/products/Products'
 import DetailProduct from '../components/body/detailProduct/DetailProduct'
 import Cart from '../components/Cart'
 import VisitUserProfile from '../components/VisitUserProfile';
-
 import UserProducts from '../components/UserProducts'
 import CreateProduct from '../components/CreateProduct'
 import Product from '../components/Product'
-
-import Explore from '../components/Explore';
-
+import Explore from '../components/Explore'
 
 
 

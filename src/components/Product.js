@@ -6,6 +6,8 @@ import DeleteSharpIcon from '@material-ui/icons/DeleteSharp';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import '../styles/posts.css';
+import '../styles/ProductCard.css';
+import '../styles/product.css';
 
 const Product = (props) => {
     // console.log(props)
@@ -55,18 +57,18 @@ const Product = (props) => {
         <div className='openPostContain'>
 
             <div>
-                <div className='openCard'>
+                <div className='product_view'>
                     <div className='buttonContain'>
                         <span onClick={goBack} className='back' >&#8678;</span>
                         {/* {/* <Button onClick={props.productReducer.product.user_id === props.userReducer.id ? () => deleteProduct(product.product_id) : () => alert('You cannot delete this post')}> */}
                             <DeleteSharpIcon className='delete' />
                         {/* </Button> */} 
                     </div>
-                    <h1 className='openTitle' >{product.title}</h1>
-                    <h1 className='postData' >{product.category}</h1>
-                    <h1 className='postDescription' >{product.description}</h1>
-                    <iframe className='postMedia' title='user_media' src={product.media} />
-                    <h1 className='price' title='postPrice'>${product.price}</h1>
+                    <h1 className='product_category'>{product.category}</h1>
+                    <img src={product.media} alt='product_image' />
+                    <div className='search_product_title' >{product.title}</div>
+                    <span>${product.price}</span>
+                    <p>{product.description}</p>
                     <h1 className='date' >{product.date}</h1>
                 </div>
 
@@ -78,6 +80,8 @@ const Product = (props) => {
                 <h2>${product.price}</h2>
                 <h1 className='date' >{product.date}</h1> */}
             </div>
+            <br />
+            <br />
             <div>Comments area</div>
         </div>
 
