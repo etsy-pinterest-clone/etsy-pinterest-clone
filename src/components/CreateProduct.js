@@ -26,14 +26,15 @@ const CreateProduct = (props) => {
 
     const submitPost = (e) => {
         e.preventDefault();
-        console.log(props)
+        // console.log(props)
         const { id } = props;
         const data1 = { id: id, date: data.date, category: data.category, title: data.title, description: data.description, price: data.price, media: data.media };
 
         axios.post('/user/store/createitem', data1)
             .then(res => {
+                // console.log(data1)
                 
-                props.createProduct({ date: res.data.date, category: res.data.category, title: res.data.title, description: res.data.description, price: res.data.price, media: res.data.media })
+                props.createProduct({date: res.data.date, category: res.data.category, title: res.data.title, description: res.data.description, price: res.data.price, media: res.data.media })
                 alert('Product successfully submitted')
                 history.push('/user/store/')
             })
@@ -65,7 +66,7 @@ const CreateProduct = (props) => {
                 <button type='button' className='backBt' onClick={() => goBack()} >&#8678;</button>
             </div>
             <form className='createPost'>
-                <h1 className='newHeader'>Create New Post</h1>
+                <h1 className='newHeader'>Create New Product</h1>
                 <input className='newTitle' type='text' placeholder='Title' onChange={onChange} name='title' value={data.title} maxLength='45' onKeyUp={e => setTitleCount(e.target.value.length)} />
                 <p>{titleCount}/45 Characters Remaining</p>
                 <select className='select' name='category' onChange={onChange} selected>

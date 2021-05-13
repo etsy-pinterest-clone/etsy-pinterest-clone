@@ -2,4 +2,5 @@
     display: flex;
     flex-wrap: wrap;
     overflow: scroll;
+    border-bottom: 1px solid lightgray;
 }

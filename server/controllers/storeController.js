@@ -1,13 +1,11 @@
-const { searchCategory } = require("./exploreController");
-
 module.exports = {
     newItem: async (req, res) => {
-        console.log(req.body)
+        // console.log(req.body)
         const db = req.app.get('db');
         const {user_id} = req.session.user;
         const {category, title, description, media, price, item_rating} = req.body;
         const date = new Date();
-        console.log(user_id)
+        // console.log(user_id)
         if (user_id) {       
            const createNew = await db.store.create_item([user_id, date, category, title, description, media, price, item_rating])
                 res.status(200).send(createNew)
@@ -19,8 +17,10 @@ module.exports = {
         const db = req.app.get('db');
         let {user_id} = req.session.user;
         if (user_id) {
-             await db.store.get_user_items(user_id)
-                .then(dbRes => res.status(200).send(dbRes))
+             const results = await db.store.get_user_items(user_id)
+                // .then(dbRes => res.status(200).send(dbRes))
+                // console.log(results)
+                res.status(200).send(results)
         } else {
             res.sendStatus(403)
         }
@@ -34,7 +34,7 @@ module.exports = {
     deleteItem: async (req, res) => {
         const db = req.app.get('db');
         const { id } = req.params;
-        console.log('work', id)
+        // console.log('work', id)
         
         const updatedItemList = await db.store.delete_item(id)
         res.status(200).send(updatedItemList)
@@ -72,7 +72,7 @@ module.exports = {
         const db = req.app.get('db');
 
         const searchResults = await db.store.search_store(`%${store}%`);
-        console.log(searchResults);
+        // console.log(searchResults);
 
         res.status(200).send(searchResults);
     }

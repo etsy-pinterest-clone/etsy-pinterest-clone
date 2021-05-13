@@ -23,7 +23,7 @@ const [body, setBody] = useState({
             title: '',
             message: ''
         })
-        console.log(res.data);
+        // console.log(res.data);
         alert('Your message has been sent!')
     })
     .catch(err => console.log(err))
