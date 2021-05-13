@@ -1,3 +1,3 @@
 DELETE FROM store_product
-WHERE item_id = $1;
+WHERE post_id = $1;
 
