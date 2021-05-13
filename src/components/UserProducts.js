@@ -62,8 +62,6 @@ const UserProducts = (props) => {
             </Button>
             <StoreSearchBar />
             <br />
-            <br />
-            <br />
             <div className='my_products'>
                 <h2>My Products</h2>
             </div>
@@ -76,7 +74,6 @@ const UserProducts = (props) => {
                             <div>
                                 <Link to={`/user/store/item/${t.post_id}`} className='product_link'>
                                     <div className='product_card' onClick={() => viewProduct(t.post_id)}>
-
                                         <div className='search_post_category'>{t.category}</div>
                                         <img src={t.media} alt='product_image'/>
                                         <div className='search_product_title'>{t.title}</div>
