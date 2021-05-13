@@ -49,9 +49,6 @@ const Product = (props) => {
             })
             .catch(err => console.log(err))
     }
-    // console.log(props.userReducer.id)
-    // console.log(props.productReducer.product.user_id)
-    // console.log(props.userReducer.id)
 
     return (
         <div className='openPostContain'>
@@ -60,7 +57,7 @@ const Product = (props) => {
                 <div className='product_view'>
                     <div className='buttonContain'>
                         <span onClick={goBack} className='back' >&#8678;</span>
-                         <Button onClick={props.productReducer.product.user_id === props.userReducer.id ? () => deleteProduct(product.product_id) : () => alert('You cannot delete this post')}> 
+                         <Button onClick={() => deleteProduct(props.match.params.id)}> 
                             <DeleteSharpIcon className='delete' />
                         </Button> 
                     </div>
@@ -72,13 +69,6 @@ const Product = (props) => {
                     <h1 className='date' >{product.date}</h1>
                 </div>
 
-                {/* <h2 className='openTitle' >{product.title}</h2>
-                <h1 className='postData' >{product.category}</h1>
-                <h1 className='postDescription' >{product.description}</h1>
-                <iframe className='postMedia' title='user_media' src={product.media} />
-                <h2 className='userName'>Author: {product.username}</h2>
-                <h2>${product.price}</h2>
-                <h1 className='date' >{product.date}</h1> */}
             </div>
             <br />
             <br />
