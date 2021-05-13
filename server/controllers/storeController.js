@@ -1,5 +1,3 @@
-const { searchCategory } = require("./exploreController");
-
 module.exports = {
     newItem: async (req, res) => {
         console.log(req.body)
