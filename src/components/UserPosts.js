@@ -50,7 +50,7 @@ const UserPosts = (props) => {
                                         <h1 className='title'>{t.title}</h1>
                                         <h2 className='category'>{t.category}</h2>
                                         <h2 className='description'>{t.description}</h2>
-                                        <iframe className='media' src={t.media} />
+                                        <iframe className='media' title='user_post_media' src={t.media} />
                                         <FavoriteIcon className='save' />
                                         <h2 className='date'>{t.date}</h2>
                                     </div>

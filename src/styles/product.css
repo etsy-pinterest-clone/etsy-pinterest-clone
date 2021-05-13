@@ -22,7 +22,7 @@
 }
 
 .product_view span {
-    color: crimson;
+    font-weight: 600;
 }
 
 .buttonContain {
@@ -40,4 +40,9 @@
     font-size: 12px;
     float: right;
     padding-bottom: 5px;
+    font-weight: 600;
+}
+
+.delete {
+    cursor: pointer;
 }

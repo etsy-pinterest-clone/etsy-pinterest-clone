@@ -14,7 +14,7 @@
 .my_products {
     display: flex;
     justify-content: center;
-    border-top: 1px solid black;
+    border-top: 4px solid rgb(187, 187, 187);
 }
 
 .my_products h2 {
@@ -24,4 +24,8 @@
     font-size: 30px;
     padding: 5px;
     background: linear-gradient(to bottom, #929292 0%,#a8a8a8 22%,#d8d8d8 87%,#ececec 100%);
+}
+
+.create_product_contain {
+    position: sticky;
 }

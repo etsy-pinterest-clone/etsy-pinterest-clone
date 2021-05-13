@@ -38,28 +38,30 @@ const UserPosts = (props) => {
 
 
     return (
-        <div className='mainContain'>
-            {
-                posts.map((t, index) => {
-                    // console.log(t)
-                    return (
-                        <div key={index} className='container'>
-                            <div>
-                                <Link to={`/user/posts/${t.post_id}`} className='link'>
-                                    <div className='card' onClick={() => viewPost(t.post_id)}>
-                                        <h1 className='title'>{t.title}</h1>
-                                        <h2 className='category'>{t.category}</h2>
-                                        <h2 className='description'>{t.description}</h2>
-                                        <iframe className='media' src={t.media} />
-                                        <FavoriteIcon className='save' />
-                                        <h2 className='date'>{t.date}</h2>
-                                    </div>
-                                </Link>
+        <div className='parentContain'>
+            <div className='mainContain'>
+                {
+                    posts.map((t, index) => {
+                        // console.log(t)
+                        return (
+                            <div key={index} className='container'>
+                                <div>
+                                    <Link to={`/user/posts/${t.post_id}`} className='link'>
+                                        <div className='card' onClick={() => viewPost(t.post_id)}>
+                                            <h1 className='title'>{t.title}</h1>
+                                            <h2 className='category'>{t.category}</h2>
+                                            <h2 className='description'>{t.description}</h2>
+                                            <iframe className='media' src={t.media} />
+                                            <FavoriteIcon className='save' />
+                                            <h2 className='date'>{t.date}</h2>
+                                        </div>
+                                    </Link>
+                                </div>
                             </div>
-                        </div>
-                    )
-                })
-            }
+                        )
+                    })
+                }
+            </div>
         </div>
     )
 };
