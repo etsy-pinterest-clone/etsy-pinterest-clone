@@ -36,9 +36,15 @@
 .commentContain {
     position: relative;
     top: 45vh;
-    left: 45vw;
+    left: 20vw;
     margin-top: 200px;
     z-index: 0;
+}
+
+.comment_item_area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .rateContain {
