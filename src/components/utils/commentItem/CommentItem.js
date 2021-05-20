@@ -38,6 +38,7 @@ function CommentItem({comment, socket}) {
     }
 
     const hideReply = () => {
+        console.log('this should be hidden')
         setReply(false)
         setNext(3)
     }
