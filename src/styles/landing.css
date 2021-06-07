@@ -95,5 +95,49 @@
   line-height: 190%;
 }
 
+@media (max-width: 450px) {
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  .logo {
+    width: 100vw;
+  }
+  .background-one {
+    height: 51.3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .background-two {
+    height: 32vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .background-three {
+    height: 32vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .background-four {
+    height: 32vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .landing-pgtext {
+    height: 40vh;
+    padding: 0px 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .landing-H1 {
+    font-size: 3rem;
+  }
+}
+
 
 
