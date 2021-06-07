@@ -175,4 +175,15 @@
       bottom: 100%;
     }
   }
+
+  @media (max-width: 450px) {
+    .login-box {
+      top: 45vh;
+      width: 80vw;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
   
